@@ -1,0 +1,10 @@
+{
+  "name": "com.freekickclassics.duellink",
+  "version": "0.1.0",
+  "displayName": "Duel Link",
+  "description": "Transport-agnostic link between two phones for turn-based duels: the IDuelLink interface, wire messages that each fit one 20-byte BLE write, commit-reveal for secret picks, room advertisement UUIDs and a round-trip-time probe. Pure C#, no UnityEngine dependency, so Dunk Duel and Volley Duel can reuse it.",
+  "unity": "6000.3",
+  "author": {
+    "name": "Free Kick Classics"
+  }
+}

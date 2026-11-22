@@ -1,0 +1,13 @@
+{
+  "name": "com.freekickclassics.core",
+  "version": "0.1.0",
+  "displayName": "Free Kick Classics Core",
+  "description": "Engine-agnostic game logic for Free Kick Classics: the Stare-Down Shootout session over a duel link, penalty rules, tendencies, the CPU keeper and the era ball-flight model. Pure C#, no UnityEngine dependency.",
+  "unity": "6000.3",
+  "dependencies": {
+    "com.freekickclassics.duellink": "0.1.0"
+  },
+  "author": {
+    "name": "Free Kick Classics"
+  }
+}

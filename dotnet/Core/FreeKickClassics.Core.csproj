@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <RootNamespace>FreeKickClassics.Core</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(PackagesRoot)com.freekickclassics.core/Runtime/**/*.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../DuelLink/FreeKickClassics.DuelLink.csproj" />
+  </ItemGroup>
+</Project>

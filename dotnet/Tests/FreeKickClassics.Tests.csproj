@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- The same test files run in Unity's Test Runner, so stick to NUnit 3 APIs that Unity's NUnit fork has. -->
+    <Compile Include="$(PackagesRoot)com.freekickclassics.duellink/Tests/**/*.cs" />
+    <Compile Include="$(PackagesRoot)com.freekickclassics.core/Tests/**/*.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
+    <PackageReference Include="NUnit" Version="3.13.3" />
+    <PackageReference Include="NUnit3TestAdapter" Version="4.6.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../DuelLink/FreeKickClassics.DuelLink.csproj" />
+    <ProjectReference Include="../Core/FreeKickClassics.Core.csproj" />
+  </ItemGroup>
+</Project>

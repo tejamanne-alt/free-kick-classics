@@ -1,0 +1,16 @@
+{
+    "name": "FreeKickClassics.Core",
+    "rootNamespace": "FreeKickClassics.Core",
+    "references": [
+        "FreeKickClassics.DuelLink"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": true
+}

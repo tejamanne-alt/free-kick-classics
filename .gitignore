@@ -1,0 +1,38 @@
+# Build output of the dotnet/ test projects
+dotnet/**/bin/
+dotnet/**/obj/
+TestResults/
+
+# Unity project (create it under unity/)
+unity/[Ll]ibrary/
+unity/[Tt]emp/
+unity/[Oo]bj/
+unity/[Bb]uild/
+unity/[Bb]uilds/
+unity/[Ll]ogs/
+unity/[Uu]ser[Ss]ettings/
+unity/[Mm]emoryCaptures/
+unity/[Rr]ecordings/
+unity/*.csproj
+unity/*.sln
+unity/*.slnx
+unity/.vsconfig
+unity/.utmp/
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+sysinfo.txt
+crashlytics-build.properties
+
+# Store builds
+*.apk
+*.aab
+*.ipa
+
+# OS and editors
+.DS_Store
+Thumbs.db
+.vs/
+.idea/
+.vscode/
+*.swp

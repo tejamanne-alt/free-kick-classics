@@ -1,0 +1,15 @@
+<Project>
+  <!--
+    These projects only exist so the Unity packages under packages/ can be built and tested with `dotnet test`
+    (locally and in CI) without opening the Unity editor. Unity compiles the same sources through the .asmdef files.
+    C# 9 is the newest language version Unity 6 supports, so the code must stay within it.
+  -->
+  <PropertyGroup>
+    <LangVersion>9.0</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <PackagesRoot>$(MSBuildThisFileDirectory)../packages/</PackagesRoot>
+  </PropertyGroup>
+</Project>
