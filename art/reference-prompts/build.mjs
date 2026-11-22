@@ -1,7 +1,7 @@
 // Builds the prompt sheet from prompts.json: sheet.html (the interactive page) and README.md (the same prompts as
 // plain text), each with a ChatGPT and a Gemini version of every prompt.
 // Run with `node art/reference-prompts/build.mjs` after editing prompts.json.
-import { readFileSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -22,6 +22,17 @@ for (const [i, p] of prompts.entries()) {
   }
 }
 if (prompts.some(p => p.attach.length > 4)) throw new Error('Keep attachments to four or fewer.');
+for (const p of prompts) if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(p.file || '')) throw new Error(`${p.id}: "file" must be kebab-case`);
+if (new Set(prompts.map(p => p.file)).size !== prompts.length) throw new Error('File names must be unique.');
+if (sections.some(s => !s.folder)) throw new Error('Every section needs a "folder".');
+
+// ---------- Where the images live in the repo ----------
+const REF_ROOT = 'art/reference';
+const REF_URL = 'https://github.com/tejamanne-alt/free-kick-classics/tree/HEAD/art/reference';
+const sectionOf = p => sections.find(s => s.id === p.section);
+const fileName = p => `${p.id}-${p.file}.png`;
+const folderOf = p => `${REF_ROOT}/${sectionOf(p).folder}/`;
+const filePath = p => folderOf(p) + fileName(p);
 
 // ---------- Prompt composition ----------
 const ORDINALS = ['first', 'second', 'third', 'fourth'];
@@ -95,7 +106,12 @@ md.push('## How to use them', '');
 md.push('1. Generate **A01** first, in a new chat. Make three or four variations and keep the one you like best.');
 md.push('2. For every later prompt, attach exactly the images listed under **Attach**, in that order.');
 md.push('3. Give each character its own chat, so the face and kit stay the same across that character\'s sheets.');
-md.push('4. Save each image with its ID as the file name, e.g. `C01.png` or `C01-v2.png`, and send them to me.', '');
+md.push('4. Save each image under the name given below, e.g. `C01-kicker-turnaround.png`. Alternatives get `-v2`, `-v3`.', '');
+md.push('## Where the files go', '');
+md.push(`Every image has a fixed place under \`${REF_ROOT}/\`, one folder per section:`, '');
+md.push('| Folder | What goes there |', '| --- | --- |');
+for (const s of sections) md.push(`| \`${REF_ROOT}/${s.folder}/\` | ${s.name} (${prompts.filter(p => p.section === s.id).map(p => p.id).join(', ')}) |`);
+md.push('', 'Two ways to get them there: attach them in our chat and I\'ll file them, or open the folder on GitHub and use **Add file → Upload files**. If a download comes out as `.jpg` or `.webp`, keep that extension; the name before it is what matters.', '');
 for (const key of toolKeys) {
   md.push(`**${TOOLS[key].name}**`, '');
   for (const n of notes[key]) md.push(`- ${n}`);
@@ -108,6 +124,7 @@ for (const section of sections) {
     md.push(`### ${p.id} · ${p.title}`, '');
     md.push(`- **Batch:** ${p.batch === 'first' ? 'first' : 'later'}`);
     md.push(`- **Image shape:** ${p.aspect}`);
+    md.push(`- **Save as:** \`${filePath(p)}\``);
     md.push(`- **Attach, in order:** ${p.attach.length ? p.attach.join(', ') : 'nothing'}`);
     md.push(`- **I'll build:** ${p.builds}`);
     if (p.tip) md.push(`- **Tip:** ${p.tip}`);
@@ -122,10 +139,31 @@ md.push('', '**Animations**', '');
 for (const [name, text] of animations) md.push(`- **${name}.** ${text}`);
 md.push('', 'You get `.blend` scenes, FBX characters and animations ready for Unity, and preview renders and videos along the way.', '');
 md.push('## Sending things back', '');
-md.push('- **Images:** name each file with its prompt ID (`A01.png`; `A01-v2.png` for alternatives) and attach them in our chat.');
+md.push(`- **Images:** save each under the name on its prompt (alternatives get \`-v2\`), then attach them in our chat or upload them to their folder under \`${REF_ROOT}/\`.`);
 md.push('- **Models:** any format Blender opens: `.blend`, `.fbx`, `.glb`/`.gltf` or `.obj`. Metres as units is ideal. A humanoid rig is a bonus; I can rig unrigged characters.');
 md.push('- **Rights:** only send models and images you made or are allowed to use in a commercial game, and tell me any credit a licence requires.');
 writeFileSync(join(here, 'README.md'), md.join('\n') + '\n');
+
+// ---------- art/reference folder READMEs ----------
+const refDir = join(here, '..', 'reference');
+const overview = ['# Reference images', ''];
+overview.push('Images generated from the prompts in [`art/reference-prompts`](../reference-prompts/README.md), used as references for the Blender scenes and animations. Each prompt has a fixed file name and folder; the prompt sheet shows both, with copy buttons.', '');
+overview.push('| Folder | Images |', '| --- | --- |');
+for (const s of sections) overview.push(`| [\`${s.folder}/\`](${s.folder}/README.md) | ${s.name}: ${prompts.filter(p => p.section === s.id).length} |`);
+overview.push('', '- Name each file exactly as listed, e.g. `C01-kicker-turnaround.png`. Alternatives get `-v2`, `-v3`.');
+overview.push('- To add images on GitHub, open the folder and use **Add file → Upload files**. Or attach them in the chat with Claude, who files them.');
+overview.push('- Keep whatever extension the download has (`.png`, `.jpg` or `.webp`).');
+overview.push('', 'This folder is generated by `node art/reference-prompts/build.mjs`; edit the prompts there.');
+mkdirSync(refDir, { recursive: true });
+writeFileSync(join(refDir, 'README.md'), overview.join('\n') + '\n');
+for (const s of sections) {
+  const lines = [`# ${s.name}`, '', s.blurb, '', 'Save each image here under the name below. Alternatives get `-v2`, `-v3`.', ''];
+  lines.push('| File | Prompt | Batch |', '| --- | --- | --- |');
+  for (const p of prompts.filter(q => q.section === s.id)) lines.push(`| \`${fileName(p)}\` | ${p.id} · ${p.title} | ${p.batch} |`);
+  lines.push('', `The prompts are in [\`art/reference-prompts\`](../../reference-prompts/README.md#${s.name.toLowerCase().replace(/[^a-z0-9 ]/g, '').replace(/ /g, '-')}).`);
+  mkdirSync(join(refDir, s.folder), { recursive: true });
+  writeFileSync(join(refDir, s.folder, 'README.md'), lines.join('\n') + '\n');
+}
 
 // ---------- sheet.html ----------
 const toolSwitch = id => `
@@ -148,6 +186,14 @@ const cards = sections.map(section => {
           <div><dt>Shape</dt><dd>${esc(p.aspect)}</dd></div>
           <div><dt>Attach</dt><dd>${attachList(p)}</dd></div>
         </dl>
+        <div class="file">
+          <span class="file-label">Save as</span>
+          <code class="path"><span class="dir">${esc(folderOf(p))}</span><span class="name">${esc(fileName(p))}</span></code>
+          <span class="file-actions">
+            <button class="copy small" type="button" data-copy-file="name" data-id="${p.id}">Copy name</button>
+            <button class="copy small" type="button" data-copy-file="path" data-id="${p.id}">Copy path</button>
+          </span>
+        </div>
         <p class="builds"><span>I'll build</span>${esc(p.builds)}</p>
         ${toolKeys.map(k => `<div class="prompt only-${k}">${TOOLS[k].visible(p).map(t => `<p>${esc(t)}</p>`).join('')}</div>`).join('\n        ')}
         <p class="appended">Copies with the ${esc(styles[p.style].name.toLowerCase())} and the originality rules for <span class="only-chatgpt">ChatGPT</span><span class="only-gemini">Gemini</span>.</p>
@@ -182,7 +228,7 @@ const styleBlocks = toolKeys.map(k => `
         </div>
       </div>`).join('');
 
-const payload = {};
+const payload = { files: Object.fromEntries(prompts.map(p => [p.id, { name: fileName(p), path: filePath(p) }])) };
 for (const k of toolKeys) {
   payload[k] = { prompts: Object.fromEntries(prompts.map(p => [p.id, TOOLS[k].full(p)])), styles: {} };
   for (const s of Object.keys(styles)) payload[k].styles[s] = TOOLS[k].styleText(s);
@@ -302,6 +348,22 @@ const html = `<title>Free Kick Classics Prompts</title>
   .ref:hover, .ref:focus-visible { border-bottom-color: var(--gold); }
   .then { color: var(--muted); margin: 0 0.35rem; font-size: 12px; }
   .none { color: var(--muted); }
+  .file { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.6rem; margin: 0 0 0.65rem; padding: 0.5rem 0.7rem; border: 1px dashed var(--rule); border-radius: 8px; }
+  .file-label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); }
+  .path { font-family: var(--mono); font-size: 13px; overflow-wrap: anywhere; min-width: 0; flex: 1 1 16rem; }
+  .path .dir { color: var(--muted); }
+  .path .name { color: var(--ink); }
+  .file-actions { display: inline-flex; gap: 0.4rem; flex: none; }
+  .where { margin: 0 0 1.25rem; }
+  .where h3 { font-size: 0.95rem; font-weight: 600; margin: 0 0 0.4rem; }
+  .where p { color: var(--ink-2); margin: 0 0 0.75rem; max-width: 70ch; }
+  .where b { color: var(--ink); font-weight: 600; }
+  .folders { overflow-x: auto; margin: 0 0 0.75rem; }
+  .folders table { border-collapse: collapse; font-size: 14px; min-width: 100%; }
+  .folders th { text-align: left; font-weight: 600; font-size: 12px; color: var(--muted); padding: 0 1rem 0.4rem 0; border-bottom: 1px solid var(--rule); }
+  .folders td { padding: 0.4rem 1rem 0.4rem 0; border-bottom: 1px solid var(--rule); color: var(--ink-2); vertical-align: top; }
+  .folders td:first-child { white-space: nowrap; }
+  .folders .ids { font-family: var(--mono); font-size: 11.5px; color: var(--muted); margin-left: 0.35rem; }
   .builds, .tip { margin: 0 0 0.6rem; font-size: 14px; color: var(--ink-2); }
   .builds span, .tip span { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-right: 0.6rem; }
   .prompt { margin: 0 0 0.4rem; padding: 0.85rem 1rem; background: var(--raised); border-radius: 8px; color: var(--ink); font-size: 15px; display: grid; gap: 0.6rem; }
@@ -376,8 +438,19 @@ const html = `<title>Free Kick Classics Prompts</title>
       <li><span><b>Make A01 first</b> in a new chat. Ask for three or four variations and keep the one you love; it sets the look for everything else.</span></li>
       <li><span><b>Attach exactly what each card lists</b>, in that order. A01 always comes first.</span></li>
       <li><span><b>One chat per character.</b> The kicker, keeper and wall each get their own chat, so faces and kits stay the same from sheet to sheet.</span></li>
-      <li><span><b>Name files by ID</b>, like <code>C01.png</code> or <code>C01-v2.png</code>, tick “Made it”, and send the images to me in our chat.</span></li>
+      <li><span><b>Save each image under the name on its card</b>, like <code>C01-kicker-turnaround.png</code>, and tick “Made it”. Alternatives get <code>-v2</code>, <code>-v3</code>.</span></li>
     </ol>
+    <div class="where">
+      <h3>Where the files go</h3>
+      <p>Every image has a fixed place in the repo under <code>${REF_ROOT}/</code>, one folder per section. Each card shows its full path.</p>
+      <div class="folders">
+        <table>
+          <thead><tr><th scope="col">Folder</th><th scope="col">What goes there</th></tr></thead>
+          <tbody>${sections.map(s => `<tr><td><code>${esc(REF_ROOT)}/${esc(s.folder)}/</code></td><td>${esc(s.name)} <span class="ids">${prompts.filter(p => p.section === s.id).map(p => p.id).join(' ')}</span></td></tr>`).join('')}</tbody>
+        </table>
+      </div>
+      <p><b>Two ways to add them:</b> attach the images in our chat and I'll file them, or open the <a href="${REF_URL}">reference folder on GitHub</a>, go into the folder, and use <b>Add file → Upload files</b>. If a download comes out as <code>.jpg</code> or <code>.webp</code>, keep that extension; the name before it is what matters.</p>
+    </div>
     ${toolKeys.map(k => `<div class="notes only-${k}">
       <h3>Working in ${TOOLS[k].name}</h3>
       <ul>${notes[k].map(n => `<li>${esc(n)}</li>`).join('')}</ul>
@@ -410,7 +483,7 @@ const html = `<title>Free Kick Classics Prompts</title>
     <p style="color: var(--ink-2); margin-top: 1rem">You get <code>.blend</code> scenes, FBX characters and animations ready for Unity, and preview renders and videos along the way.</p>
     <h3>Sending things back</h3>
     <ul>
-      <li><b>Images:</b> name each file with its prompt ID and attach them in our chat. Send alternatives as <code>A01-v2.png</code>.</li>
+      <li><b>Images:</b> save each under the name on its card, then attach them in our chat or upload them to their folder under <code>${REF_ROOT}/</code>.</li>
       <li><b>Models:</b> any format Blender opens: <code>.blend</code>, <code>.fbx</code>, <code>.glb</code> or <code>.obj</code>. Metres as units is ideal. A humanoid rig is a bonus; I can rig unrigged characters.</li>
       <li><b>Rights:</b> only send models and images you made or are allowed to use in a commercial game, and tell me any credit a licence asks for.</li>
     </ul>
@@ -473,6 +546,27 @@ const html = `<title>Free Kick Classics Prompts</title>
       copyText(data[tool].prompts[id], button.closest('.card'), 'fallback-' + id, button);
     });
   });
+  document.querySelectorAll('[data-copy-file]').forEach(function (button) {
+    button.addEventListener('click', function () {
+      var file = data.files[button.getAttribute('data-id')];
+      var kind = button.getAttribute('data-copy-file');
+      var text = kind === 'path' ? file.path : file.name;
+      var card = button.closest('.card');
+      if (!navigator.clipboard || !navigator.clipboard.writeText) { selectPath(card); return; }
+      navigator.clipboard.writeText(text).then(function () {
+        flash(card, kind === 'path' ? 'Path copied.' : 'File name copied.');
+      }, function () { selectPath(card); });
+    });
+  });
+  function selectPath(card) {
+    var node = card.querySelector('.path');
+    var range = document.createRange();
+    range.selectNodeContents(node);
+    var sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    flash(card, 'Selected. Copy it from the highlighted path.');
+  }
   document.querySelectorAll('[data-copy-style]').forEach(function (button) {
     button.addEventListener('click', function () {
       var parts = button.getAttribute('data-copy-style').split(':');

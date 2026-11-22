@@ -11,7 +11,24 @@ Edit `prompts.json`, then run `node art/reference-prompts/build.mjs` to rebuild 
 1. Generate **A01** first, in a new chat. Make three or four variations and keep the one you like best.
 2. For every later prompt, attach exactly the images listed under **Attach**, in that order.
 3. Give each character its own chat, so the face and kit stay the same across that character's sheets.
-4. Save each image with its ID as the file name, e.g. `C01.png` or `C01-v2.png`, and send them to me.
+4. Save each image under the name given below, e.g. `C01-kicker-turnaround.png`. Alternatives get `-v2`, `-v3`.
+
+## Where the files go
+
+Every image has a fixed place under `art/reference/`, one folder per section:
+
+| Folder | What goes there |
+| --- | --- |
+| `art/reference/style/` | Start here (A01, A02, A03) |
+| `art/reference/characters/` | Characters (C01, C02, C03, C04, C05, C06, C07) |
+| `art/reference/poses/` | Animation poses (P01, P02, P03, P04, P05, P06, P07, P08, P09, P10) |
+| `art/reference/props/` | Ball, goal and pitch (B01, B02, B03, B04) |
+| `art/reference/arena/` | Arena and cameras (W01, W02, W03, W04) |
+| `art/reference/moments/` | Moments (M01, M02, M03, M04) |
+| `art/reference/textures/` | Textures (T01, T02, T03, T04) |
+| `art/reference/worlds/` | Eras and Classics (E01, E02, S01, S02, S03, S04, S05) |
+
+Two ways to get them there: attach them in our chat and I'll file them, or open the folder on GitHub and use **Add file → Upload files**. If a download comes out as `.jpg` or `.webp`, keep that extension; the name before it is what matters.
 
 **ChatGPT**
 
@@ -36,6 +53,7 @@ The style keyframe sets the look for everything else. Make it first, pick the va
 
 - **Batch:** first
 - **Image shape:** Landscape 3:2
+- **Save as:** `art/reference/style/A01-style-keyframe.png`
 - **Attach, in order:** nothing
 - **I'll build:** The master look: lighting, colour grade, fog and sky for every scene.
 - **Tip:** Generate three or four variations and keep the one you love. Attach it to every prompt after this one.
@@ -66,6 +84,7 @@ Everything here is an original design invented for this game: the people, kits, 
 
 - **Batch:** first
 - **Image shape:** Landscape 3:2
+- **Save as:** `art/reference/style/A02-palette-materials.png`
 - **Attach, in order:** A01
 - **I'll build:** The Blender material library and the colour values every scene shares.
 
@@ -95,6 +114,7 @@ Everything here is an original design invented for this game: the people, kits, 
 
 - **Batch:** first
 - **Image shape:** Landscape 3:2
+- **Save as:** `art/reference/style/A03-ball-flight-trails.png`
 - **Attach, in order:** A01
 - **I'll build:** The ball-trail effects. In Blender the ribbons follow real flight paths exported from the game's own physics.
 
@@ -128,6 +148,7 @@ Turnaround sheets I model and rig from. Keep each character in its own chat so t
 
 - **Batch:** first
 - **Image shape:** Landscape 3:2
+- **Save as:** `art/reference/characters/C01-kicker-turnaround.png`
 - **Attach, in order:** A01
 - **I'll build:** The kicker model, rigged as a humanoid so animations can be shared and exported to Unity.
 - **Tip:** If the views come back with perspective or shadows, reply in the same chat: “Same sheet, but flat orthographic views, evenly lit, every view the same height.”
@@ -158,6 +179,7 @@ Everything here is an original design invented for this game: the people, kits, 
 
 - **Batch:** first
 - **Image shape:** Landscape 3:2
+- **Save as:** `art/reference/characters/C02-kicker-faces.png`
 - **Attach, in order:** A01, C01
 - **I'll build:** Head modelling and the facial shape keys for stare-down close-ups.
 
@@ -187,6 +209,7 @@ Everything here is an original design invented for this game: the people, kits, 
 
 - **Batch:** first
 - **Image shape:** Landscape 3:2
+- **Save as:** `art/reference/characters/C03-keeper-turnaround.png`
 - **Attach, in order:** A01
 - **I'll build:** The keeper model, on the same humanoid rig as the kicker.
 - **Tip:** Start a new chat for the keeper so the kicker's features don't bleed into him.
@@ -217,6 +240,7 @@ Everything here is an original design invented for this game: the people, kits, 
 
 - **Batch:** first
 - **Image shape:** Landscape 3:2
+- **Save as:** `art/reference/characters/C04-keeper-faces-gloves.png`
 - **Attach, in order:** A01, C03
 - **I'll build:** The keeper's head, facial shape keys and glove model.
 
@@ -246,6 +270,7 @@ Everything here is an original design invented for this game: the people, kits, 
 
 - **Batch:** later
 - **Image shape:** Landscape 3:2
+- **Save as:** `art/reference/characters/C05-wall-players.png`
 - **Attach, in order:** A01
 - **I'll build:** Three body types for the defensive wall in free kicks.
 
@@ -275,6 +300,7 @@ Everything here is an original design invented for this game: the people, kits, 
 
 - **Batch:** first
 - **Image shape:** Landscape 3:2
+- **Save as:** `art/reference/characters/C06-kit-flat-lays.png`
 - **Attach, in order:** A01, C01, C03
 - **I'll build:** Texture painting for the kits and the alternate colours.
 
@@ -304,6 +330,7 @@ Everything here is an original design invented for this game: the people, kits, 
 
 - **Batch:** later
 - **Image shape:** Landscape 3:2
+- **Save as:** `art/reference/characters/C07-referee.png`
 - **Attach, in order:** A01
 - **I'll build:** The referee who sprays the 9.15 m line and pushes the wall back.
 
@@ -337,6 +364,7 @@ Key-pose sheets I turn into keyframed animations. Attach the character's turnaro
 
 - **Batch:** first
 - **Image shape:** Landscape 3:2
+- **Save as:** `art/reference/poses/P01-run-up-side-foot.png`
 - **Attach, in order:** A01, C01
 - **I'll build:** The 1.5-second run-up and the placed shot.
 
@@ -366,6 +394,7 @@ Everything here is an original design invented for this game: the people, kits, 
 
 - **Batch:** first
 - **Image shape:** Landscape 3:2
+- **Save as:** `art/reference/poses/P02-driven-knuckleball.png`
 - **Attach, in order:** A01, C01
 - **I'll build:** The laces strike that feeds the knuckleball.
 
@@ -395,6 +424,7 @@ Everything here is an original design invented for this game: the people, kits, 
 
 - **Batch:** later
 - **Image shape:** Landscape 3:2
+- **Save as:** `art/reference/poses/P03-curler-trivela.png`
 - **Attach, in order:** A01, C01
 - **I'll build:** The inside-of-the-foot curler and the outside-of-the-foot trivela.
 
@@ -424,6 +454,7 @@ Everything here is an original design invented for this game: the people, kits, 
 
 - **Batch:** first
 - **Image shape:** Landscape 3:2
+- **Save as:** `art/reference/poses/P04-chip.png`
 - **Attach, in order:** A01, C01
 - **I'll build:** The soft chip that punishes an early dive.
 
@@ -453,6 +484,7 @@ Everything here is an original design invented for this game: the people, kits, 
 
 - **Batch:** first
 - **Image shape:** Landscape 3:2
+- **Save as:** `art/reference/poses/P05-stutter.png`
 - **Attach, in order:** A01, C01
 - **I'll build:** The stutter bluff.
 
@@ -482,6 +514,7 @@ Everything here is an original design invented for this game: the people, kits, 
 
 - **Batch:** first
 - **Image shape:** Landscape 3:2
+- **Save as:** `art/reference/poses/P06-keeper-ready-shuffle.png`
 - **Attach, in order:** A01, C03
 - **I'll build:** The keeper's idle stance and the shuffle bluff on the line.
 
@@ -511,6 +544,7 @@ Everything here is an original design invented for this game: the people, kits, 
 
 - **Batch:** first
 - **Image shape:** Landscape 3:2
+- **Save as:** `art/reference/poses/P07-keeper-dives.png`
 - **Attach, in order:** A01, C03
 - **I'll build:** The dives, mirrored in Blender for the other side. Early and late dives are the same poses with different timing.
 
@@ -540,6 +574,7 @@ Everything here is an original design invented for this game: the people, kits, 
 
 - **Batch:** first
 - **Image shape:** Landscape 3:2
+- **Save as:** `art/reference/poses/P08-keeper-saves.png`
 - **Attach, in order:** A01, C03
 - **I'll build:** Staying big, catches and parries.
 
@@ -569,6 +604,7 @@ Everything here is an original design invented for this game: the people, kits, 
 
 - **Batch:** later
 - **Image shape:** Landscape 3:2
+- **Save as:** `art/reference/poses/P09-wall-poses.png`
 - **Attach, in order:** A01, C05
 - **I'll build:** Wall set-up, jump, brace and the lying man for Wall Wars and the Classics cards.
 
@@ -598,6 +634,7 @@ Everything here is an original design invented for this game: the people, kits, 
 
 - **Batch:** later
 - **Image shape:** Landscape 3:2
+- **Save as:** `art/reference/poses/P10-celebrations.png`
 - **Attach, in order:** A01, C01, C03
 - **I'll build:** The after-kick reactions for both players.
 
@@ -631,6 +668,7 @@ Props I model to real dimensions: a 22 cm ball, a 7.32 × 2.44 m goal, the 9.15 
 
 - **Batch:** first
 - **Image shape:** Landscape 3:2
+- **Save as:** `art/reference/props/B01-era-balls.png`
 - **Attach, in order:** A01
 - **I'll build:** The three balls, each paired with its era's physics in the game.
 
@@ -660,6 +698,7 @@ Everything here is an original design invented for this game: the people, kits, 
 
 - **Batch:** first
 - **Image shape:** Landscape 3:2
+- **Save as:** `art/reference/props/B02-goal-net.png`
 - **Attach, in order:** A01
 - **I'll build:** The goal to real dimensions, with a net that ripples and glows on a goal.
 
@@ -689,6 +728,7 @@ Everything here is an original design invented for this game: the people, kits, 
 
 - **Batch:** later
 - **Image shape:** Square 1:1
+- **Save as:** `art/reference/props/B03-penalty-area.png`
 - **Attach, in order:** A01
 - **I'll build:** Line markings, the penalty spot, the spray line and the corner flag.
 
@@ -718,6 +758,7 @@ Everything here is an original design invented for this game: the people, kits, 
 
 - **Batch:** later
 - **Image shape:** Landscape 3:2
+- **Save as:** `art/reference/props/B04-floodlights.png`
 - **Attach, in order:** A01
 - **I'll build:** One floodlight design per era.
 
@@ -751,6 +792,7 @@ The first playable world and the camera framings the shootout uses on a phone.
 
 - **Batch:** first
 - **Image shape:** Landscape 3:2
+- **Save as:** `art/reference/arena/W01-arena-aerial.png`
 - **Attach, in order:** A01
 - **I'll build:** The layout and scale of the first playable arena.
 
@@ -780,6 +822,7 @@ Everything here is an original design invented for this game: the people, kits, 
 
 - **Batch:** first
 - **Image shape:** Portrait 2:3
+- **Save as:** `art/reference/arena/W02-camera-kicker.png`
 - **Attach, in order:** A01, W01
 - **I'll build:** The main kicker camera, framed for a phone.
 
@@ -809,6 +852,7 @@ Everything here is an original design invented for this game: the people, kits, 
 
 - **Batch:** first
 - **Image shape:** Portrait 2:3
+- **Save as:** `art/reference/arena/W03-camera-keeper.png`
 - **Attach, in order:** A01, W01
 - **I'll build:** The keeper camera, framed for a phone.
 
@@ -838,6 +882,7 @@ Everything here is an original design invented for this game: the people, kits, 
 
 - **Batch:** later
 - **Image shape:** Landscape 3:2
+- **Save as:** `art/reference/arena/W04-stands-crowd.png`
 - **Attach, in order:** A01
 - **I'll build:** Stand geometry and the crowd shader.
 
@@ -871,6 +916,7 @@ Frames that direct the animation, lighting and effects at the beats that matter:
 
 - **Batch:** first
 - **Image shape:** Landscape 3:2
+- **Save as:** `art/reference/moments/M01-stare-down.png`
 - **Attach, in order:** A01, C02, C04
 - **I'll build:** The stare-down cinematic camera and face lighting.
 
@@ -900,6 +946,7 @@ Everything here is an original design invented for this game: the people, kits, 
 
 - **Batch:** first
 - **Image shape:** Landscape 3:2
+- **Save as:** `art/reference/moments/M02-goal.png`
 - **Attach, in order:** A01, B02
 - **I'll build:** The net burst, crowd wave and camera for a goal.
 
@@ -929,6 +976,7 @@ Everything here is an original design invented for this game: the people, kits, 
 
 - **Batch:** first
 - **Image shape:** Landscape 3:2
+- **Save as:** `art/reference/moments/M03-fingertip-save.png`
 - **Attach, in order:** A01, C03
 - **I'll build:** The slow-motion save with afterimages.
 
@@ -958,6 +1006,7 @@ Everything here is an original design invented for this game: the people, kits, 
 
 - **Batch:** later
 - **Image shape:** Landscape 3:2
+- **Save as:** `art/reference/moments/M04-replay.png`
 - **Attach, in order:** A01, A03
 - **I'll build:** The replay camera and trail styling.
 
@@ -991,6 +1040,7 @@ Surfaces I map onto the models. Most are square images.
 
 - **Batch:** first
 - **Image shape:** Square 1:1
+- **Save as:** `art/reference/textures/T01-grass.png`
 - **Attach, in order:** A01
 - **I'll build:** The pitch surface.
 
@@ -1020,6 +1070,7 @@ Everything here is an original design invented for this game: the people, kits, 
 
 - **Batch:** later
 - **Image shape:** Square 1:1
+- **Save as:** `art/reference/textures/T02-goalmouth.png`
 - **Attach, in order:** A01, T01
 - **I'll build:** The scuffed turf in front of the goal.
 
@@ -1049,6 +1100,7 @@ Everything here is an original design invented for this game: the people, kits, 
 
 - **Batch:** first
 - **Image shape:** Square 1:1
+- **Save as:** `art/reference/textures/T03-crowd-sprites.png`
 - **Attach, in order:** A01
 - **I'll build:** Billboard sprites for thousands of fans, cut out on the green background.
 - **Tip:** The pure green background is what lets me cut the fans out. If it comes back with a floor or shadows, ask again for a flat #00FF00 background.
@@ -1079,6 +1131,7 @@ Everything here is an original design invented for this game: the people, kits, 
 
 - **Batch:** first
 - **Image shape:** Landscape 3:2
+- **Save as:** `art/reference/textures/T04-sky-dome.png`
 - **Attach, in order:** A01
 - **I'll build:** The 360-degree sky around the arena.
 
@@ -1112,6 +1165,7 @@ The other worlds: the two remaining eras and the Classics scenario cards. These 
 
 - **Batch:** later
 - **Image shape:** Landscape 3:2
+- **Save as:** `art/reference/worlds/E01-era-1970s.png`
 - **Attach, in order:** A01
 - **I'll build:** The 1970s era, paired with the heavy leather ball.
 
@@ -1141,6 +1195,7 @@ Everything here is an original design invented for this game: the people, kits, 
 
 - **Batch:** later
 - **Image shape:** Landscape 3:2
+- **Save as:** `art/reference/worlds/E02-era-1990s.png`
 - **Attach, in order:** A01
 - **I'll build:** The 1990s era, paired with the glossy, big-bending ball.
 
@@ -1170,6 +1225,7 @@ Everything here is an original design invented for this game: the people, kits, 
 
 - **Batch:** later
 - **Image shape:** Landscape 3:2
+- **Save as:** `art/reference/worlds/S01-classic-impossible-banana.png`
 - **Attach, in order:** A01, C05
 - **I'll build:** The 35 m free kick that has to start wide of the post.
 
@@ -1199,6 +1255,7 @@ Everything here is an original design invented for this game: the people, kits, 
 
 - **Batch:** later
 - **Image shape:** Landscape 3:2
+- **Save as:** `art/reference/worlds/S02-classic-ninety-third-minute.png`
 - **Attach, in order:** A01, C05
 - **I'll build:** One kick, a wall of six, everything on it.
 
@@ -1228,6 +1285,7 @@ Everything here is an original design invented for this game: the people, kits, 
 
 - **Batch:** later
 - **Image shape:** Landscape 3:2
+- **Save as:** `art/reference/worlds/S03-classic-ice-cold-chip.png`
 - **Attach, in order:** A01, C03
 - **I'll build:** The keeper who always dives early.
 
@@ -1257,6 +1315,7 @@ Everything here is an original design invented for this game: the people, kits, 
 
 - **Batch:** later
 - **Image shape:** Landscape 3:2
+- **Save as:** `art/reference/worlds/S04-classic-monsoon-final.png`
 - **Attach, in order:** A01
 - **I'll build:** The wet, skidding ball.
 
@@ -1286,6 +1345,7 @@ Everything here is an original design invented for this game: the people, kits, 
 
 - **Batch:** later
 - **Image shape:** Landscape 3:2
+- **Save as:** `art/reference/worlds/S05-classic-above-the-clouds.png`
 - **Attach, in order:** A01
 - **I'll build:** The high-altitude stadium where the ball flies further.
 
@@ -1331,6 +1391,6 @@ You get `.blend` scenes, FBX characters and animations ready for Unity, and prev
 
 ## Sending things back
 
-- **Images:** name each file with its prompt ID (`A01.png`; `A01-v2.png` for alternatives) and attach them in our chat.
+- **Images:** save each under the name on its prompt (alternatives get `-v2`), then attach them in our chat or upload them to their folder under `art/reference/`.
 - **Models:** any format Blender opens: `.blend`, `.fbx`, `.glb`/`.gltf` or `.obj`. Metres as units is ideal. A humanoid rig is a bonus; I can rig unrigged characters.
 - **Rights:** only send models and images you made or are allowed to use in a commercial game, and tell me any credit a licence requires.
