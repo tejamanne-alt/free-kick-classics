@@ -30,6 +30,9 @@ namespace FreeKickClassics.Core.Shootout
     {
         const int MaxSpeedBumps = 10;
 
+        /// <summary>How close the re-flown launch must land to the target, in metres.</summary>
+        public const double LandingTolerance = 0.01;
+
         readonly FlightModel model;
 
         public PenaltyKickPlanner(FlightModel model)
@@ -81,21 +84,25 @@ namespace FreeKickClassics.Core.Shootout
             // The same swing moves a waterlogged ball less: scale by momentum.
             double speed = ShotSpeed(choice) * model.Era.BallMassKg / model.MassKg;
 
-            Vec3 velocity = Vec3.Zero;
-            bool solved = false;
-            for (int bump = 0; bump <= MaxSpeedBumps && !solved; bump++)
+            for (int bump = 0; bump <= MaxSpeedBumps; bump++)
             {
-                solved = AimSolver.TrySolve(model, start, speed + bump, spin, knuckleSeed, Pitch.PenaltyDistance, targetX, targetY, out velocity);
+                if (!AimSolver.TrySolve(model, start, speed + bump, spin, knuckleSeed, Pitch.PenaltyDistance, targetX, targetY, out Vec3 velocity))
+                {
+                    continue;
+                }
+
+                // Re-fly what will actually be sent, grass included, and only accept it if it still lands on target.
+                var launch = new LaunchParams(start, velocity, spin, knuckleSeed).Quantized();
+                var flight = Flight.Simulate(model, launch, Pitch.PenaltyDistance);
+                if (flight.GoalLine.Happened &&
+                    System.Math.Abs(flight.GoalLine.Point.X - targetX) <= LandingTolerance &&
+                    System.Math.Abs(flight.GoalLine.Point.Y - targetY) <= LandingTolerance)
+                {
+                    return new PlannedKick(launch, flight.EndPoint, flight.EndTime);
+                }
             }
 
-            if (!solved)
-            {
-                throw new InvalidOperationException("No launch reaches " + resolution + " with " + choice + ".");
-            }
-
-            var launch = new LaunchParams(start, velocity, spin, knuckleSeed).Quantized();
-            var flight = Flight.Simulate(model, launch, Pitch.PenaltyDistance);
-            return new PlannedKick(launch, flight.EndPoint, flight.EndTime);
+            throw new InvalidOperationException("No launch reaches " + resolution + " with " + choice + ".");
         }
     }
 }

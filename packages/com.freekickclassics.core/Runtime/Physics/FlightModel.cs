@@ -160,11 +160,14 @@ namespace FreeKickClassics.Core.Physics
     {
         readonly FlightModel model;
         readonly ulong knuckleSeed;
+        readonly bool withGround;
         BallState state;
 
-        public FlightSimulator(FlightModel model, LaunchParams launch)
+        /// <param name="withGround">False lets the ball fly through the grass, which the aim solver needs.</param>
+        public FlightSimulator(FlightModel model, LaunchParams launch, bool withGround = true)
         {
             this.model = model ?? throw new ArgumentNullException(nameof(model));
+            this.withGround = withGround;
             knuckleSeed = launch.KnuckleSeed;
             state = new BallState { Position = launch.Position, Velocity = launch.Velocity, Spin = launch.Spin, Time = 0 };
         }
@@ -186,7 +189,7 @@ namespace FreeKickClassics.Core.Physics
             Vec3 position = state.Position + vMid * dt;
             Vec3 velocity = v + a2 * dt;
             spin = spin * model.SpinRetentionPerStep;
-            model.ResolveGround(ref position, ref velocity, ref spin);
+            if (withGround) model.ResolveGround(ref position, ref velocity, ref spin);
 
             state.Position = position;
             state.Velocity = velocity;
@@ -240,15 +243,17 @@ namespace FreeKickClassics.Core.Physics
         /// </summary>
         /// <param name="wallZ">Plane of the wall, or NaN for none.</param>
         /// <param name="trajectory">If given, receives the launch state and every step up to the end.</param>
+        /// <param name="withGround">False lets the ball fly through the grass (for aiming).</param>
         public static FlightResult Simulate(
             FlightModel model,
             LaunchParams launch,
             double goalLineZ,
             double wallZ = double.NaN,
             double maxSeconds = DefaultMaxSeconds,
-            List<BallState> trajectory = null)
+            List<BallState> trajectory = null,
+            bool withGround = true)
         {
-            var simulator = new FlightSimulator(model, launch);
+            var simulator = new FlightSimulator(model, launch, withGround);
             trajectory?.Add(simulator.State);
             var goal = default(PlaneCrossing);
             var wall = default(PlaneCrossing);
@@ -265,7 +270,7 @@ namespace FreeKickClassics.Core.Physics
 
                 if (TryCross(before, after, goalLineZ, out goal)) break;
 
-                bool stopped = after.Position.Y <= Pitch.BallRadius && after.Velocity.LengthSquared < 0.0025;
+                bool stopped = withGround && after.Position.Y <= Pitch.BallRadius && after.Velocity.LengthSquared < 0.0025;
                 bool goneBackwards = after.Position.Z < launch.Position.Z - 5;
                 bool goneWide = System.Math.Abs(after.Position.X - launch.Position.X) > 60;
                 if (stopped || goneBackwards || goneWide) break;

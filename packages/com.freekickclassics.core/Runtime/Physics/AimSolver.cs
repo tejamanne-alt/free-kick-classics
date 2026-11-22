@@ -4,6 +4,11 @@ namespace FreeKickClassics.Core.Physics
     /// Finds the launch direction that sends a ball with a given speed and spin through a chosen point on the goal-line
     /// plane, through the full flight model (drag, swerve, knuckle wobble included). Newton's method on yaw and pitch.
     /// </summary>
+    /// <remarks>
+    /// Aims as if there were no grass: a shot that skips off the ground before the line makes the crossing height jump
+    /// around as the launch angle changes, which sends Newton's method astray. Re-fly the answer with the ground on and
+    /// check it (as <c>PenaltyKickPlanner</c> does) before trusting it for very low targets.
+    /// </remarks>
     public static class AimSolver
     {
         /// <summary>How close to the target the crossing must be, in metres.</summary>
@@ -91,7 +96,7 @@ namespace FreeKickClassics.Core.Physics
             out double ry)
         {
             var launch = new LaunchParams(start, Direction(yaw, pitch) * speed, spin, knuckleSeed);
-            var result = Flight.Simulate(model, launch, goalLineZ);
+            var result = Flight.Simulate(model, launch, goalLineZ, withGround: false);
             rx = ry = 0;
             if (!result.GoalLine.Happened) return false;
             rx = result.GoalLine.Point.X - targetX;

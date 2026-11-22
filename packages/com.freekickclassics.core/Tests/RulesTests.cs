@@ -492,6 +492,43 @@ namespace FreeKickClassics.Core.Tests
         }
 
         [Test]
+        public void ReachesEveryCornerOfEveryZoneForEveryStrike([Values(Era.Seventies, Era.Nineties, Era.Modern)] Era era)
+        {
+            // Sweeps the extremes of each zone's scatter box, including balls skimming the grass, which once tripped
+            // the aim solver (a low, central placed shot at 22 cm).
+            var tuning = ShootoutTuning.CreateDefault();
+            var planner = new PenaltyKickPlanner(new FlightModel(EraProfile.For(era), MatchConditions.Calm));
+            int planned = 0;
+            foreach (var kick in Picks.AllKicks(0, 126, 255))
+            {
+                if (kick.Stutter) continue;
+                int strike = (int)kick.Strike;
+                int cx = tuning.ColumnCentreXmm[(int)kick.Column];
+                int cy = tuning.RowCentreYmm[(int)kick.Row];
+                foreach (int dx in new[] { -tuning.ScatterXmm[strike], 0, tuning.ScatterXmm[strike] })
+                foreach (int dy in new[] { -tuning.ScatterYmm[strike], 0, tuning.ScatterYmm[strike] })
+                {
+                    int x = Math.Max(-3530, Math.Min(3530, cx + dx));
+                    int y = Math.Max(130, Math.Min(2310, cy + dy));
+                    var resolution = new ShotResolution(ShotOutcome.Goal, x, y, 0, 0);
+                    Assert.DoesNotThrow(() => planner.Plan(kick, resolution, 77), $"{era} {kick} to ({x}, {y})");
+                    planned++;
+                }
+            }
+
+            Assert.That(planned, Is.EqualTo(9 * 3 * 3 * 9));
+        }
+
+        [Test]
+        public void ReachesTheLowCentralShotThatOnceFailed()
+        {
+            var planner = new PenaltyKickPlanner(new FlightModel(EraProfile.Modern, MatchConditions.Calm));
+            var kick = new KickerChoice(GoalColumn.Centre, GoalRow.Low, StrikeType.Placed, 126);
+            var planned = planner.Plan(kick, new ShotResolution(ShotOutcome.Goal, 62, 225, 0, 0), 1);
+            Assert.That(Math.Abs(planned.EndPoint.Y - 0.225), Is.LessThan(PenaltyKickPlanner.LandingTolerance));
+        }
+
+        [Test]
         public void DrivenShotsAreFasterThanPlacedOnesAndChipsAreSlowest()
         {
             var placed = PenaltyKickPlanner.ShotSpeed(new KickerChoice(GoalColumn.Left, GoalRow.Low, StrikeType.Placed, 128));
