@@ -1,26 +1,74 @@
 // Builds the prompt sheet from prompts.json: sheet.html (the interactive page) and README.md (the same prompts as
-// plain text). Run with `node art/reference-prompts/build.mjs` after editing prompts.json.
+// plain text), each with a ChatGPT and a Gemini version of every prompt.
+// Run with `node art/reference-prompts/build.mjs` after editing prompts.json.
 import { readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const data = JSON.parse(readFileSync(join(here, 'prompts.json'), 'utf8'));
-const { styles, rules, sections, prompts } = data;
+const { styles, rules, chatgptAspect, gemini, sections, prompts } = data;
+const byId = Object.fromEntries(prompts.map(p => [p.id, p]));
 
-const ids = new Set(prompts.map(p => p.id));
-for (const p of prompts) {
-  if (!styles[p.style]) throw new Error(`${p.id}: unknown style ${p.style}`);
+// ---------- Checks ----------
+for (const [i, p] of prompts.entries()) {
+  if (!styles[p.style] || !gemini.styles[p.style]) throw new Error(`${p.id}: unknown style ${p.style}`);
   if (!sections.some(s => s.id === p.section)) throw new Error(`${p.id}: unknown section ${p.section}`);
-  for (const a of p.attach) if (!ids.has(a)) throw new Error(`${p.id}: attaches unknown ${a}`);
-  const order = prompts.findIndex(q => q.id === p.id);
+  if (!chatgptAspect[p.aspect] || !gemini.aspect[p.aspect]) throw new Error(`${p.id}: unknown aspect ${p.aspect}`);
   for (const a of p.attach) {
-    if (prompts.findIndex(q => q.id === a) > order) throw new Error(`${p.id}: attaches ${a}, which comes later`);
+    if (!byId[a]) throw new Error(`${p.id}: attaches unknown ${a}`);
+    if (!byId[a].ref) throw new Error(`${p.id}: attaches ${a}, which has no "ref" name for the Gemini prompt`);
+    if (prompts.indexOf(byId[a]) > i) throw new Error(`${p.id}: attaches ${a}, which comes later`);
   }
 }
+if (prompts.some(p => p.attach.length > 4)) throw new Error('Keep attachments to four or fewer.');
 
-const fullPrompt = p => `${p.prompt}\n\n${styles[p.style].text}\n\n${rules}`;
+// ---------- Prompt composition ----------
+const ORDINALS = ['first', 'second', 'third', 'fourth'];
+const chatgptLead = p => `Make ${chatgptAspect[p.aspect]}.`;
+function geminiLead(p) {
+  const shape = `Create an image in ${gemini.aspect[p.aspect]}.`;
+  if (!p.attach.length) return shape;
+  const refs = p.attach.map(id => `${byId[id].ref} (${id})`);
+  if (refs.length === 1) return `${shape} Use the attached image, ${refs[0]}, as your reference.`;
+  return `${shape} Use the reference images attached in this order: ${refs.map((r, i) => `${ORDINALS[i]}, ${r}`).join('; ')}.`;
+}
+const geminiBody = p => p.geminiPrompt || p.prompt;
+
+const TOOLS = {
+  chatgpt: {
+    name: 'ChatGPT',
+    visible: p => [`${chatgptLead(p)} ${p.prompt}`],
+    full: p => `${chatgptLead(p)} ${p.prompt}\n\n${styles[p.style].text}\n\n${rules}`,
+    styleName: k => styles[k].name,
+    styleText: k => styles[k].text,
+    rules,
+  },
+  gemini: {
+    name: 'Gemini',
+    visible: p => [geminiLead(p), geminiBody(p)],
+    full: p => `${geminiLead(p)}\n\n${geminiBody(p)}\n\n${gemini.styles[p.style]}\n\n${gemini.rules}`,
+    styleName: k => styles[k].name,
+    styleText: k => gemini.styles[k],
+    rules: gemini.rules,
+  },
+};
+const toolKeys = Object.keys(TOOLS);
 const firstCount = prompts.filter(p => p.batch === 'first').length;
+
+const notes = {
+  chatgpt: [
+    'Each prompt opens with the image shape, and ChatGPT picks landscape, portrait or square from it.',
+    'Attach the listed images, then paste the prompt into the same message.',
+    'To fix something, reply in the same chat, for example: “Same sheet, but flat orthographic views with no shadows.”',
+  ],
+  gemini: [
+    'Upload the listed images first, in the order the card shows. The prompt names them in that order.',
+    'Gemini follows descriptions of what to include better than lists of what to avoid, so these prompts describe clean, plain surfaces instead of banning logos one by one.',
+    'Refine in the same chat, for example: “Keep everything the same, but make the background plain light grey.”',
+    'If an image comes back in the wrong shape, reply: “Recompose this as a 3:2 landscape image.”',
+  ],
+};
 
 const scenes = [
   ['The stare-down arena', 'The first playable world: the floating night arena, its stands, crowd, sky and lighting, with the phone cameras for kicker, keeper and the stare-down close-up.'],
@@ -40,25 +88,31 @@ const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(
 // ---------- README.md ----------
 const md = [];
 md.push('# Reference art prompts', '');
-md.push('Image prompts to generate in ChatGPT. The images come back to me as references for building the Blender scenes and animations.', '');
-md.push(`There are ${prompts.length} prompts. Make the ${firstCount} in the first batch before the others.`, '');
+md.push('Image prompts to generate in ChatGPT or Gemini. The images come back to me as references for building the Blender scenes and animations.', '');
+md.push(`There are ${prompts.length} prompts, each in a ChatGPT and a Gemini version. Make the ${firstCount} in the first batch before the others.`, '');
 md.push('Edit `prompts.json`, then run `node art/reference-prompts/build.mjs` to rebuild this file and `sheet.html`.', '');
 md.push('## How to use them', '');
-md.push('1. Generate **A01** first, in a new ChatGPT chat. Make three or four variations and keep the one you like best.');
-md.push('2. For every later prompt, attach the images listed under **Attach**. Always include A01.');
+md.push('1. Generate **A01** first, in a new chat. Make three or four variations and keep the one you like best.');
+md.push('2. For every later prompt, attach exactly the images listed under **Attach**, in that order.');
 md.push('3. Give each character its own chat, so the face and kit stay the same across that character\'s sheets.');
 md.push('4. Save each image with its ID as the file name, e.g. `C01.png` or `C01-v2.png`, and send them to me.', '');
-md.push('Each prompt below is complete: the prompt, then its style block, then the originality rules. Copy the whole block.', '');
+for (const key of toolKeys) {
+  md.push(`**${TOOLS[key].name}**`, '');
+  for (const n of notes[key]) md.push(`- ${n}`);
+  md.push('');
+}
+md.push('Each prompt below is complete, with its style block and originality rules. Copy the whole block for the tool you use.', '');
 for (const section of sections) {
   md.push(`## ${section.name}`, '', section.blurb, '');
   for (const p of prompts.filter(q => q.section === section.id)) {
     md.push(`### ${p.id} · ${p.title}`, '');
     md.push(`- **Batch:** ${p.batch === 'first' ? 'first' : 'later'}`);
     md.push(`- **Image shape:** ${p.aspect}`);
-    md.push(`- **Attach:** ${p.attach.length ? p.attach.join(', ') : 'nothing'}`);
+    md.push(`- **Attach, in order:** ${p.attach.length ? p.attach.join(', ') : 'nothing'}`);
     md.push(`- **I'll build:** ${p.builds}`);
     if (p.tip) md.push(`- **Tip:** ${p.tip}`);
-    md.push('', '```text', fullPrompt(p), '```', '');
+    for (const key of toolKeys) md.push('', `**${TOOLS[key].name}**`, '', '```text', TOOLS[key].full(p), '```');
+    md.push('');
   }
 }
 md.push('## What I\'ll build in Blender', '');
@@ -74,7 +128,14 @@ md.push('- **Rights:** only send models and images you made or are allowed to us
 writeFileSync(join(here, 'README.md'), md.join('\n') + '\n');
 
 // ---------- sheet.html ----------
+const toolSwitch = id => `
+      <div class="tool-switch" role="radiogroup" aria-label="Prompts for">
+        ${toolKeys.map(k => `<label><input type="radio" name="${id}" value="${k}" data-tool-choice${k === 'chatgpt' ? ' checked' : ''}><span>${TOOLS[k].name}</span></label>`).join('')}
+      </div>`;
 const sectionNav = sections.map(s => `<button class="chip" type="button" data-filter="${s.id}">${esc(s.name)}</button>`).join('');
+const attachList = p => p.attach.length
+  ? p.attach.map(a => `<a class="ref" href="#${a}">${a}</a>`).join('<span class="then">then</span>')
+  : '<span class="none">Nothing</span>';
 const cards = sections.map(section => {
   const items = prompts.filter(p => p.section === section.id).map(p => `
       <article class="card" id="${p.id}" data-section="${p.section}" data-batch="${p.batch}">
@@ -85,14 +146,14 @@ const cards = sections.map(section => {
         <dl class="meta">
           <div><dt>Batch</dt><dd><span class="badge ${p.batch}">${p.batch === 'first' ? 'First batch' : 'Later'}</span></dd></div>
           <div><dt>Shape</dt><dd>${esc(p.aspect)}</dd></div>
-          <div><dt>Attach</dt><dd>${p.attach.length ? p.attach.map(a => `<a class="ref" href="#${a}">${a}</a>`).join(' ') : '<span class="none">Nothing</span>'}</dd></div>
+          <div><dt>Attach</dt><dd>${attachList(p)}</dd></div>
         </dl>
         <p class="builds"><span>I'll build</span>${esc(p.builds)}</p>
-        <p class="prompt">${esc(p.prompt)}</p>
-        <p class="appended">Copies with the ${esc(styles[p.style].name.toLowerCase())} and the originality rules.</p>
+        ${toolKeys.map(k => `<div class="prompt only-${k}">${TOOLS[k].visible(p).map(t => `<p>${esc(t)}</p>`).join('')}</div>`).join('\n        ')}
+        <p class="appended">Copies with the ${esc(styles[p.style].name.toLowerCase())} and the originality rules for <span class="only-chatgpt">ChatGPT</span><span class="only-gemini">Gemini</span>.</p>
         ${p.tip ? `<p class="tip"><span>Tip</span>${esc(p.tip)}</p>` : ''}
         <div class="actions">
-          <button class="copy" type="button" data-copy="${p.id}">Copy prompt</button>
+          <button class="copy" type="button" data-copy="${p.id}">Copy <span class="only-chatgpt">ChatGPT</span><span class="only-gemini">Gemini</span> prompt</button>
           <label class="done"><input type="checkbox" id="done-${p.id}" data-done="${p.id}"> Made it</label>
           <span class="status" role="status" aria-live="polite"></span>
         </div>
@@ -107,17 +168,26 @@ const cards = sections.map(section => {
     </section>`;
 }).join('');
 
-const styleBlocks = Object.entries(styles).map(([key, s]) => `
+const styleBlocks = toolKeys.map(k => `
+      <div class="blocks only-${k}">${Object.keys(styles).map(s => `
         <div class="block">
-          <div class="block-head"><h3>${esc(s.name)}</h3><span>${esc(s.use)}</span>
-            <button class="copy small" type="button" data-copy-style="${key}">Copy</button></div>
-          <p>${esc(s.text)}</p>
-        </div>`).join('') + `
+          <div class="block-head"><h3>${esc(TOOLS[k].styleName(s))}</h3><span>${esc(styles[s].use)}</span>
+            <button class="copy small" type="button" data-copy-style="${k}:${s}">Copy</button></div>
+          <p>${esc(TOOLS[k].styleText(s))}</p>
+        </div>`).join('')}
         <div class="block">
           <div class="block-head"><h3>Originality rules</h3><span>Every prompt</span>
-            <button class="copy small" type="button" data-copy-style="rules">Copy</button></div>
-          <p>${esc(rules)}</p>
-        </div>`;
+            <button class="copy small" type="button" data-copy-style="${k}:rules">Copy</button></div>
+          <p>${esc(TOOLS[k].rules)}</p>
+        </div>
+      </div>`).join('');
+
+const payload = {};
+for (const k of toolKeys) {
+  payload[k] = { prompts: Object.fromEntries(prompts.map(p => [p.id, TOOLS[k].full(p)])), styles: {} };
+  for (const s of Object.keys(styles)) payload[k].styles[s] = TOOLS[k].styleText(s);
+  payload[k].styles.rules = TOOLS[k].rules;
+}
 
 const html = `<title>Free Kick Classics Prompts</title>
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -137,16 +207,15 @@ const html = `<title>Free Kick Classics Prompts</title>
     --muted: #8f88a8;
     --gold: #eab95f;
     --teal: #4cc6b5;
-    --aurora-green: #3fd39a;
-    --violet: #9b84ff;
-    --amber: #e8955a;
     --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
     --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
     --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
   }
   * { box-sizing: border-box; }
   body { background: var(--night); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.6; }
+  body:not([data-tool="gemini"]) .only-gemini, body[data-tool="gemini"] .only-chatgpt { display: none !important; }
   a { color: var(--gold); }
+  code { font-family: var(--mono); font-size: 13px; color: var(--gold); }
   .wrap { max-width: 880px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
 
   .hero { margin-top: calc(-1 * env(safe-area-inset-top, 0px)); padding-top: calc(env(safe-area-inset-top, 0px) + 3.5rem); padding-bottom: 2.75rem;
@@ -159,8 +228,16 @@ const html = `<title>Free Kick Classics Prompts</title>
   .eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin: 0 0 0.75rem; }
   h1 { font-family: var(--display); font-weight: 700; font-size: clamp(2.1rem, 5.5vw, 3.4rem); line-height: 1.04; letter-spacing: -0.02em; margin: 0 0 1rem; text-wrap: balance; max-width: 16ch; }
   .lead { font-size: 1.08rem; color: var(--ink-2); max-width: 62ch; margin: 0 0 1.5rem; }
+  .hero-row { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.75rem; }
   .facts { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; font-family: var(--mono); font-size: 13px; color: var(--ink-2); margin: 0; padding: 0; list-style: none; }
   .facts b { color: var(--ink); font-weight: 500; }
+
+  .tool-switch { display: inline-flex; flex: none; padding: 3px; border: 1px solid var(--rule); border-radius: 999px; background: rgba(15, 14, 29, 0.6); }
+  .tool-switch label { position: relative; cursor: pointer; }
+  .tool-switch input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+  .tool-switch span { display: block; font: 600 13px/1 var(--body); color: var(--ink-2); padding: 0.5rem 0.9rem; border-radius: 999px; }
+  .tool-switch input:checked + span { background: var(--gold); color: var(--night); }
+  .tool-switch input:focus-visible + span { outline: 2px solid var(--gold); outline-offset: 2px; }
 
   main section.intro { padding-block: 2.5rem 0.5rem; }
   h2 { font-family: var(--display); font-weight: 700; font-size: 1.6rem; letter-spacing: -0.01em; margin: 0 0 0.5rem; text-wrap: balance; }
@@ -178,10 +255,13 @@ const html = `<title>Free Kick Classics Prompts</title>
   .era.modern { background: radial-gradient(80% 70% at 30% 20%, #3fd39a 0%, transparent 60%), radial-gradient(70% 70% at 80% 30%, #9b84ff 0%, transparent 65%), linear-gradient(180deg, #1f1b52, #0d0c1f); }
   .era .tag { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.85); margin-bottom: auto; }
 
-  ol.steps { counter-reset: step; list-style: none; margin: 0 0 1.5rem; padding: 0; display: grid; gap: 0.75rem; }
+  ol.steps { counter-reset: step; list-style: none; margin: 0 0 1.25rem; padding: 0; display: grid; gap: 0.75rem; }
   ol.steps li { counter-increment: step; display: grid; grid-template-columns: 2rem 1fr; gap: 0.75rem; align-items: start; color: var(--ink-2); }
   ol.steps li::before { content: counter(step); font-family: var(--mono); font-size: 13px; color: var(--night); background: var(--gold); width: 1.6rem; height: 1.6rem; border-radius: 50%; display: grid; place-items: center; margin-top: 0.1rem; }
   ol.steps b { color: var(--ink); font-weight: 600; }
+  .notes { border-left: 2px solid var(--gold); padding: 0.1rem 0 0.1rem 1rem; margin: 0 0 1.25rem; }
+  .notes h3 { font-size: 0.95rem; font-weight: 600; margin: 0 0 0.4rem; }
+  .notes ul { margin: 0; padding-left: 1.1rem; color: var(--ink-2); display: grid; gap: 0.35rem; }
 
   details.styles { border: 1px solid var(--rule); border-radius: 10px; background: var(--deep); margin: 0 0 1rem; }
   details.styles summary { cursor: pointer; padding: 0.9rem 1rem; font-weight: 600; color: var(--ink); }
@@ -194,7 +274,7 @@ const html = `<title>Free Kick Classics Prompts</title>
 
   .bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: rgba(15, 14, 29, 0.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); }
   body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--night); }
-  .bar-inner { display: flex; align-items: center; gap: 0.75rem; padding-block: 0.65rem; }
+  .bar-inner { display: flex; align-items: center; gap: 0.6rem 0.75rem; padding-block: 0.6rem; }
   .chips { display: flex; gap: 0.4rem; overflow-x: auto; scrollbar-width: none; flex: 1; min-width: 0; padding-right: 1.5rem;
     -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 2rem), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - 2rem), transparent); }
   .chips::-webkit-scrollbar { display: none; }
@@ -206,7 +286,7 @@ const html = `<title>Free Kick Classics Prompts</title>
 
   .group { padding-top: 2.25rem; }
   .group-head p { color: var(--ink-2); margin: 0 0 1rem; max-width: 65ch; }
-  .card { background: var(--deep); border: 1px solid var(--rule); border-radius: 12px; padding: 1.1rem 1.2rem 1rem; margin-bottom: 0.9rem; scroll-margin-top: 5rem; }
+  .card { background: var(--deep); border: 1px solid var(--rule); border-radius: 12px; padding: 1.1rem 1.2rem 1rem; margin-bottom: 0.9rem; scroll-margin-top: 7rem; }
   .card.is-done { border-color: rgba(76, 198, 181, 0.45); }
   .card-head { display: flex; align-items: baseline; gap: 0.75rem; }
   .pid { font-family: var(--mono); font-size: 13px; color: var(--gold); flex: none; }
@@ -220,10 +300,12 @@ const html = `<title>Free Kick Classics Prompts</title>
   .badge.later { color: var(--muted); border-color: var(--rule); }
   .ref { font-family: var(--mono); font-size: 12px; text-decoration: none; border-bottom: 1px solid rgba(234, 185, 95, 0.4); }
   .ref:hover, .ref:focus-visible { border-bottom-color: var(--gold); }
+  .then { color: var(--muted); margin: 0 0.35rem; font-size: 12px; }
   .none { color: var(--muted); }
   .builds, .tip { margin: 0 0 0.6rem; font-size: 14px; color: var(--ink-2); }
   .builds span, .tip span { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-right: 0.6rem; }
-  .prompt { margin: 0 0 0.4rem; padding: 0.85rem 1rem; background: var(--raised); border-radius: 8px; color: var(--ink); font-size: 15px; }
+  .prompt { margin: 0 0 0.4rem; padding: 0.85rem 1rem; background: var(--raised); border-radius: 8px; color: var(--ink); font-size: 15px; display: grid; gap: 0.6rem; }
+  .prompt p { margin: 0; }
   .appended { margin: 0 0 0.6rem; font-size: 12.5px; color: var(--muted); }
   .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1rem; }
   .copy { font: 600 14px/1 var(--body); color: var(--night); background: var(--gold); border: 0; border-radius: 8px; padding: 0.65rem 1rem; cursor: pointer; }
@@ -240,13 +322,15 @@ const html = `<title>Free Kick Classics Prompts</title>
   .outro h3 { font-family: var(--display); font-weight: 500; font-size: 1.1rem; margin: 1.25rem 0 0.4rem; }
   .outro ul { margin: 0; padding-left: 1.1rem; color: var(--ink-2); display: grid; gap: 0.4rem; }
   .outro li b { color: var(--ink); font-weight: 600; }
-  .outro code { font-family: var(--mono); font-size: 13px; color: var(--gold); }
 
   @media (max-width: 640px) {
     .pillars li { grid-template-columns: 1fr; gap: 0.15rem; }
     .eras { grid-template-columns: 1fr; }
     .era { min-height: 6.5rem; }
     .card { padding: 1rem; }
+    .bar-inner { flex-wrap: wrap; }
+    .bar-inner .progress { margin-left: auto; }
+    .chips { order: 3; flex-basis: 100%; }
   }
   @media (prefers-reduced-motion: no-preference) {
     .card { transition: border-color 0.2s ease; }
@@ -257,12 +341,14 @@ const html = `<title>Free Kick Classics Prompts</title>
   <div class="wrap">
     <p class="eyebrow">Free Kick Classics · reference art</p>
     <h1>Image prompts for the Blender build</h1>
-    <p class="lead">Generate these in ChatGPT and send the images back. I'll model, rig, light and animate the game's scenes from them in Blender, with every ball flight taken from the game's own physics.</p>
-    <ul class="facts">
-      <li><b>${prompts.length}</b> prompts</li>
-      <li><b>${firstCount}</b> in the first batch</li>
-      <li>Start with <b>A01</b></li>
-    </ul>
+    <p class="lead">Generate these in ChatGPT or Gemini and send the images back. I'll model, rig, light and animate the game's scenes from them in Blender, with every ball flight taken from the game's own physics.</p>
+    <div class="hero-row">${toolSwitch('tool-hero')}
+      <ul class="facts">
+        <li><b>${prompts.length}</b> prompts</li>
+        <li><b>${firstCount}</b> in the first batch</li>
+        <li>Start with <b>A01</b></li>
+      </ul>
+    </div>
   </div>
 </header>
 
@@ -287,20 +373,22 @@ const html = `<title>Free Kick Classics Prompts</title>
   <section class="intro wrap" aria-labelledby="how">
     <h2 id="how">How to use this sheet</h2>
     <ol class="steps">
-      <li><span><b>Make A01 first</b> in a new ChatGPT chat. Ask for three or four variations and keep the one you love; it sets the look for everything else.</span></li>
-      <li><span><b>Attach what each card lists.</b> Always include A01, plus the character sheets a pose or face prompt names.</span></li>
+      <li><span><b>Make A01 first</b> in a new chat. Ask for three or four variations and keep the one you love; it sets the look for everything else.</span></li>
+      <li><span><b>Attach exactly what each card lists</b>, in that order. A01 always comes first.</span></li>
       <li><span><b>One chat per character.</b> The kicker, keeper and wall each get their own chat, so faces and kits stay the same from sheet to sheet.</span></li>
       <li><span><b>Name files by ID</b>, like <code>C01.png</code> or <code>C01-v2.png</code>, tick “Made it”, and send the images to me in our chat.</span></li>
     </ol>
+    ${toolKeys.map(k => `<div class="notes only-${k}">
+      <h3>Working in ${TOOLS[k].name}</h3>
+      <ul>${notes[k].map(n => `<li>${esc(n)}</li>`).join('')}</ul>
+    </div>`).join('\n    ')}
     <details class="styles">
-      <summary>Shared style blocks (already included in every Copy)</summary>
-      <div class="blocks">${styleBlocks}
-      </div>
+      <summary>Shared style blocks for <span class="only-chatgpt">ChatGPT</span><span class="only-gemini">Gemini</span> (already in every Copy)</summary>${styleBlocks}
     </details>
   </section>
 
   <div class="bar">
-    <div class="wrap bar-inner">
+    <div class="wrap bar-inner">${toolSwitch('tool-bar')}
       <div class="chips" role="toolbar" aria-label="Filter prompts">
         <button class="chip" type="button" data-filter="first" aria-pressed="true">First batch</button>
         <button class="chip" type="button" data-filter="all" aria-pressed="false">All</button>
@@ -329,22 +417,34 @@ const html = `<title>Free Kick Classics Prompts</title>
   </section>
 </main>
 
-<script id="prompt-data" type="application/json">${JSON.stringify({ styles, rules, prompts: prompts.map(p => ({ id: p.id, text: fullPrompt(p) })) }).replace(/</g, '\\u003c')}</script>
+<script id="prompt-data" type="application/json">${JSON.stringify(payload).replace(/</g, '\\u003c')}</script>
 <script>
 (function () {
   var data = JSON.parse(document.getElementById('prompt-data').textContent);
-  var full = {};
-  data.prompts.forEach(function (p) { full[p.id] = p.text; });
-  var styleText = { rules: data.rules };
-  Object.keys(data.styles).forEach(function (k) { styleText[k] = data.styles[k].text; });
-  var KEY = 'fkc-prompts-done';
+  var DONE_KEY = 'fkc-prompts-done';
+  var TOOL_KEY = 'fkc-prompts-tool';
+  var ids = Object.keys(data.chatgpt.prompts);
   var done = {};
-  try { done = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) { done = {}; }
+  try { done = JSON.parse(localStorage.getItem(DONE_KEY) || '{}') || {}; } catch (e) { done = {}; }
+  var tool = 'chatgpt';
+  try { if (localStorage.getItem(TOOL_KEY) === 'gemini') tool = 'gemini'; } catch (e) {}
+  if (location.hash === '#gemini' || location.hash === '#chatgpt') tool = location.hash.slice(1);
 
-  function save() { try { localStorage.setItem(KEY, JSON.stringify(done)); } catch (e) {} }
+  function setTool(next) {
+    tool = next === 'gemini' ? 'gemini' : 'chatgpt';
+    if (tool === 'gemini') document.body.setAttribute('data-tool', 'gemini'); else document.body.removeAttribute('data-tool');
+    document.querySelectorAll('[data-tool-choice]').forEach(function (r) { r.checked = r.value === tool; });
+    document.querySelectorAll('.fallback').forEach(function (a) { a.hidden = true; });
+    try { localStorage.setItem(TOOL_KEY, tool); } catch (e) {}
+  }
+  document.querySelectorAll('[data-tool-choice]').forEach(function (radio) {
+    radio.addEventListener('change', function () { if (radio.checked) setTool(radio.value); });
+  });
+
+  function save() { try { localStorage.setItem(DONE_KEY, JSON.stringify(done)); } catch (e) {} }
   function updateProgress() {
-    var count = Object.keys(full).filter(function (id) { return done[id]; }).length;
-    document.getElementById('progress').innerHTML = '<b>' + count + '</b> of ' + Object.keys(full).length + ' made';
+    var count = ids.filter(function (id) { return done[id]; }).length;
+    document.getElementById('progress').innerHTML = '<b>' + count + '</b> of ' + ids.length + ' made';
   }
   function flash(card, message) {
     var status = card && card.querySelector('.status');
@@ -361,7 +461,7 @@ const html = `<title>Free Kick Classics Prompts</title>
     }
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(text).then(function () {
-        flash(card, 'Copied. Paste it into ChatGPT.');
+        flash(card, 'Copied. Paste it into ' + (tool === 'gemini' ? 'Gemini.' : 'ChatGPT.'));
         if (!card && button) { var label = button.textContent; button.textContent = 'Copied'; setTimeout(function () { button.textContent = label; }, 1800); }
       }, showFallback);
     } else { showFallback(); }
@@ -370,11 +470,14 @@ const html = `<title>Free Kick Classics Prompts</title>
   document.querySelectorAll('[data-copy]').forEach(function (button) {
     button.addEventListener('click', function () {
       var id = button.getAttribute('data-copy');
-      copyText(full[id], button.closest('.card'), 'fallback-' + id, button);
+      copyText(data[tool].prompts[id], button.closest('.card'), 'fallback-' + id, button);
     });
   });
   document.querySelectorAll('[data-copy-style]').forEach(function (button) {
-    button.addEventListener('click', function () { copyText(styleText[button.getAttribute('data-copy-style')], null, null, button); });
+    button.addEventListener('click', function () {
+      var parts = button.getAttribute('data-copy-style').split(':');
+      copyText(data[parts[0]].styles[parts[1]], null, null, button);
+    });
   });
   document.querySelectorAll('[data-done]').forEach(function (box) {
     var id = box.getAttribute('data-done');
@@ -406,10 +509,11 @@ const html = `<title>Free Kick Classics Prompts</title>
       if (target && target.hidden) applyFilter('all');
     });
   });
+  setTool(tool);
   applyFilter('first');
   updateProgress();
 })();
 </script>
 `;
 writeFileSync(join(here, 'sheet.html'), html);
-console.log(`Built ${prompts.length} prompts (${firstCount} first batch): sheet.html, README.md`);
+console.log(`Built ${prompts.length} prompts (${firstCount} first batch) for ${toolKeys.map(k => TOOLS[k].name).join(' and ')}: sheet.html, README.md`);
