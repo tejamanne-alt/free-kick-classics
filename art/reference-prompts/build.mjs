@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const data = JSON.parse(readFileSync(join(here, 'prompts.json'), 'utf8'));
-const { styles, rules, chatgptAspect, gemini, sections, prompts } = data;
+const { styles, rules, chatgptAspect, gemini, pitch, sections, prompts } = data;
 const byId = Object.fromEntries(prompts.map(p => [p.id, p]));
 
 // ---------- Checks ----------
@@ -25,6 +25,8 @@ if (prompts.some(p => p.attach.length > 4)) throw new Error('Keep attachments to
 for (const p of prompts) if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(p.file || '')) throw new Error(`${p.id}: "file" must be kebab-case`);
 if (new Set(prompts.map(p => p.file)).size !== prompts.length) throw new Error('File names must be unique.');
 if (sections.some(s => !s.folder)) throw new Error('Every section needs a "folder".');
+if (!pitch || !pitch.chatgpt || !pitch.gemini) throw new Error('prompts.json needs a "pitch" block for both tools.');
+for (const p of prompts) if (typeof p.pitch !== 'boolean') throw new Error(`${p.id}: "pitch" must be true or false`);
 
 // ---------- Where the images live in the repo ----------
 const REF_ROOT = 'art/reference';
@@ -50,7 +52,7 @@ const TOOLS = {
   chatgpt: {
     name: 'ChatGPT',
     visible: p => [`${chatgptLead(p)} ${p.prompt}`],
-    full: p => `${chatgptLead(p)} ${p.prompt}\n\n${styles[p.style].text}\n\n${rules}`,
+    full: p => `${chatgptLead(p)} ${p.prompt}\n\n${p.pitch ? pitch.chatgpt + '\n\n' : ''}${styles[p.style].text}\n\n${rules}`,
     styleName: k => styles[k].name,
     styleText: k => styles[k].text,
     rules,
@@ -58,7 +60,7 @@ const TOOLS = {
   gemini: {
     name: 'Gemini',
     visible: p => [geminiLead(p), geminiBody(p)],
-    full: p => `${geminiLead(p)}\n\n${geminiBody(p)}\n\n${gemini.styles[p.style]}\n\n${gemini.rules}`,
+    full: p => `${geminiLead(p)}\n\n${geminiBody(p)}\n\n${p.pitch ? pitch.gemini + '\n\n' : ''}${gemini.styles[p.style]}\n\n${gemini.rules}`,
     styleName: k => styles[k].name,
     styleText: k => gemini.styles[k],
     rules: gemini.rules,
@@ -82,8 +84,8 @@ const notes = {
 };
 
 const scenes = [
-  ['The comic render setup', 'One reusable Blender look for every scene: Line Art ink lines, halftone and Ben-Day dot shading, offset-colour defocus instead of blur, and a print style per era.'],
-  ['The harbour stadium', 'The first playable ground, at golden hour and under floodlights: its stands, crowd, sky, sea and lighting, with the phone cameras for kicker, keeper and the split-panel stare-down.'],
+  ['The render setup', 'Realistic lighting and materials for every ground, with Line Art ink lines, halftone shading and speed lines layered on the players, ball and action, and a subtle print finish per era.'],
+  ['The harbour stadium', 'The first playable ground, at golden hour and under floodlights, with the pitch and its markings built to regulation dimensions: stands, crowd, dugouts, boards, sky, sea and lighting, plus the phone cameras for kicker, keeper and the split-panel stare-down.'],
   ['The free-kick set piece', 'The same ground with a wall at the 9.15 m spray line and the referee.'],
   ['Two more eras', 'The 1970s old ground on a winter afternoon and the 1990s floodlit rain, each lit and graded as its own ground.'],
   ['Classics scenes', 'Clifftop coast, night storm, snow, monsoon and mountain altitude, one per scenario card.'],
@@ -118,7 +120,7 @@ for (const key of toolKeys) {
   for (const n of notes[key]) md.push(`- ${n}`);
   md.push('');
 }
-md.push('Each prompt below is complete, with its style block and originality rules. Copy the whole block for the tool you use.', '');
+md.push('Each prompt below is complete: its style block, the pitch-markings block when the pitch is in shot, and the originality rules. Copy the whole block for the tool you use.', '');
 for (const section of sections) {
   md.push(`## ${section.name}`, '', section.blurb, '');
   for (const p of prompts.filter(q => q.section === section.id)) {
@@ -197,7 +199,7 @@ const cards = sections.map(section => {
         </div>
         <p class="builds"><span>I'll build</span>${esc(p.builds)}</p>
         ${toolKeys.map(k => `<div class="prompt only-${k}">${TOOLS[k].visible(p).map(t => `<p>${esc(t)}</p>`).join('')}</div>`).join('\n        ')}
-        <p class="appended">Copies with the ${esc(styles[p.style].name.toLowerCase())} and the originality rules for <span class="only-chatgpt">ChatGPT</span><span class="only-gemini">Gemini</span>.</p>
+        <p class="appended">Copies with the ${esc(styles[p.style].name.toLowerCase())}${p.pitch ? ', the pitch markings' : ''} and the originality rules for <span class="only-chatgpt">ChatGPT</span><span class="only-gemini">Gemini</span>.</p>
         ${p.tip ? `<p class="tip"><span>Tip</span>${esc(p.tip)}</p>` : ''}
         <div class="actions">
           <button class="copy" type="button" data-copy="${p.id}">Copy <span class="only-chatgpt">ChatGPT</span><span class="only-gemini">Gemini</span> prompt</button>
@@ -223,6 +225,11 @@ const styleBlocks = toolKeys.map(k => `
           <p>${esc(TOOLS[k].styleText(s))}</p>
         </div>`).join('')}
         <div class="block">
+          <div class="block-head"><h3>${esc(pitch.name)}</h3><span>${esc(pitch.use)}</span>
+            <button class="copy small" type="button" data-copy-style="${k}:pitch">Copy</button></div>
+          <p>${esc(pitch[k])}</p>
+        </div>
+        <div class="block">
           <div class="block-head"><h3>Originality rules</h3><span>Every prompt</span>
             <button class="copy small" type="button" data-copy-style="${k}:rules">Copy</button></div>
           <p>${esc(TOOLS[k].rules)}</p>
@@ -234,6 +241,7 @@ for (const k of toolKeys) {
   payload[k] = { prompts: Object.fromEntries(prompts.map(p => [p.id, TOOLS[k].full(p)])), styles: {} };
   for (const s of Object.keys(styles)) payload[k].styles[s] = TOOLS[k].styleText(s);
   payload[k].styles.rules = TOOLS[k].rules;
+  payload[k].styles.pitch = pitch[k];
 }
 
 const html = `<title>Free Kick Classics Prompts</title>
@@ -426,18 +434,19 @@ const html = `<title>Free Kick Classics Prompts</title>
 <main>
   <section class="intro wrap" aria-labelledby="look">
     <h2 id="look">The look</h2>
-    <p>Real football grounds, drawn like a comic book come to life. The stadiums, turf and crowds are believable; the art is in the ink lines, halftone dots and offset colour, and in the light: golden hours, floodlights in the rain, sea air and snow. The goal, the ball and the two players stay crisp, because the game is still about reading your friend.</p>
+    <p>Real football grounds with comic-book heroes in them. The stadiums, turf, crowds and light are realistic, down to regulation pitch markings; the players, the ball and the action carry the comic treatment of ink lines, halftone dots, speed lines and smears. The goal, the ball and the two players stay crisp, because the game is still about reading your friend.</p>
     <ul class="pillars">
-      <li><strong>A comic come to life</strong><span>Hand-inked lines over 3D, bold flat colour, halftone and Ben-Day dots, offset colour instead of blur. Characters move on twos, with smears on the big strikes.</span></li>
-      <li><strong>Real grounds</strong><span>Believable stadiums, turf, crowds and kits, in places worth the trip: a harbour at sunset, an old terraced ground, a clifftop, snow, a monsoon final, the mountains.</span></li>
-      <li><strong>Every era, its own print</strong><span>The 1970s look like a yellowed newsprint comic, the 1990s like a glossy, heavily inked one, the modern game like a crisp graphic novel.</span></li>
+      <li><strong>Real world, comic heroes</strong><span>The grounds are realistic, with physically accurate light and weather. The players, ball and action get bold ink lines, halftone, speed lines and smears, and move on twos, so they pop.</span></li>
+      <li><strong>Lines you could referee by</strong><span>Regulation markings in every shot: the 16.5 m box, the 5.5 m six-yard box, one spot at 11 m, the 9.15 m arc, straight unbroken lines and a clean run-off to the boards.</span></li>
+      <li><strong>Places worth the trip</strong><span>A harbour at sunset, an old terraced ground, a clifftop, snow, a monsoon final, the mountains, each with real match-day detail: boards, dugouts, stewards, photographers.</span></li>
+      <li><strong>Every era, its own finish</strong><span>A subtle print finish over the real world: warm newsprint for the 1970s, glossy heavy inks for the 1990s, a crisp graphic-novel edge for today.</span></li>
       <li><strong>Physics you can read</strong><span>Replays draw the ball's real flight as a bold inked trajectory with speed lines: the curl, dip or knuckle wobble from the flight model.</span></li>
       <li><strong>Faces carry the duel</strong><span>The stare-down plays out in split panels: the bluff, the read, the relief. Ball, frame and players always hold the strongest contrast.</span></li>
     </ul>
     <div class="eras" role="list">
-      <div class="era seventies" role="listitem"><span class="tag">Heavy leather ball</span><h3>1970s</h3><p>Yellowed newsprint: coarse dots, off-register colour, the old ground in winter sun.</p></div>
-      <div class="era nineties" role="listitem"><span class="tag">Big-bending glossy ball</span><h3>1990s</h3><p>Glossy 90s comic: heavy inks, airbrushed floodlights, steam and rain.</p></div>
-      <div class="era modern" role="listitem"><span class="tag">Light knuckling ball</span><h3>Modern</h3><p>Crisp graphic novel: the harbour stadium at golden hour. First to build.</p></div>
+      <div class="era seventies" role="listitem"><span class="tag">Heavy leather ball</span><h3>1970s</h3><p>The old ground in winter sun, with a warm newsprint finish.</p></div>
+      <div class="era nineties" role="listitem"><span class="tag">Big-bending glossy ball</span><h3>1990s</h3><p>Floodlit rain and steam off the crowd, with a glossy 90s finish.</p></div>
+      <div class="era modern" role="listitem"><span class="tag">Light knuckling ball</span><h3>Modern</h3><p>The harbour stadium at golden hour, with a crisp graphic-novel edge. First to build.</p></div>
     </div>
   </section>
 

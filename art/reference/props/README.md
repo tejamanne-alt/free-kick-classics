@@ -8,7 +8,7 @@ Save each image here under the name below. Alternatives get `-v2`, `-v3`.
 | --- | --- | --- |
 | `B01-era-balls.png` | B01 · Three era balls | first |
 | `B02-goal-net.png` | B02 · Goal frame and net | first |
-| `B03-penalty-area.png` | B03 · Penalty area details | later |
+| `B03-penalty-area.png` | B03 · Goal end, plan view | later |
 | `B04-floodlights.png` | B04 · Floodlights through the eras | later |
 
 The prompts are in [`art/reference-prompts`](../../reference-prompts/README.md#ball-goal-and-pitch).
