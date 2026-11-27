@@ -61,11 +61,11 @@ The style keyframe sets the look for everything else. Make it first, pick the va
 **ChatGPT**
 
 ```text
-Make a landscape image (3:2). Cinematic wide frame of a penalty kick at golden hour in an original modern football stadium built on a harbourfront. In the foreground a kicker in a deep teal kit stands behind the ball on the penalty spot, seen from behind and slightly to one side. On the goal line the keeper, in a warm amber kit, crouches with his eyes locked on the kicker. Behind the goal rises a steep two-tier stand packed with fans in scarves. The far end of the stadium is open, framing the sea and a low sun that throws long shadows across freshly mown, striped turf. The floodlights are just flickering on, light haze hangs over the pitch, and a few strands of coloured flare smoke drift from the stand. The mood is a held breath just before the strike.
+Make a landscape image (3:2). Cinematic wide frame of a penalty kick at golden hour in an original modern football stadium built on a harbourfront. In the foreground a kicker in a deep teal kit stands behind the ball on the penalty spot, seen from behind and slightly to one side. On the goal line the keeper, in a warm amber kit, crouches with his eyes locked on the kicker. Behind the goal rises a steep two-tier stand packed with fans in scarves. The far end of the stadium is open, framing the sea and a low sun that throws long shadows across freshly mown, striped turf. The floodlights are just flickering on, light haze hangs over the pitch, and a few strands of coloured flare smoke drift from the stand. Shadows break into halftone dots, every edge carries a hand-inked line, and the far stand dissolves into offset colour, like a printed comic page come to life. The mood is a held breath just before the strike.
 
-Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Rich, natural colour grading. The goal frame, the ball and the players are always the sharpest, clearest elements in the frame. Cinematic composition with a shallow depth of field.
+Art direction: Free Kick Classics, an original football game set in believable football grounds, rendered as a comic book come to life in 3D. Real stadium architecture, turf, crowds and kits, drawn with hand-inked contour lines over 3D forms, bold flat colour, halftone and Ben-Day dot shading in shadows and skies, and offset-print colour misregistration where things fall out of focus, instead of blur. Graphic speed lines and motion smears on fast action. Dramatic light: golden hours, floodlights cutting through haze and rain, long shadows, drifting flare smoke. The goal frame, the ball and the players have the cleanest lines and the strongest contrast. Dynamic, comic-panel composition with bold camera angles.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -73,29 +73,29 @@ Original design: not based on any real footballer, club, national team, stadium,
 ```text
 Create an image in a 3:2 landscape format.
 
-Cinematic wide frame of a penalty kick at golden hour in an original modern football stadium built on a harbourfront. In the foreground a kicker in a deep teal kit stands behind the ball on the penalty spot, seen from behind and slightly to one side. On the goal line the keeper, in a warm amber kit, crouches with his eyes locked on the kicker. Behind the goal rises a steep two-tier stand packed with fans in scarves. The far end of the stadium is open, framing the sea and a low sun that throws long shadows across freshly mown, striped turf. The floodlights are just flickering on, light haze hangs over the pitch, and a few strands of coloured flare smoke drift from the stand. The mood is a held breath just before the strike.
+Cinematic wide frame of a penalty kick at golden hour in an original modern football stadium built on a harbourfront. In the foreground a kicker in a deep teal kit stands behind the ball on the penalty spot, seen from behind and slightly to one side. On the goal line the keeper, in a warm amber kit, crouches with his eyes locked on the kicker. Behind the goal rises a steep two-tier stand packed with fans in scarves. The far end of the stadium is open, framing the sea and a low sun that throws long shadows across freshly mown, striped turf. The floodlights are just flickering on, light haze hangs over the pitch, and a few strands of coloured flare smoke drift from the stand. Shadows break into halftone dots, every edge carries a hand-inked line, and the far stand dissolves into offset colour, like a printed comic page come to life. The mood is a held breath just before the strike.
 
-Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Render it with cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The sense of escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Grade the colour richly and naturally. Keep the goal frame, the ball and the players the sharpest, clearest elements in the frame, and compose cinematically with a shallow depth of field.
+Art direction: Free Kick Classics, an original football game set in believable football grounds, rendered as a comic book come to life in 3D. Draw real stadium architecture, turf, crowds and kits with hand-inked contour lines over 3D forms and bold flat colour. Shade shadows and skies with halftone and Ben-Day dots, and show anything out of focus as offset-print colour misregistration, with every edge still crisp. Add graphic speed lines and motion smears to fast action. Light it dramatically: golden hours, floodlights cutting through haze and rain, long shadows, drifting flare smoke. Give the goal frame, the ball and the players the cleanest lines and the strongest contrast, and compose like a dynamic comic panel with bold camera angles.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
-### A02 · Palette and materials board
+### A02 · Palette, materials and print patterns
 
 - **Batch:** first
 - **Image shape:** Landscape 3:2
 - **Save as:** `art/reference/style/A02-palette-materials.png`
 - **Attach, in order:** A01
-- **I'll build:** The Blender material library and the colour values every scene shares.
+- **I'll build:** The Blender material library, the colour values every scene shares, and the halftone and ink shaders.
 
 **ChatGPT**
 
 ```text
-Make a landscape image (3:2). A tidy art-direction board on a dark charcoal background, using the colours of the attached keyframe. Across the top, a row of eight plain colour swatches: sunset gold, harbour blue, deep pitch green, chalk-line white, teal, amber, weathered concrete grey and floodlight white. Below them, six material spheres in a row showing how surfaces should look: striped natural turf, stitched ball leather, smooth modern ball synthetic, kit fabric with a woven texture, goal-net nylon, and weathered stadium concrete.
+Make a landscape image (3:2). A tidy art-direction board on a dark charcoal background, using the colours of the attached keyframe. Across the top, a row of eight plain colour swatches: sunset gold, harbour blue, deep pitch green, chalk-line white, teal, amber, weathered concrete grey and floodlight white. Below them, six material spheres in a row, each drawn in the comic style with ink outlines and halftone shading: striped turf, stitched ball leather, smooth modern ball synthetic, kit fabric, goal-net nylon, and weathered stadium concrete. Along the bottom, four square pattern swatches: fine halftone dots, coarse Ben-Day dots, hand-inked cross-hatching, and offset colour misregistration.
 
-Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Rich, natural colour grading. The goal frame, the ball and the players are always the sharpest, clearest elements in the frame. Cinematic composition with a shallow depth of field.
+Art direction: Free Kick Classics, an original football game set in believable football grounds, rendered as a comic book come to life in 3D. Real stadium architecture, turf, crowds and kits, drawn with hand-inked contour lines over 3D forms, bold flat colour, halftone and Ben-Day dot shading in shadows and skies, and offset-print colour misregistration where things fall out of focus, instead of blur. Graphic speed lines and motion smears on fast action. Dramatic light: golden hours, floodlights cutting through haze and rain, long shadows, drifting flare smoke. The goal frame, the ball and the players have the cleanest lines and the strongest contrast. Dynamic, comic-panel composition with bold camera angles.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -103,29 +103,29 @@ Original design: not based on any real footballer, club, national team, stadium,
 ```text
 Create an image in a 3:2 landscape format. Use the attached image, the style keyframe (A01), as your reference.
 
-A tidy art-direction board on a dark charcoal background, using the colours of the attached keyframe. Across the top, a row of eight plain colour swatches: sunset gold, harbour blue, deep pitch green, chalk-line white, teal, amber, weathered concrete grey and floodlight white. Below them, six material spheres in a row showing how surfaces should look: striped natural turf, stitched ball leather, smooth modern ball synthetic, kit fabric with a woven texture, goal-net nylon, and weathered stadium concrete.
+A tidy art-direction board on a dark charcoal background, using the colours of the attached keyframe. Across the top, a row of eight plain colour swatches: sunset gold, harbour blue, deep pitch green, chalk-line white, teal, amber, weathered concrete grey and floodlight white. Below them, six material spheres in a row, each drawn in the comic style with ink outlines and halftone shading: striped turf, stitched ball leather, smooth modern ball synthetic, kit fabric, goal-net nylon, and weathered stadium concrete. Along the bottom, four square pattern swatches: fine halftone dots, coarse Ben-Day dots, hand-inked cross-hatching, and offset colour misregistration.
 
-Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Render it with cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The sense of escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Grade the colour richly and naturally. Keep the goal frame, the ball and the players the sharpest, clearest elements in the frame, and compose cinematically with a shallow depth of field.
+Art direction: Free Kick Classics, an original football game set in believable football grounds, rendered as a comic book come to life in 3D. Draw real stadium architecture, turf, crowds and kits with hand-inked contour lines over 3D forms and bold flat colour. Shade shadows and skies with halftone and Ben-Day dots, and show anything out of focus as offset-print colour misregistration, with every edge still crisp. Add graphic speed lines and motion smears to fast action. Light it dramatically: golden hours, floodlights cutting through haze and rain, long shadows, drifting flare smoke. Give the goal frame, the ball and the players the cleanest lines and the strongest contrast, and compose like a dynamic comic panel with bold camera angles.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
-### A03 · Replay tracers: four ball flights
+### A03 · Replay tracers: four inked ball flights
 
 - **Batch:** first
 - **Image shape:** Landscape 3:2
 - **Save as:** `art/reference/style/A03-replay-tracers.png`
 - **Attach, in order:** A01
-- **I'll build:** The replay tracer effect. In Blender the tracers follow real flight paths exported from the game's own physics.
+- **I'll build:** The replay trajectory effect. In Blender the inked lines follow real flight paths exported from the game's own physics.
 
 **ChatGPT**
 
 ```text
-Make a landscape image (3:2). Four panels side by side, each a side-on television replay of a football's flight in a realistic stadium, with the path drawn as a clean, thin tracer line like a broadcast shot tracer. Panel one: a smooth bending curve for a curling shot. Panel two: an arc that dips sharply at the end for a topspin shot. Panel three: a nearly straight path that wobbles only in its last third, for a knuckleball. Panel four: a high, gentle lob for a chip. Each tracer is crisp and bright near the ball and fades softly behind it.
+Make a landscape image (3:2). Four comic panels side by side, each a side-on replay of a football's flight in a stadium, with the path drawn as a bold inked curve, speed lines and a fading halftone trail. Panel one: a smooth bending curve for a curling shot. Panel two: an arc that dips sharply at the end for a topspin shot. Panel three: a nearly straight path that wobbles only in its last third, for a knuckleball, with jittery ink strokes. Panel four: a high, gentle lob for a chip.
 
-Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Rich, natural colour grading. The goal frame, the ball and the players are always the sharpest, clearest elements in the frame. Cinematic composition with a shallow depth of field.
+Art direction: Free Kick Classics, an original football game set in believable football grounds, rendered as a comic book come to life in 3D. Real stadium architecture, turf, crowds and kits, drawn with hand-inked contour lines over 3D forms, bold flat colour, halftone and Ben-Day dot shading in shadows and skies, and offset-print colour misregistration where things fall out of focus, instead of blur. Graphic speed lines and motion smears on fast action. Dramatic light: golden hours, floodlights cutting through haze and rain, long shadows, drifting flare smoke. The goal frame, the ball and the players have the cleanest lines and the strongest contrast. Dynamic, comic-panel composition with bold camera angles.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -133,11 +133,11 @@ Original design: not based on any real footballer, club, national team, stadium,
 ```text
 Create an image in a 3:2 landscape format. Use the attached image, the style keyframe (A01), as your reference.
 
-Four panels side by side, each a side-on television replay of a football's flight in a realistic stadium, with the path drawn as a clean, thin tracer line like a broadcast shot tracer. Panel one: a smooth bending curve for a curling shot. Panel two: an arc that dips sharply at the end for a topspin shot. Panel three: a nearly straight path that wobbles only in its last third, for a knuckleball. Panel four: a high, gentle lob for a chip. Each tracer is crisp and bright near the ball and fades softly behind it.
+Four comic panels side by side, each a side-on replay of a football's flight in a stadium, with the path drawn as a bold inked curve, speed lines and a fading halftone trail. Panel one: a smooth bending curve for a curling shot. Panel two: an arc that dips sharply at the end for a topspin shot. Panel three: a nearly straight path that wobbles only in its last third, for a knuckleball, with jittery ink strokes. Panel four: a high, gentle lob for a chip.
 
-Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Render it with cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The sense of escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Grade the colour richly and naturally. Keep the goal frame, the ball and the players the sharpest, clearest elements in the frame, and compose cinematically with a shallow depth of field.
+Art direction: Free Kick Classics, an original football game set in believable football grounds, rendered as a comic book come to life in 3D. Draw real stadium architecture, turf, crowds and kits with hand-inked contour lines over 3D forms and bold flat colour. Shade shadows and skies with halftone and Ben-Day dots, and show anything out of focus as offset-print colour misregistration, with every edge still crisp. Add graphic speed lines and motion smears to fast action. Light it dramatically: golden hours, floodlights cutting through haze and rain, long shadows, drifting flare smoke. Give the goal frame, the ball and the players the cleanest lines and the strongest contrast, and compose like a dynamic comic panel with bold camera angles.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ## Characters
@@ -156,11 +156,11 @@ Turnaround sheets I model and rig from. Keep each character in its own chat so t
 **ChatGPT**
 
 ```text
-Make a landscape image (3:2). Character turnaround model sheet of the kicker from the attached keyframe: an original young professional footballer with an athletic build and realistic proportions, short curly dark hair, warm brown skin and determined eyes. Deep teal kit with a subtle tonal pattern across the shirt, white shorts, teal socks and gold boots. Three full-body views side by side: front, left side and back. A-pose, with arms angled 45 degrees down and feet shoulder-width apart.
+Make a landscape image (3:2). Character turnaround model sheet of the kicker from the attached keyframe: an original young professional footballer with an athletic build and grounded, slightly stylized proportions, short curly dark hair, warm brown skin and determined eyes. Deep teal kit with a subtle tonal pattern across the shirt, white shorts, teal socks and gold boots. Three full-body views side by side: front, left side and back. A-pose, with arms angled 45 degrees down and feet shoulder-width apart.
 
-This is a reference sheet for 3D modelling and animation in Blender. Realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat studio lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
+This is a reference sheet for 3D modelling and animation in Blender. Comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -168,11 +168,11 @@ Original design: not based on any real footballer, club, national team, stadium,
 ```text
 Create an image in a 3:2 landscape format. Use the attached image, the style keyframe (A01), as your reference.
 
-Character turnaround model sheet of the kicker from the attached keyframe: an original young professional footballer with an athletic build and realistic proportions, short curly dark hair, warm brown skin and determined eyes. Deep teal kit with a subtle tonal pattern across the shirt, white shorts, teal socks and gold boots. Three full-body views side by side: front, left side and back. A-pose, with arms angled 45 degrees down and feet shoulder-width apart.
+Character turnaround model sheet of the kicker from the attached keyframe: an original young professional footballer with an athletic build and grounded, slightly stylized proportions, short curly dark hair, warm brown skin and determined eyes. Deep teal kit with a subtle tonal pattern across the shirt, white shorts, teal socks and gold boots. Three full-body views side by side: front, left side and back. A-pose, with arms angled 45 degrees down and feet shoulder-width apart.
 
-This is a reference sheet for 3D modelling and animation in Blender. Render it with a realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front, as in a softbox studio, so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
+This is a reference sheet for 3D modelling and animation in Blender. Draw it in a comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ### C02 · Kicker face and expressions
@@ -188,9 +188,9 @@ Everything here is an original design invented for this game: the people, kits, 
 ```text
 Make a landscape image (3:2). Head and face reference sheet for the kicker in the attached turnaround. Top row: the neutral head from the front, three-quarter and side. Bottom row: four expressions from the front: calm focus, a sly bluffing half-smile, wide-eyed joy after scoring, and frustration after a miss. Shoulders up, with the same face shape and hair in every view.
 
-This is a reference sheet for 3D modelling and animation in Blender. Realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat studio lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
+This is a reference sheet for 3D modelling and animation in Blender. Comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -200,9 +200,9 @@ Create an image in a 3:2 landscape format. Use the reference images attached in 
 
 Head and face reference sheet for the kicker in the attached turnaround. Top row: the neutral head from the front, three-quarter and side. Bottom row: four expressions from the front: calm focus, a sly bluffing half-smile, wide-eyed joy after scoring, and frustration after a miss. Shoulders up, with the same face shape and hair in every view.
 
-This is a reference sheet for 3D modelling and animation in Blender. Render it with a realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front, as in a softbox studio, so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
+This is a reference sheet for 3D modelling and animation in Blender. Draw it in a comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ### C03 · Keeper turnaround
@@ -217,11 +217,11 @@ Everything here is an original design invented for this game: the people, kits, 
 **ChatGPT**
 
 ```text
-Make a landscape image (3:2). Character turnaround model sheet of the keeper from the attached keyframe: an original goalkeeper, tall with long arms and large hands, realistic athletic proportions, shaved head with a short beard, light tan skin and calm, intense eyes. Long-sleeved warm amber goalkeeper kit with darker amber elbow padding and a subtle tonal pattern, black shorts, amber socks, and well-worn goalkeeper gloves. Three full-body views side by side: front, left side and back. A-pose, with arms angled 45 degrees down and feet shoulder-width apart.
+Make a landscape image (3:2). Character turnaround model sheet of the keeper from the attached keyframe: an original goalkeeper, tall with long arms and large hands, grounded, slightly stylized athletic proportions, shaved head with a short beard, light tan skin and calm, intense eyes. Long-sleeved warm amber goalkeeper kit with darker amber elbow padding and a subtle tonal pattern, black shorts, amber socks, and well-worn goalkeeper gloves. Three full-body views side by side: front, left side and back. A-pose, with arms angled 45 degrees down and feet shoulder-width apart.
 
-This is a reference sheet for 3D modelling and animation in Blender. Realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat studio lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
+This is a reference sheet for 3D modelling and animation in Blender. Comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -229,11 +229,11 @@ Original design: not based on any real footballer, club, national team, stadium,
 ```text
 Create an image in a 3:2 landscape format. Use the attached image, the style keyframe (A01), as your reference.
 
-Character turnaround model sheet of the keeper from the attached keyframe: an original goalkeeper, tall with long arms and large hands, realistic athletic proportions, shaved head with a short beard, light tan skin and calm, intense eyes. Long-sleeved warm amber goalkeeper kit with darker amber elbow padding and a subtle tonal pattern, black shorts, amber socks, and well-worn goalkeeper gloves. Three full-body views side by side: front, left side and back. A-pose, with arms angled 45 degrees down and feet shoulder-width apart.
+Character turnaround model sheet of the keeper from the attached keyframe: an original goalkeeper, tall with long arms and large hands, grounded, slightly stylized athletic proportions, shaved head with a short beard, light tan skin and calm, intense eyes. Long-sleeved warm amber goalkeeper kit with darker amber elbow padding and a subtle tonal pattern, black shorts, amber socks, and well-worn goalkeeper gloves. Three full-body views side by side: front, left side and back. A-pose, with arms angled 45 degrees down and feet shoulder-width apart.
 
-This is a reference sheet for 3D modelling and animation in Blender. Render it with a realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front, as in a softbox studio, so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
+This is a reference sheet for 3D modelling and animation in Blender. Draw it in a comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ### C04 · Keeper face and gloves
@@ -249,9 +249,9 @@ Everything here is an original design invented for this game: the people, kits, 
 ```text
 Make a landscape image (3:2). Face and glove reference sheet for the keeper in the attached turnaround. Top row: the neutral head from the front, three-quarter and side. Bottom row: four expressions from the front: reading the kicker with narrowed eyes, a taunting grin, a roaring celebration, and quiet despair. On the right, a close study of one goalkeeper glove from the palm side and from the back.
 
-This is a reference sheet for 3D modelling and animation in Blender. Realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat studio lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
+This is a reference sheet for 3D modelling and animation in Blender. Comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -261,9 +261,9 @@ Create an image in a 3:2 landscape format. Use the reference images attached in 
 
 Face and glove reference sheet for the keeper in the attached turnaround. Top row: the neutral head from the front, three-quarter and side. Bottom row: four expressions from the front: reading the kicker with narrowed eyes, a taunting grin, a roaring celebration, and quiet despair. On the right, a close study of one goalkeeper glove from the palm side and from the back.
 
-This is a reference sheet for 3D modelling and animation in Blender. Render it with a realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front, as in a softbox studio, so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
+This is a reference sheet for 3D modelling and animation in Blender. Draw it in a comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ### C05 · Wall players
@@ -279,9 +279,9 @@ Everything here is an original design invented for this game: the people, kits, 
 ```text
 Make a landscape image (3:2). Turnaround sheet of three original outfield players who will form a defensive wall, all in the same deep crimson kit with a faint diagonal pattern: one broad and short, one tall and lean, one of medium build, each with a different hairstyle and skin tone. Show each player from the front and from the left side, standing in an A-pose, so there are six full-body views in one row.
 
-This is a reference sheet for 3D modelling and animation in Blender. Realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat studio lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
+This is a reference sheet for 3D modelling and animation in Blender. Comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -291,9 +291,9 @@ Create an image in a 3:2 landscape format. Use the attached image, the style key
 
 Turnaround sheet of three original outfield players who will form a defensive wall, all in the same deep crimson kit with a faint diagonal pattern: one broad and short, one tall and lean, one of medium build, each with a different hairstyle and skin tone. Show each player from the front and from the left side, standing in an A-pose, so there are six full-body views in one row.
 
-This is a reference sheet for 3D modelling and animation in Blender. Render it with a realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front, as in a softbox studio, so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
+This is a reference sheet for 3D modelling and animation in Blender. Draw it in a comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ### C06 · Kit flat-lays
@@ -309,9 +309,9 @@ Everything here is an original design invented for this game: the people, kits, 
 ```text
 Make a landscape image (3:2). Flat-lay kit design sheet seen straight down: four complete football kits, each laid out neatly with shirt, shorts and socks and shown from the front and the back. The kicker's teal and gold kit from the kicker turnaround, an alternate kit in chalk white and violet, the keeper's amber kit from the keeper turnaround, and the wall team's deep crimson kit. Fabric weave and pattern detail clearly visible.
 
-This is a reference sheet for 3D modelling and animation in Blender. Realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat studio lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
+This is a reference sheet for 3D modelling and animation in Blender. Comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -321,9 +321,9 @@ Create an image in a 3:2 landscape format. Use the reference images attached in 
 
 Flat-lay kit design sheet seen straight down: four complete football kits, each laid out neatly with shirt, shorts and socks and shown from the front and the back. The kicker's teal and gold kit from the kicker turnaround, an alternate kit in chalk white and violet, the keeper's amber kit from the keeper turnaround, and the wall team's deep crimson kit. Fabric weave and pattern detail clearly visible.
 
-This is a reference sheet for 3D modelling and animation in Blender. Render it with a realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front, as in a softbox studio, so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
+This is a reference sheet for 3D modelling and animation in Blender. Draw it in a comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ### C07 · The referee
@@ -339,9 +339,9 @@ Everything here is an original design invented for this game: the people, kits, 
 ```text
 Make a landscape image (3:2). Character turnaround model sheet of an original referee with a calm, authoritative presence: a black kit with subtle gold trim, a whistle on a cord, and a can of vanishing spray on his belt. Three full-body views side by side: front, left side and back, in an A-pose.
 
-This is a reference sheet for 3D modelling and animation in Blender. Realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat studio lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
+This is a reference sheet for 3D modelling and animation in Blender. Comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -351,9 +351,9 @@ Create an image in a 3:2 landscape format. Use the attached image, the style key
 
 Character turnaround model sheet of an original referee with a calm, authoritative presence: a black kit with subtle gold trim, a whistle on a cord, and a can of vanishing spray on his belt. Three full-body views side by side: front, left side and back, in an A-pose.
 
-This is a reference sheet for 3D modelling and animation in Blender. Render it with a realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front, as in a softbox studio, so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
+This is a reference sheet for 3D modelling and animation in Blender. Draw it in a comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ## Animation poses
@@ -373,9 +373,9 @@ Key-pose sheets I turn into keyframed animations. Attach the character's turnaro
 ```text
 Make a landscape image (3:2). Animation key-pose sheet of the kicker in the attached turnaround taking a penalty, seen from the side. Eight poses in a single row from left to right, evenly spaced: standing ready behind the ball; first step; mid-stride; long last stride with the planted foot landing beside the ball; kicking leg swinging back; side-foot contact with the ball; follow-through; landing and looking up.
 
-This is a reference sheet for 3D modelling and animation in Blender. Realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat studio lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
+This is a reference sheet for 3D modelling and animation in Blender. Comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -385,9 +385,9 @@ Create an image in a 3:2 landscape format. Use the reference images attached in 
 
 Animation key-pose sheet of the kicker in the attached turnaround taking a penalty, seen from the side. Eight poses in a single row from left to right, evenly spaced: standing ready behind the ball; first step; mid-stride; long last stride with the planted foot landing beside the ball; kicking leg swinging back; side-foot contact with the ball; follow-through; landing and looking up.
 
-This is a reference sheet for 3D modelling and animation in Blender. Render it with a realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front, as in a softbox studio, so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
+This is a reference sheet for 3D modelling and animation in Blender. Draw it in a comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ### P02 · Driven knuckleball strike
@@ -403,9 +403,9 @@ Everything here is an original design invented for this game: the people, kits, 
 ```text
 Make a landscape image (3:2). Animation key-pose sheet of the kicker in the attached turnaround striking a driven knuckleball, seen from the side. Eight poses in a single row from left to right, evenly spaced: ready; fast approach; planted foot; kicking leg cocked high; laces striking through the middle of the ball with the ankle locked; short, stabbing follow-through; landing; watching the ball fly.
 
-This is a reference sheet for 3D modelling and animation in Blender. Realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat studio lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
+This is a reference sheet for 3D modelling and animation in Blender. Comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -415,9 +415,9 @@ Create an image in a 3:2 landscape format. Use the reference images attached in 
 
 Animation key-pose sheet of the kicker in the attached turnaround striking a driven knuckleball, seen from the side. Eight poses in a single row from left to right, evenly spaced: ready; fast approach; planted foot; kicking leg cocked high; laces striking through the middle of the ball with the ankle locked; short, stabbing follow-through; landing; watching the ball fly.
 
-This is a reference sheet for 3D modelling and animation in Blender. Render it with a realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front, as in a softbox studio, so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
+This is a reference sheet for 3D modelling and animation in Blender. Draw it in a comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ### P03 · Curler and trivela
@@ -433,9 +433,9 @@ Everything here is an original design invented for this game: the people, kits, 
 ```text
 Make a landscape image (3:2). Animation key-pose sheet of the kicker in the attached turnaround, seen from the side, in two rows. Top row, four poses of an inside-of-the-foot curler, with the body wrapping around the ball. Bottom row, four poses of an outside-of-the-foot trivela, with the kicking leg swinging across the body.
 
-This is a reference sheet for 3D modelling and animation in Blender. Realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat studio lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
+This is a reference sheet for 3D modelling and animation in Blender. Comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -445,9 +445,9 @@ Create an image in a 3:2 landscape format. Use the reference images attached in 
 
 Animation key-pose sheet of the kicker in the attached turnaround, seen from the side, in two rows. Top row, four poses of an inside-of-the-foot curler, with the body wrapping around the ball. Bottom row, four poses of an outside-of-the-foot trivela, with the kicking leg swinging across the body.
 
-This is a reference sheet for 3D modelling and animation in Blender. Render it with a realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front, as in a softbox studio, so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
+This is a reference sheet for 3D modelling and animation in Blender. Draw it in a comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ### P04 · The chip
@@ -463,9 +463,9 @@ Everything here is an original design invented for this game: the people, kits, 
 ```text
 Make a landscape image (3:2). Animation key-pose sheet of the kicker in the attached turnaround playing a soft chip down the middle, seen from the side. Six poses in a single row from left to right: ready; approach, slowing; planted foot; kicking leg swinging gently; foot scooping under the ball; a cheeky follow-through with the weight leaning back.
 
-This is a reference sheet for 3D modelling and animation in Blender. Realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat studio lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
+This is a reference sheet for 3D modelling and animation in Blender. Comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -475,9 +475,9 @@ Create an image in a 3:2 landscape format. Use the reference images attached in 
 
 Animation key-pose sheet of the kicker in the attached turnaround playing a soft chip down the middle, seen from the side. Six poses in a single row from left to right: ready; approach, slowing; planted foot; kicking leg swinging gently; foot scooping under the ball; a cheeky follow-through with the weight leaning back.
 
-This is a reference sheet for 3D modelling and animation in Blender. Render it with a realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front, as in a softbox studio, so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
+This is a reference sheet for 3D modelling and animation in Blender. Draw it in a comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ### P05 · Stutter run-up
@@ -493,9 +493,9 @@ Everything here is an original design invented for this game: the people, kits, 
 ```text
 Make a landscape image (3:2). Animation key-pose sheet of the kicker in the attached turnaround doing a stutter run-up, seen from the side. Six poses in a single row from left to right: approach; a sudden hop and pause mid-run with the arms out for balance; a second small hop; the long final stride; the strike; follow-through.
 
-This is a reference sheet for 3D modelling and animation in Blender. Realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat studio lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
+This is a reference sheet for 3D modelling and animation in Blender. Comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -505,9 +505,9 @@ Create an image in a 3:2 landscape format. Use the reference images attached in 
 
 Animation key-pose sheet of the kicker in the attached turnaround doing a stutter run-up, seen from the side. Six poses in a single row from left to right: approach; a sudden hop and pause mid-run with the arms out for balance; a second small hop; the long final stride; the strike; follow-through.
 
-This is a reference sheet for 3D modelling and animation in Blender. Render it with a realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front, as in a softbox studio, so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
+This is a reference sheet for 3D modelling and animation in Blender. Draw it in a comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ### P06 · Keeper ready and shuffle
@@ -523,9 +523,9 @@ Everything here is an original design invented for this game: the people, kits, 
 ```text
 Make a landscape image (3:2). Animation key-pose sheet of the keeper in the attached turnaround, seen from the front. Six poses in a single row from left to right: crouched ready stance on the goal line; shuffle step to his left; shuffle step to his right; arms spread wide to look big; bouncing on his toes; set position a moment before the dive.
 
-This is a reference sheet for 3D modelling and animation in Blender. Realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat studio lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
+This is a reference sheet for 3D modelling and animation in Blender. Comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -535,9 +535,9 @@ Create an image in a 3:2 landscape format. Use the reference images attached in 
 
 Animation key-pose sheet of the keeper in the attached turnaround, seen from the front. Six poses in a single row from left to right: crouched ready stance on the goal line; shuffle step to his left; shuffle step to his right; arms spread wide to look big; bouncing on his toes; set position a moment before the dive.
 
-This is a reference sheet for 3D modelling and animation in Blender. Render it with a realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front, as in a softbox studio, so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
+This is a reference sheet for 3D modelling and animation in Blender. Draw it in a comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ### P07 · Keeper dives: low, middle, top corner
@@ -553,9 +553,9 @@ Everything here is an original design invented for this game: the people, kits, 
 ```text
 Make a landscape image (3:2). Animation key-pose sheet of the keeper in the attached turnaround, seen from the front as the kicker sees him, in three rows of four poses, all diving to the same side. Top row, a low dive to the bottom corner. Middle row, a dive at waist height. Bottom row, a full-stretch leap to the top corner. Each row runs from left to right: push-off, take-off, full stretch at the height of the ball, landing.
 
-This is a reference sheet for 3D modelling and animation in Blender. Realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat studio lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
+This is a reference sheet for 3D modelling and animation in Blender. Comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -565,9 +565,9 @@ Create an image in a 3:2 landscape format. Use the reference images attached in 
 
 Animation key-pose sheet of the keeper in the attached turnaround, seen from the front as the kicker sees him, in three rows of four poses, all diving to the same side. Top row, a low dive to the bottom corner. Middle row, a dive at waist height. Bottom row, a full-stretch leap to the top corner. Each row runs from left to right: push-off, take-off, full stretch at the height of the ball, landing.
 
-This is a reference sheet for 3D modelling and animation in Blender. Render it with a realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front, as in a softbox studio, so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
+This is a reference sheet for 3D modelling and animation in Blender. Draw it in a comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ### P08 · Stay big, catch and parry
@@ -583,9 +583,9 @@ Everything here is an original design invented for this game: the people, kits, 
 ```text
 Make a landscape image (3:2). Animation key-pose sheet of the keeper in the attached turnaround, seen from the front. Six poses in a single row from left to right: staying big in a star shape with arms and legs spread; catching a ball against his chest; smothering a low ball on the ground; a one-handed fingertip tip over the bar; a two-fisted punch; getting back up from the ground.
 
-This is a reference sheet for 3D modelling and animation in Blender. Realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat studio lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
+This is a reference sheet for 3D modelling and animation in Blender. Comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -595,9 +595,9 @@ Create an image in a 3:2 landscape format. Use the reference images attached in 
 
 Animation key-pose sheet of the keeper in the attached turnaround, seen from the front. Six poses in a single row from left to right: staying big in a star shape with arms and legs spread; catching a ball against his chest; smothering a low ball on the ground; a one-handed fingertip tip over the bar; a two-fisted punch; getting back up from the ground.
 
-This is a reference sheet for 3D modelling and animation in Blender. Render it with a realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front, as in a softbox studio, so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
+This is a reference sheet for 3D modelling and animation in Blender. Draw it in a comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ### P09 · The wall
@@ -613,9 +613,9 @@ Everything here is an original design invented for this game: the people, kits, 
 ```text
 Make a landscape image (3:2). Animation key-pose sheet of the wall players in the attached sheet, seen from the side. Eight poses in a single row from left to right: lining up shoulder to shoulder; hands covering in the set position; crouching before the jump; jumping together with arms down; landing; one player staying grounded to block a low shot; one player lying flat on the ground behind the wall; turning to watch the ball.
 
-This is a reference sheet for 3D modelling and animation in Blender. Realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat studio lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
+This is a reference sheet for 3D modelling and animation in Blender. Comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -625,9 +625,9 @@ Create an image in a 3:2 landscape format. Use the reference images attached in 
 
 Animation key-pose sheet of the wall players in the attached sheet, seen from the side. Eight poses in a single row from left to right: lining up shoulder to shoulder; hands covering in the set position; crouching before the jump; jumping together with arms down; landing; one player staying grounded to block a low shot; one player lying flat on the ground behind the wall; turning to watch the ball.
 
-This is a reference sheet for 3D modelling and animation in Blender. Render it with a realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front, as in a softbox studio, so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
+This is a reference sheet for 3D modelling and animation in Blender. Draw it in a comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ### P10 · Celebrations and dejection
@@ -643,9 +643,9 @@ Everything here is an original design invented for this game: the people, kits, 
 ```text
 Make a landscape image (3:2). Animation key-pose sheet in two rows. Top row, the kicker from the kicker turnaround, four poses: a knee slide, an arms-wide aeroplane run, a finger to the lips, and hands on head after a miss. Bottom row, the keeper from the keeper turnaround, four poses: a roaring fist pump, pointing to the crowd, lying face down after conceding, and standing with hands on hips.
 
-This is a reference sheet for 3D modelling and animation in Blender. Realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat studio lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
+This is a reference sheet for 3D modelling and animation in Blender. Comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -655,9 +655,9 @@ Create an image in a 3:2 landscape format. Use the reference images attached in 
 
 Animation key-pose sheet in two rows. Top row, the kicker from the kicker turnaround, four poses: a knee slide, an arms-wide aeroplane run, a finger to the lips, and hands on head after a miss. Bottom row, the keeper from the keeper turnaround, four poses: a roaring fist pump, pointing to the crowd, lying face down after conceding, and standing with hands on hips.
 
-This is a reference sheet for 3D modelling and animation in Blender. Render it with a realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front, as in a softbox studio, so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
+This is a reference sheet for 3D modelling and animation in Blender. Draw it in a comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ## Ball, goal and pitch
@@ -677,9 +677,9 @@ Props I model to real dimensions: a 22 cm ball, a 7.32 × 2.44 m goal, the 9.15 
 ```text
 Make a landscape image (3:2). Orthographic reference of three original footballs in one row, each shown from the front and from the side. A 1970s ball of hand-stitched brown leather in the classic 32-panel pattern of hexagons and pentagons, slightly worn and scuffed. A 1990s glossy white ball with bold original curved-triangle graphics in black and gold. A modern lightweight ball with smooth bonded panels and an original pattern of sweeping teal and gold strokes.
 
-This is a reference sheet for 3D modelling and animation in Blender. Realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat studio lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
+This is a reference sheet for 3D modelling and animation in Blender. Comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -689,9 +689,9 @@ Create an image in a 3:2 landscape format. Use the attached image, the style key
 
 Orthographic reference of three original footballs in one row, each shown from the front and from the side. A 1970s ball of hand-stitched brown leather in the classic 32-panel pattern of hexagons and pentagons, slightly worn and scuffed. A 1990s glossy white ball with bold original curved-triangle graphics in black and gold. A modern lightweight ball with smooth bonded panels and an original pattern of sweeping teal and gold strokes.
 
-This is a reference sheet for 3D modelling and animation in Blender. Render it with a realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front, as in a softbox studio, so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
+This is a reference sheet for 3D modelling and animation in Blender. Draw it in a comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ### B02 · Goal frame and net
@@ -705,11 +705,11 @@ Everything here is an original design invented for this game: the people, kits, 
 **ChatGPT**
 
 ```text
-Make a landscape image (3:2). Orthographic reference of a full-size football goal, front view and side view next to each other: slim, rounded white posts and crossbar, a deep net held out by thin back supports, and realistic nylon net mesh. Add a close-up inset of the net knots in the corner.
+Make a landscape image (3:2). Orthographic reference of a full-size football goal, front view and side view next to each other: slim, rounded white posts and crossbar, a deep net held out by thin back supports, and nylon net mesh drawn with fine, even ink lines. Add a close-up inset of the net knots in the corner.
 
-This is a reference sheet for 3D modelling and animation in Blender. Realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat studio lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
+This is a reference sheet for 3D modelling and animation in Blender. Comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -717,11 +717,11 @@ Original design: not based on any real footballer, club, national team, stadium,
 ```text
 Create an image in a 3:2 landscape format. Use the attached image, the style keyframe (A01), as your reference.
 
-Orthographic reference of a full-size football goal, front view and side view next to each other: slim, rounded white posts and crossbar, a deep net held out by thin back supports, and realistic nylon net mesh. Add a close-up inset of the net knots in the corner.
+Orthographic reference of a full-size football goal, front view and side view next to each other: slim, rounded white posts and crossbar, a deep net held out by thin back supports, and nylon net mesh drawn with fine, even ink lines. Add a close-up inset of the net knots in the corner.
 
-This is a reference sheet for 3D modelling and animation in Blender. Render it with a realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front, as in a softbox studio, so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
+This is a reference sheet for 3D modelling and animation in Blender. Draw it in a comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ### B03 · Penalty area details
@@ -737,9 +737,9 @@ Everything here is an original design invented for this game: the people, kits, 
 ```text
 Make a square image (1:1). Overhead view of the penalty area of a real football pitch: crisp painted white lines, the penalty spot, a curved line of white vanishing spray on the grass, and, beside the frame, a tall corner flag shown from the side.
 
-This is a reference sheet for 3D modelling and animation in Blender. Realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat studio lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
+This is a reference sheet for 3D modelling and animation in Blender. Comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -749,9 +749,9 @@ Create an image in a square 1:1 format. Use the attached image, the style keyfra
 
 Overhead view of the penalty area of a real football pitch: crisp painted white lines, the penalty spot, a curved line of white vanishing spray on the grass, and, beside the frame, a tall corner flag shown from the side.
 
-This is a reference sheet for 3D modelling and animation in Blender. Render it with a realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front, as in a softbox studio, so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
+This is a reference sheet for 3D modelling and animation in Blender. Draw it in a comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ### B04 · Floodlights through the eras
@@ -767,9 +767,9 @@ Everything here is an original design invented for this game: the people, kits, 
 ```text
 Make a landscape image (3:2). Three original stadium floodlight designs side by side, all seen from the front: a 1970s lattice steel pylon topped with a dense grid of lamps, a 1990s angular tower with rectangular lamp banks, and a modern floodlight ring set into the edge of a stadium roof.
 
-This is a reference sheet for 3D modelling and animation in Blender. Realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat studio lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
+This is a reference sheet for 3D modelling and animation in Blender. Comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -779,9 +779,9 @@ Create an image in a 3:2 landscape format. Use the attached image, the style key
 
 Three original stadium floodlight designs side by side, all seen from the front: a 1970s lattice steel pylon topped with a dense grid of lamps, a 1990s angular tower with rectangular lamp banks, and a modern floodlight ring set into the edge of a stadium roof.
 
-This is a reference sheet for 3D modelling and animation in Blender. Render it with a realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front, as in a softbox studio, so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
+This is a reference sheet for 3D modelling and animation in Blender. Draw it in a comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ## Arena and cameras
@@ -801,9 +801,9 @@ The first playable ground, the harbour stadium, and the camera framings the shoo
 ```text
 Make a landscape image (3:2). Aerial three-quarter view of the harbourfront stadium from the attached keyframe at golden hour: a modern bowl with a sweeping translucent roof, three closed sides and one open end looking out over a harbour with moored fishing boats, a lighthouse on the breakwater, and the sun setting over the sea. Old brick warehouses and narrow streets surround the stadium, with fans streaming in. One end of the pitch, with its goal, is in the foreground.
 
-Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Rich, natural colour grading. The goal frame, the ball and the players are always the sharpest, clearest elements in the frame. Cinematic composition with a shallow depth of field.
+Art direction: Free Kick Classics, an original football game set in believable football grounds, rendered as a comic book come to life in 3D. Real stadium architecture, turf, crowds and kits, drawn with hand-inked contour lines over 3D forms, bold flat colour, halftone and Ben-Day dot shading in shadows and skies, and offset-print colour misregistration where things fall out of focus, instead of blur. Graphic speed lines and motion smears on fast action. Dramatic light: golden hours, floodlights cutting through haze and rain, long shadows, drifting flare smoke. The goal frame, the ball and the players have the cleanest lines and the strongest contrast. Dynamic, comic-panel composition with bold camera angles.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -813,9 +813,9 @@ Create an image in a 3:2 landscape format. Use the attached image, the style key
 
 Aerial three-quarter view of the harbourfront stadium from the attached keyframe at golden hour: a modern bowl with a sweeping translucent roof, three closed sides and one open end looking out over a harbour with moored fishing boats, a lighthouse on the breakwater, and the sun setting over the sea. Old brick warehouses and narrow streets surround the stadium, with fans streaming in. One end of the pitch, with its goal, is in the foreground.
 
-Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Render it with cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The sense of escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Grade the colour richly and naturally. Keep the goal frame, the ball and the players the sharpest, clearest elements in the frame, and compose cinematically with a shallow depth of field.
+Art direction: Free Kick Classics, an original football game set in believable football grounds, rendered as a comic book come to life in 3D. Draw real stadium architecture, turf, crowds and kits with hand-inked contour lines over 3D forms and bold flat colour. Shade shadows and skies with halftone and Ben-Day dots, and show anything out of focus as offset-print colour misregistration, with every edge still crisp. Add graphic speed lines and motion smears to fast action. Light it dramatically: golden hours, floodlights cutting through haze and rain, long shadows, drifting flare smoke. Give the goal frame, the ball and the players the cleanest lines and the strongest contrast, and compose like a dynamic comic panel with bold camera angles.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ### W02 · Game camera: behind the ball
@@ -831,9 +831,9 @@ Everything here is an original design invented for this game: the people, kits, 
 ```text
 Make a portrait image (2:3). The game camera's view from just behind and above the ball on the penalty spot, looking at the goal in the attached stadium. The keeper is set on his line, the steep stand behind the goal is packed with fans and scarves, and the evening sky glows above the roof. Framed for a phone held upright: the goal fills the upper half, and the ball sits in the lower third with clear space around it.
 
-Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Rich, natural colour grading. The goal frame, the ball and the players are always the sharpest, clearest elements in the frame. Cinematic composition with a shallow depth of field.
+Art direction: Free Kick Classics, an original football game set in believable football grounds, rendered as a comic book come to life in 3D. Real stadium architecture, turf, crowds and kits, drawn with hand-inked contour lines over 3D forms, bold flat colour, halftone and Ben-Day dot shading in shadows and skies, and offset-print colour misregistration where things fall out of focus, instead of blur. Graphic speed lines and motion smears on fast action. Dramatic light: golden hours, floodlights cutting through haze and rain, long shadows, drifting flare smoke. The goal frame, the ball and the players have the cleanest lines and the strongest contrast. Dynamic, comic-panel composition with bold camera angles.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -843,9 +843,9 @@ Create an image in a 2:3 portrait format. Use the reference images attached in t
 
 The game camera's view from just behind and above the ball on the penalty spot, looking at the goal in the attached stadium. The keeper is set on his line, the steep stand behind the goal is packed with fans and scarves, and the evening sky glows above the roof. Framed for a phone held upright: the goal fills the upper half, and the ball sits in the lower third with clear space around it.
 
-Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Render it with cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The sense of escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Grade the colour richly and naturally. Keep the goal frame, the ball and the players the sharpest, clearest elements in the frame, and compose cinematically with a shallow depth of field.
+Art direction: Free Kick Classics, an original football game set in believable football grounds, rendered as a comic book come to life in 3D. Draw real stadium architecture, turf, crowds and kits with hand-inked contour lines over 3D forms and bold flat colour. Shade shadows and skies with halftone and Ben-Day dots, and show anything out of focus as offset-print colour misregistration, with every edge still crisp. Add graphic speed lines and motion smears to fast action. Light it dramatically: golden hours, floodlights cutting through haze and rain, long shadows, drifting flare smoke. Give the goal frame, the ball and the players the cleanest lines and the strongest contrast, and compose like a dynamic comic panel with bold camera angles.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ### W03 · Game camera: keeper's view
@@ -861,9 +861,9 @@ Everything here is an original design invented for this game: the people, kits, 
 ```text
 Make a portrait image (2:3). The keeper's view from just in front of the goal line at eye height, looking out at the kicker from the attached keyframe standing behind the ball 11 metres away. Behind the kicker, the open end of the stadium frames the harbour and the setting sun. Framed for a phone held upright, with the kicker small and central and the goal posts just out of frame on either side.
 
-Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Rich, natural colour grading. The goal frame, the ball and the players are always the sharpest, clearest elements in the frame. Cinematic composition with a shallow depth of field.
+Art direction: Free Kick Classics, an original football game set in believable football grounds, rendered as a comic book come to life in 3D. Real stadium architecture, turf, crowds and kits, drawn with hand-inked contour lines over 3D forms, bold flat colour, halftone and Ben-Day dot shading in shadows and skies, and offset-print colour misregistration where things fall out of focus, instead of blur. Graphic speed lines and motion smears on fast action. Dramatic light: golden hours, floodlights cutting through haze and rain, long shadows, drifting flare smoke. The goal frame, the ball and the players have the cleanest lines and the strongest contrast. Dynamic, comic-panel composition with bold camera angles.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -873,9 +873,9 @@ Create an image in a 2:3 portrait format. Use the reference images attached in t
 
 The keeper's view from just in front of the goal line at eye height, looking out at the kicker from the attached keyframe standing behind the ball 11 metres away. Behind the kicker, the open end of the stadium frames the harbour and the setting sun. Framed for a phone held upright, with the kicker small and central and the goal posts just out of frame on either side.
 
-Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Render it with cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The sense of escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Grade the colour richly and naturally. Keep the goal frame, the ball and the players the sharpest, clearest elements in the frame, and compose cinematically with a shallow depth of field.
+Art direction: Free Kick Classics, an original football game set in believable football grounds, rendered as a comic book come to life in 3D. Draw real stadium architecture, turf, crowds and kits with hand-inked contour lines over 3D forms and bold flat colour. Shade shadows and skies with halftone and Ben-Day dots, and show anything out of focus as offset-print colour misregistration, with every edge still crisp. Add graphic speed lines and motion smears to fast action. Light it dramatically: golden hours, floodlights cutting through haze and rain, long shadows, drifting flare smoke. Give the goal frame, the ball and the players the cleanest lines and the strongest contrast, and compose like a dynamic comic panel with bold camera angles.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ### W04 · Stands and crowd up close
@@ -889,11 +889,11 @@ Everything here is an original design invented for this game: the people, kits, 
 **ChatGPT**
 
 ```text
-Make a landscape image (3:2). A close view of one tier of the stands: realistic fans in scarves and jackets, flags and hand-painted banners with abstract patterns, a few phone torches, and flare smoke drifting through low golden sunlight.
+Make a landscape image (3:2). A close view of one tier of the stands: fans in scarves and jackets drawn with ink outlines and halftone shading, flags and hand-painted banners with abstract patterns, a few phone torches, and flare smoke drifting through low golden sunlight in loose inked swirls.
 
-Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Rich, natural colour grading. The goal frame, the ball and the players are always the sharpest, clearest elements in the frame. Cinematic composition with a shallow depth of field.
+Art direction: Free Kick Classics, an original football game set in believable football grounds, rendered as a comic book come to life in 3D. Real stadium architecture, turf, crowds and kits, drawn with hand-inked contour lines over 3D forms, bold flat colour, halftone and Ben-Day dot shading in shadows and skies, and offset-print colour misregistration where things fall out of focus, instead of blur. Graphic speed lines and motion smears on fast action. Dramatic light: golden hours, floodlights cutting through haze and rain, long shadows, drifting flare smoke. The goal frame, the ball and the players have the cleanest lines and the strongest contrast. Dynamic, comic-panel composition with bold camera angles.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -901,11 +901,11 @@ Original design: not based on any real footballer, club, national team, stadium,
 ```text
 Create an image in a 3:2 landscape format. Use the attached image, the style keyframe (A01), as your reference.
 
-A close view of one tier of the stands: realistic fans in scarves and jackets, flags and hand-painted banners with abstract patterns, a few phone torches, and flare smoke drifting through low golden sunlight.
+A close view of one tier of the stands: fans in scarves and jackets drawn with ink outlines and halftone shading, flags and hand-painted banners with abstract patterns, a few phone torches, and flare smoke drifting through low golden sunlight in loose inked swirls.
 
-Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Render it with cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The sense of escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Grade the colour richly and naturally. Keep the goal frame, the ball and the players the sharpest, clearest elements in the frame, and compose cinematically with a shallow depth of field.
+Art direction: Free Kick Classics, an original football game set in believable football grounds, rendered as a comic book come to life in 3D. Draw real stadium architecture, turf, crowds and kits with hand-inked contour lines over 3D forms and bold flat colour. Shade shadows and skies with halftone and Ben-Day dots, and show anything out of focus as offset-print colour misregistration, with every edge still crisp. Add graphic speed lines and motion smears to fast action. Light it dramatically: golden hours, floodlights cutting through haze and rain, long shadows, drifting flare smoke. Give the goal frame, the ball and the players the cleanest lines and the strongest contrast, and compose like a dynamic comic panel with bold camera angles.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ## Moments
@@ -923,11 +923,11 @@ Frames that direct the animation, lighting and effects at the beats that matter:
 **ChatGPT**
 
 ```text
-Make a landscape image (3:2). A split composition at the moment before a penalty: the left half is an extreme close-up of the kicker's eyes and brow from the kicker face sheet, the right half the keeper's eyes from the keeper face sheet. Both are lit by low golden sunlight, with the stadium falling away into soft bokeh behind them. The tension of two friends trying to read each other.
+Make a landscape image (3:2). Two tall comic panels side by side at the moment before a penalty: the left panel is an extreme close-up of the kicker's eyes and brow from the kicker face sheet, the right panel the keeper's eyes from the keeper face sheet. Both are lit by low golden sunlight with bold ink shadows, and the stadium behind them breaks into halftone dots and offset colour. The tension of two friends trying to read each other.
 
-Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Rich, natural colour grading. The goal frame, the ball and the players are always the sharpest, clearest elements in the frame. Cinematic composition with a shallow depth of field.
+Art direction: Free Kick Classics, an original football game set in believable football grounds, rendered as a comic book come to life in 3D. Real stadium architecture, turf, crowds and kits, drawn with hand-inked contour lines over 3D forms, bold flat colour, halftone and Ben-Day dot shading in shadows and skies, and offset-print colour misregistration where things fall out of focus, instead of blur. Graphic speed lines and motion smears on fast action. Dramatic light: golden hours, floodlights cutting through haze and rain, long shadows, drifting flare smoke. The goal frame, the ball and the players have the cleanest lines and the strongest contrast. Dynamic, comic-panel composition with bold camera angles.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -935,11 +935,11 @@ Original design: not based on any real footballer, club, national team, stadium,
 ```text
 Create an image in a 3:2 landscape format. Use the reference images attached in this order: first, the style keyframe (A01); second, the kicker face sheet (C02); third, the keeper face sheet (C04).
 
-A split composition at the moment before a penalty: the left half is an extreme close-up of the kicker's eyes and brow from the kicker face sheet, the right half the keeper's eyes from the keeper face sheet. Both are lit by low golden sunlight, with the stadium falling away into soft bokeh behind them. The tension of two friends trying to read each other.
+Two tall comic panels side by side at the moment before a penalty: the left panel is an extreme close-up of the kicker's eyes and brow from the kicker face sheet, the right panel the keeper's eyes from the keeper face sheet. Both are lit by low golden sunlight with bold ink shadows, and the stadium behind them breaks into halftone dots and offset colour. The tension of two friends trying to read each other.
 
-Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Render it with cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The sense of escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Grade the colour richly and naturally. Keep the goal frame, the ball and the players the sharpest, clearest elements in the frame, and compose cinematically with a shallow depth of field.
+Art direction: Free Kick Classics, an original football game set in believable football grounds, rendered as a comic book come to life in 3D. Draw real stadium architecture, turf, crowds and kits with hand-inked contour lines over 3D forms and bold flat colour. Shade shadows and skies with halftone and Ben-Day dots, and show anything out of focus as offset-print colour misregistration, with every edge still crisp. Add graphic speed lines and motion smears to fast action. Light it dramatically: golden hours, floodlights cutting through haze and rain, long shadows, drifting flare smoke. Give the goal frame, the ball and the players the cleanest lines and the strongest contrast, and compose like a dynamic comic panel with bold camera angles.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ### M02 · The goal
@@ -953,11 +953,11 @@ Everything here is an original design invented for this game: the people, kits, 
 **ChatGPT**
 
 ```text
-Make a landscape image (3:2). The instant a penalty hits the back of the net in the attached stadium: the net bulges, the keeper lies on the grass where he dived, and the stand behind the goal erupts, with scarves whirling, paper confetti in the air and flare smoke catching the evening light.
+Make a landscape image (3:2). The instant a penalty hits the back of the net in the attached stadium: the net bulges, the keeper lies on the grass where he dived, and the stand behind the goal erupts, with scarves whirling, paper confetti in the air and flare smoke catching the evening light. Graphic impact lines burst outward from the net.
 
-Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Rich, natural colour grading. The goal frame, the ball and the players are always the sharpest, clearest elements in the frame. Cinematic composition with a shallow depth of field.
+Art direction: Free Kick Classics, an original football game set in believable football grounds, rendered as a comic book come to life in 3D. Real stadium architecture, turf, crowds and kits, drawn with hand-inked contour lines over 3D forms, bold flat colour, halftone and Ben-Day dot shading in shadows and skies, and offset-print colour misregistration where things fall out of focus, instead of blur. Graphic speed lines and motion smears on fast action. Dramatic light: golden hours, floodlights cutting through haze and rain, long shadows, drifting flare smoke. The goal frame, the ball and the players have the cleanest lines and the strongest contrast. Dynamic, comic-panel composition with bold camera angles.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -965,11 +965,11 @@ Original design: not based on any real footballer, club, national team, stadium,
 ```text
 Create an image in a 3:2 landscape format. Use the reference images attached in this order: first, the style keyframe (A01); second, the goal reference (B02).
 
-The instant a penalty hits the back of the net in the attached stadium: the net bulges, the keeper lies on the grass where he dived, and the stand behind the goal erupts, with scarves whirling, paper confetti in the air and flare smoke catching the evening light.
+The instant a penalty hits the back of the net in the attached stadium: the net bulges, the keeper lies on the grass where he dived, and the stand behind the goal erupts, with scarves whirling, paper confetti in the air and flare smoke catching the evening light. Graphic impact lines burst outward from the net.
 
-Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Render it with cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The sense of escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Grade the colour richly and naturally. Keep the goal frame, the ball and the players the sharpest, clearest elements in the frame, and compose cinematically with a shallow depth of field.
+Art direction: Free Kick Classics, an original football game set in believable football grounds, rendered as a comic book come to life in 3D. Draw real stadium architecture, turf, crowds and kits with hand-inked contour lines over 3D forms and bold flat colour. Shade shadows and skies with halftone and Ben-Day dots, and show anything out of focus as offset-print colour misregistration, with every edge still crisp. Add graphic speed lines and motion smears to fast action. Light it dramatically: golden hours, floodlights cutting through haze and rain, long shadows, drifting flare smoke. Give the goal frame, the ball and the players the cleanest lines and the strongest contrast, and compose like a dynamic comic panel with bold camera angles.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ### M03 · The fingertip save
@@ -983,11 +983,11 @@ Everything here is an original design invented for this game: the people, kits, 
 **ChatGPT**
 
 ```text
-Make a landscape image (3:2). A frozen slow-motion moment under floodlights on a wet night: the keeper from the attached turnaround at full stretch, tipping the ball around the post with his fingertips. A spray of water flies off the ball and his gloves, each droplet catching the light, and the crowd behind is a soft blur.
+Make a landscape image (3:2). A frozen slow-motion moment under floodlights on a wet night: the keeper from the attached turnaround at full stretch, tipping the ball around the post with his fingertips. A spray of water flies off the ball and his gloves, each droplet catching the light, and the crowd behind breaks into halftone dots and offset colour. His body shows a motion smear and a few overlapping ink outlines from the dive.
 
-Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Rich, natural colour grading. The goal frame, the ball and the players are always the sharpest, clearest elements in the frame. Cinematic composition with a shallow depth of field.
+Art direction: Free Kick Classics, an original football game set in believable football grounds, rendered as a comic book come to life in 3D. Real stadium architecture, turf, crowds and kits, drawn with hand-inked contour lines over 3D forms, bold flat colour, halftone and Ben-Day dot shading in shadows and skies, and offset-print colour misregistration where things fall out of focus, instead of blur. Graphic speed lines and motion smears on fast action. Dramatic light: golden hours, floodlights cutting through haze and rain, long shadows, drifting flare smoke. The goal frame, the ball and the players have the cleanest lines and the strongest contrast. Dynamic, comic-panel composition with bold camera angles.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -995,11 +995,11 @@ Original design: not based on any real footballer, club, national team, stadium,
 ```text
 Create an image in a 3:2 landscape format. Use the reference images attached in this order: first, the style keyframe (A01); second, the keeper turnaround (C03).
 
-A frozen slow-motion moment under floodlights on a wet night: the keeper from the attached turnaround at full stretch, tipping the ball around the post with his fingertips. A spray of water flies off the ball and his gloves, each droplet catching the light, and the crowd behind is a soft blur.
+A frozen slow-motion moment under floodlights on a wet night: the keeper from the attached turnaround at full stretch, tipping the ball around the post with his fingertips. A spray of water flies off the ball and his gloves, each droplet catching the light, and the crowd behind breaks into halftone dots and offset colour. His body shows a motion smear and a few overlapping ink outlines from the dive.
 
-Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Render it with cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The sense of escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Grade the colour richly and naturally. Keep the goal frame, the ball and the players the sharpest, clearest elements in the frame, and compose cinematically with a shallow depth of field.
+Art direction: Free Kick Classics, an original football game set in believable football grounds, rendered as a comic book come to life in 3D. Draw real stadium architecture, turf, crowds and kits with hand-inked contour lines over 3D forms and bold flat colour. Shade shadows and skies with halftone and Ben-Day dots, and show anything out of focus as offset-print colour misregistration, with every edge still crisp. Add graphic speed lines and motion smears to fast action. Light it dramatically: golden hours, floodlights cutting through haze and rain, long shadows, drifting flare smoke. Give the goal frame, the ball and the players the cleanest lines and the strongest contrast, and compose like a dynamic comic panel with bold camera angles.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ### M04 · The slow-motion replay
@@ -1013,11 +1013,11 @@ Everything here is an original design invented for this game: the people, kits, 
 **ChatGPT**
 
 ```text
-Make a landscape image (3:2). A side-on slow-motion replay frame: the full flight of a knuckleball drawn as a thin broadcast tracer line that wobbles near the goal, the ball frozen in mid-air above a jumping wall of crimson players, and the keeper beginning his dive.
+Make a landscape image (3:2). A side-on slow-motion replay frame: the full flight of a knuckleball drawn as a bold inked trajectory with speed lines that wobbles near the goal, the ball frozen in mid-air above a jumping wall of crimson players, and the keeper beginning his dive.
 
-Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Rich, natural colour grading. The goal frame, the ball and the players are always the sharpest, clearest elements in the frame. Cinematic composition with a shallow depth of field.
+Art direction: Free Kick Classics, an original football game set in believable football grounds, rendered as a comic book come to life in 3D. Real stadium architecture, turf, crowds and kits, drawn with hand-inked contour lines over 3D forms, bold flat colour, halftone and Ben-Day dot shading in shadows and skies, and offset-print colour misregistration where things fall out of focus, instead of blur. Graphic speed lines and motion smears on fast action. Dramatic light: golden hours, floodlights cutting through haze and rain, long shadows, drifting flare smoke. The goal frame, the ball and the players have the cleanest lines and the strongest contrast. Dynamic, comic-panel composition with bold camera angles.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -1025,11 +1025,11 @@ Original design: not based on any real footballer, club, national team, stadium,
 ```text
 Create an image in a 3:2 landscape format. Use the reference images attached in this order: first, the style keyframe (A01); second, the replay tracer board (A03).
 
-A side-on slow-motion replay frame: the full flight of a knuckleball drawn as a thin broadcast tracer line that wobbles near the goal, the ball frozen in mid-air above a jumping wall of crimson players, and the keeper beginning his dive.
+A side-on slow-motion replay frame: the full flight of a knuckleball drawn as a bold inked trajectory with speed lines that wobbles near the goal, the ball frozen in mid-air above a jumping wall of crimson players, and the keeper beginning his dive.
 
-Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Render it with cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The sense of escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Grade the colour richly and naturally. Keep the goal frame, the ball and the players the sharpest, clearest elements in the frame, and compose cinematically with a shallow depth of field.
+Art direction: Free Kick Classics, an original football game set in believable football grounds, rendered as a comic book come to life in 3D. Draw real stadium architecture, turf, crowds and kits with hand-inked contour lines over 3D forms and bold flat colour. Shade shadows and skies with halftone and Ben-Day dots, and show anything out of focus as offset-print colour misregistration, with every edge still crisp. Add graphic speed lines and motion smears to fast action. Light it dramatically: golden hours, floodlights cutting through haze and rain, long shadows, drifting flare smoke. Give the goal frame, the ball and the players the cleanest lines and the strongest contrast, and compose like a dynamic comic panel with bold camera angles.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ## Textures
@@ -1047,11 +1047,11 @@ Surfaces I map onto the models. Most are square images.
 **ChatGPT**
 
 ```text
-Make a square image (1:1). Photorealistic natural stadium turf, deep healthy green with fine blade detail and slight colour variation, with alternating wide light and dark mowing stripes running vertically.
+Make a square image (1:1). Stadium turf drawn in a comic-book style: deep greens in flat colour with fine ink hatching for grass blades and light halftone dots, with alternating wide light and dark mowing stripes running vertically.
 
-This is a texture for a 3D game. Photorealistic, viewed straight down, with perfectly flat, even lighting and no shadows or highlights. It must tile seamlessly on all four edges and fill the whole frame edge to edge, matching the attached style reference.
+This is a texture for a 3D game in a comic-book style: flat colour with ink hatching and halftone dot detail, matching the attached style reference. View it straight down, with flat, even lighting and no shadows. It must tile seamlessly on all four edges and fill the whole frame edge to edge.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -1059,11 +1059,11 @@ Original design: not based on any real footballer, club, national team, stadium,
 ```text
 Create an image in a square 1:1 format. Use the attached image, the style keyframe (A01), as your reference.
 
-Photorealistic natural stadium turf, deep healthy green with fine blade detail and slight colour variation, with alternating wide light and dark mowing stripes running vertically.
+Stadium turf drawn in a comic-book style: deep greens in flat colour with fine ink hatching for grass blades and light halftone dots, with alternating wide light and dark mowing stripes running vertically.
 
-This is a texture for a 3D game. Make it photorealistic and show the surface from directly above, evenly and flatly lit, so it reads as pure colour and detail. Make it seamless, so the left edge flows into the right and the top into the bottom, and fill the whole frame edge to edge, in the look of the style keyframe.
+This is a texture for a 3D game in a comic-book style: flat colour with ink hatching and halftone dot detail, in the look of the style keyframe. Show the surface from directly above, evenly and flatly lit, so it reads as pure colour and pattern. Make it seamless, so the left edge flows into the right and the top into the bottom, and fill the whole frame edge to edge.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ### T02 · Worn goalmouth
@@ -1077,11 +1077,11 @@ Everything here is an original design invented for this game: the people, kits, 
 **ChatGPT**
 
 ```text
-Make a square image (1:1). Worn goalmouth turf in the same style as the attached grass: thinning grass, scuffed bare-earth patches and stud marks.
+Make a square image (1:1). Worn goalmouth turf in the same comic style as the attached grass: thinning grass, scuffed bare-earth patches and stud marks, drawn with ink hatching and halftone dots.
 
-This is a texture for a 3D game. Photorealistic, viewed straight down, with perfectly flat, even lighting and no shadows or highlights. It must tile seamlessly on all four edges and fill the whole frame edge to edge, matching the attached style reference.
+This is a texture for a 3D game in a comic-book style: flat colour with ink hatching and halftone dot detail, matching the attached style reference. View it straight down, with flat, even lighting and no shadows. It must tile seamlessly on all four edges and fill the whole frame edge to edge.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -1089,11 +1089,11 @@ Original design: not based on any real footballer, club, national team, stadium,
 ```text
 Create an image in a square 1:1 format. Use the reference images attached in this order: first, the style keyframe (A01); second, the grass texture (T01).
 
-Worn goalmouth turf in the same style as the attached grass: thinning grass, scuffed bare-earth patches and stud marks.
+Worn goalmouth turf in the same comic style as the attached grass: thinning grass, scuffed bare-earth patches and stud marks, drawn with ink hatching and halftone dots.
 
-This is a texture for a 3D game. Make it photorealistic and show the surface from directly above, evenly and flatly lit, so it reads as pure colour and detail. Make it seamless, so the left edge flows into the right and the top into the bottom, and fill the whole frame edge to edge, in the look of the style keyframe.
+This is a texture for a 3D game in a comic-book style: flat colour with ink hatching and halftone dot detail, in the look of the style keyframe. Show the surface from directly above, evenly and flatly lit, so it reads as pure colour and pattern. Make it seamless, so the left edge flows into the right and the top into the bottom, and fill the whole frame edge to edge.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ### T03 · Crowd sprites
@@ -1108,11 +1108,11 @@ Everything here is an original design invented for this game: the people, kits, 
 **ChatGPT**
 
 ```text
-Make a square image (1:1). A sheet of sixteen different realistic football fans in a four-by-four grid, each a full-body figure in a different pose: cheering with arms up, clapping, holding a scarf over the head, hands on head, jumping. Every figure is on a flat, pure green background (#00FF00) with clear space between figures. This overrides the grey background for this sheet.
+Make a square image (1:1). A sheet of sixteen different football fans in a four-by-four grid, each a full-body figure in the comic style, with ink outlines, flat colour and light halftone shading, in a different pose: cheering with arms up, clapping, holding a scarf over the head, hands on head, jumping. Every figure is on a flat, pure green background (#00FF00) with clear space between figures. This overrides the grey background for this sheet.
 
-This is a reference sheet for 3D modelling and animation in Blender. Realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat studio lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
+This is a reference sheet for 3D modelling and animation in Blender. Comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -1120,11 +1120,11 @@ Original design: not based on any real footballer, club, national team, stadium,
 ```text
 Create an image in a square 1:1 format. Use the attached image, the style keyframe (A01), as your reference.
 
-A sheet of sixteen different realistic football fans in a four-by-four grid, each a full-body figure in a different pose: cheering with arms up, clapping, holding a scarf over the head, hands on head, jumping. Every figure is on a flat, pure green background (#00FF00) with clear space between figures. This overrides the grey background for this sheet.
+A sheet of sixteen different football fans in a four-by-four grid, each a full-body figure in the comic style, with ink outlines, flat colour and light halftone shading, in a different pose: cheering with arms up, clapping, holding a scarf over the head, hands on head, jumping. Every figure is on a flat, pure green background (#00FF00) with clear space between figures. This overrides the grey background for this sheet.
 
-This is a reference sheet for 3D modelling and animation in Blender. Render it with a realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front, as in a softbox studio, so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
+This is a reference sheet for 3D modelling and animation in Blender. Draw it in a comic-book 3D style: clean hand-inked contour lines, bold flat colour fills and light halftone shading, in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ### T04 · Sunset sky dome
@@ -1138,11 +1138,11 @@ Everything here is an original design invented for this game: the people, kits, 
 **ChatGPT**
 
 ```text
-Make a landscape image (3:2). A wide panoramic sunset sky over the sea for a 360-degree sky dome: a warm gold sun low on the horizon, layered clouds lit from below in orange and rose, deepening to clear blue overhead. The horizon runs exactly across the middle of the image, with no ground, buildings or people.
+Make a landscape image (3:2). A wide panoramic sunset sky over the sea for a 360-degree sky dome, drawn like a comic: a warm gold sun low on the horizon, bands of flat colour from orange and rose to clear blue overhead filled with Ben-Day dots, and clouds with crisp inked edges. The horizon runs exactly across the middle of the image, with no ground, buildings or people.
 
-Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Rich, natural colour grading. The goal frame, the ball and the players are always the sharpest, clearest elements in the frame. Cinematic composition with a shallow depth of field.
+Art direction: Free Kick Classics, an original football game set in believable football grounds, rendered as a comic book come to life in 3D. Real stadium architecture, turf, crowds and kits, drawn with hand-inked contour lines over 3D forms, bold flat colour, halftone and Ben-Day dot shading in shadows and skies, and offset-print colour misregistration where things fall out of focus, instead of blur. Graphic speed lines and motion smears on fast action. Dramatic light: golden hours, floodlights cutting through haze and rain, long shadows, drifting flare smoke. The goal frame, the ball and the players have the cleanest lines and the strongest contrast. Dynamic, comic-panel composition with bold camera angles.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -1150,11 +1150,11 @@ Original design: not based on any real footballer, club, national team, stadium,
 ```text
 Create an image in a 3:2 landscape format. Use the attached image, the style keyframe (A01), as your reference.
 
-A wide panoramic sunset sky over the sea for a 360-degree sky dome: a warm gold sun low on the horizon, layered clouds lit from below in orange and rose, deepening to clear blue overhead. The horizon runs exactly across the middle of the image, and the whole frame is sky, cloud and a thin line of calm sea.
+A wide panoramic sunset sky over the sea for a 360-degree sky dome, drawn like a comic: a warm gold sun low on the horizon, bands of flat colour from orange and rose to clear blue overhead filled with Ben-Day dots, and clouds with crisp inked edges. The horizon runs exactly across the middle of the image, and the whole frame is sky, cloud and a thin line of calm sea.
 
-Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Render it with cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The sense of escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Grade the colour richly and naturally. Keep the goal frame, the ball and the players the sharpest, clearest elements in the frame, and compose cinematically with a shallow depth of field.
+Art direction: Free Kick Classics, an original football game set in believable football grounds, rendered as a comic book come to life in 3D. Draw real stadium architecture, turf, crowds and kits with hand-inked contour lines over 3D forms and bold flat colour. Shade shadows and skies with halftone and Ben-Day dots, and show anything out of focus as offset-print colour misregistration, with every edge still crisp. Add graphic speed lines and motion smears to fast action. Light it dramatically: golden hours, floodlights cutting through haze and rain, long shadows, drifting flare smoke. Give the goal frame, the ball and the players the cleanest lines and the strongest contrast, and compose like a dynamic comic panel with bold camera angles.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ## Eras and Classics
@@ -1172,11 +1172,11 @@ The other grounds: the two remaining eras and the Classics scenario cards. These
 **ChatGPT**
 
 ```text
-Make a landscape image (3:2). The penalty end of an original old football ground on a winter afternoon in the 1970s: deep standing terraces packed with fans in heavy coats and scarves, a low sun behind the main stand, breath clouding in the cold air, a heavy muddy goalmouth, a lattice floodlight pylon, and a brown leather ball on the spot. Warm, film-like colour with soft grain.
+Make a landscape image (3:2). The penalty end of an original old football ground on a winter afternoon in the 1970s: deep standing terraces packed with fans in heavy coats and scarves, a low sun behind the main stand, breath clouding in the cold air, a heavy muddy goalmouth, a lattice floodlight pylon, and a brown leather ball on the spot. Drawn like a 1970s newsprint comic: limited four-colour printing, coarse halftone dots, slightly off-register colour and a yellowed paper tone.
 
-Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Rich, natural colour grading. The goal frame, the ball and the players are always the sharpest, clearest elements in the frame. Cinematic composition with a shallow depth of field.
+Art direction: Free Kick Classics, an original football game set in believable football grounds, rendered as a comic book come to life in 3D. Real stadium architecture, turf, crowds and kits, drawn with hand-inked contour lines over 3D forms, bold flat colour, halftone and Ben-Day dot shading in shadows and skies, and offset-print colour misregistration where things fall out of focus, instead of blur. Graphic speed lines and motion smears on fast action. Dramatic light: golden hours, floodlights cutting through haze and rain, long shadows, drifting flare smoke. The goal frame, the ball and the players have the cleanest lines and the strongest contrast. Dynamic, comic-panel composition with bold camera angles.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -1184,11 +1184,11 @@ Original design: not based on any real footballer, club, national team, stadium,
 ```text
 Create an image in a 3:2 landscape format. Use the attached image, the style keyframe (A01), as your reference.
 
-The penalty end of an original old football ground on a winter afternoon in the 1970s: deep standing terraces packed with fans in heavy coats and scarves, a low sun behind the main stand, breath clouding in the cold air, a heavy muddy goalmouth, a lattice floodlight pylon, and a brown leather ball on the spot. Warm, film-like colour with soft grain.
+The penalty end of an original old football ground on a winter afternoon in the 1970s: deep standing terraces packed with fans in heavy coats and scarves, a low sun behind the main stand, breath clouding in the cold air, a heavy muddy goalmouth, a lattice floodlight pylon, and a brown leather ball on the spot. Drawn like a 1970s newsprint comic: limited four-colour printing, coarse halftone dots, slightly off-register colour and a yellowed paper tone.
 
-Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Render it with cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The sense of escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Grade the colour richly and naturally. Keep the goal frame, the ball and the players the sharpest, clearest elements in the frame, and compose cinematically with a shallow depth of field.
+Art direction: Free Kick Classics, an original football game set in believable football grounds, rendered as a comic book come to life in 3D. Draw real stadium architecture, turf, crowds and kits with hand-inked contour lines over 3D forms and bold flat colour. Shade shadows and skies with halftone and Ben-Day dots, and show anything out of focus as offset-print colour misregistration, with every edge still crisp. Add graphic speed lines and motion smears to fast action. Light it dramatically: golden hours, floodlights cutting through haze and rain, long shadows, drifting flare smoke. Give the goal frame, the ball and the players the cleanest lines and the strongest contrast, and compose like a dynamic comic panel with bold camera angles.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ### E02 · 1990s: floodlit rain
@@ -1202,11 +1202,11 @@ Everything here is an original design invented for this game: the people, kits, 
 **ChatGPT**
 
 ```text
-Make a landscape image (3:2). The penalty end of an original city ground on a floodlit night in the 1990s: rain falling through the floodlight beams, steam rising off the packed crowd, blank advertising boards along the touchline, a glossy white ball on the wet spot, and puddles reflecting the lights.
+Make a landscape image (3:2). The penalty end of an original city ground on a floodlit night in the 1990s: rain falling through the floodlight beams, steam rising off the packed crowd, blank advertising boards along the touchline, a glossy white ball on the wet spot, and puddles reflecting the lights. Drawn like a 1990s comic: heavy black inks, saturated colour, airbrushed gradients and glossy highlights.
 
-Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Rich, natural colour grading. The goal frame, the ball and the players are always the sharpest, clearest elements in the frame. Cinematic composition with a shallow depth of field.
+Art direction: Free Kick Classics, an original football game set in believable football grounds, rendered as a comic book come to life in 3D. Real stadium architecture, turf, crowds and kits, drawn with hand-inked contour lines over 3D forms, bold flat colour, halftone and Ben-Day dot shading in shadows and skies, and offset-print colour misregistration where things fall out of focus, instead of blur. Graphic speed lines and motion smears on fast action. Dramatic light: golden hours, floodlights cutting through haze and rain, long shadows, drifting flare smoke. The goal frame, the ball and the players have the cleanest lines and the strongest contrast. Dynamic, comic-panel composition with bold camera angles.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -1214,11 +1214,11 @@ Original design: not based on any real footballer, club, national team, stadium,
 ```text
 Create an image in a 3:2 landscape format. Use the attached image, the style keyframe (A01), as your reference.
 
-The penalty end of an original city ground on a floodlit night in the 1990s: rain falling through the floodlight beams, steam rising off the packed crowd, blank advertising boards along the touchline, a glossy white ball on the wet spot, and puddles reflecting the lights.
+The penalty end of an original city ground on a floodlit night in the 1990s: rain falling through the floodlight beams, steam rising off the packed crowd, blank advertising boards along the touchline, a glossy white ball on the wet spot, and puddles reflecting the lights. Drawn like a 1990s comic: heavy black inks, saturated colour, airbrushed gradients and glossy highlights.
 
-Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Render it with cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The sense of escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Grade the colour richly and naturally. Keep the goal frame, the ball and the players the sharpest, clearest elements in the frame, and compose cinematically with a shallow depth of field.
+Art direction: Free Kick Classics, an original football game set in believable football grounds, rendered as a comic book come to life in 3D. Draw real stadium architecture, turf, crowds and kits with hand-inked contour lines over 3D forms and bold flat colour. Shade shadows and skies with halftone and Ben-Day dots, and show anything out of focus as offset-print colour misregistration, with every edge still crisp. Add graphic speed lines and motion smears to fast action. Light it dramatically: golden hours, floodlights cutting through haze and rain, long shadows, drifting flare smoke. Give the goal frame, the ball and the players the cleanest lines and the strongest contrast, and compose like a dynamic comic panel with bold camera angles.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ### S01 · Classic: The Impossible Banana
@@ -1232,11 +1232,11 @@ Everything here is an original design invented for this game: the people, kits, 
 **ChatGPT**
 
 ```text
-Make a landscape image (3:2). A free kick 35 metres from goal at an original small coastal ground on a clifftop at golden hour, with the sea far below beyond the low stand. A wall of crimson players stands at the spray line, and a thin replay tracer starts far wide of the post before bending back toward the far corner.
+Make a landscape image (3:2). A free kick 35 metres from goal at an original small coastal ground on a clifftop at golden hour, with the sea far below beyond the low stand. A wall of crimson players stands at the spray line, and a bold inked trajectory with speed lines starts far wide of the post before bending back toward the far corner.
 
-Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Rich, natural colour grading. The goal frame, the ball and the players are always the sharpest, clearest elements in the frame. Cinematic composition with a shallow depth of field.
+Art direction: Free Kick Classics, an original football game set in believable football grounds, rendered as a comic book come to life in 3D. Real stadium architecture, turf, crowds and kits, drawn with hand-inked contour lines over 3D forms, bold flat colour, halftone and Ben-Day dot shading in shadows and skies, and offset-print colour misregistration where things fall out of focus, instead of blur. Graphic speed lines and motion smears on fast action. Dramatic light: golden hours, floodlights cutting through haze and rain, long shadows, drifting flare smoke. The goal frame, the ball and the players have the cleanest lines and the strongest contrast. Dynamic, comic-panel composition with bold camera angles.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -1244,11 +1244,11 @@ Original design: not based on any real footballer, club, national team, stadium,
 ```text
 Create an image in a 3:2 landscape format. Use the reference images attached in this order: first, the style keyframe (A01); second, the wall players sheet (C05).
 
-A free kick 35 metres from goal at an original small coastal ground on a clifftop at golden hour, with the sea far below beyond the low stand. A wall of crimson players stands at the spray line, and a thin replay tracer starts far wide of the post before bending back toward the far corner.
+A free kick 35 metres from goal at an original small coastal ground on a clifftop at golden hour, with the sea far below beyond the low stand. A wall of crimson players stands at the spray line, and a bold inked trajectory with speed lines starts far wide of the post before bending back toward the far corner.
 
-Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Render it with cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The sense of escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Grade the colour richly and naturally. Keep the goal frame, the ball and the players the sharpest, clearest elements in the frame, and compose cinematically with a shallow depth of field.
+Art direction: Free Kick Classics, an original football game set in believable football grounds, rendered as a comic book come to life in 3D. Draw real stadium architecture, turf, crowds and kits with hand-inked contour lines over 3D forms and bold flat colour. Shade shadows and skies with halftone and Ben-Day dots, and show anything out of focus as offset-print colour misregistration, with every edge still crisp. Add graphic speed lines and motion smears to fast action. Light it dramatically: golden hours, floodlights cutting through haze and rain, long shadows, drifting flare smoke. Give the goal frame, the ball and the players the cleanest lines and the strongest contrast, and compose like a dynamic comic panel with bold camera angles.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ### S02 · Classic: Ninety-Third Minute
@@ -1264,9 +1264,9 @@ Everything here is an original design invented for this game: the people, kits, 
 ```text
 Make a landscape image (3:2). A storm at night at a packed old ground: a wall of six crimson players braced at the spray line, rain lashing sideways through the floodlight beams, lightning over the stand, and the kicker alone behind the ball.
 
-Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Rich, natural colour grading. The goal frame, the ball and the players are always the sharpest, clearest elements in the frame. Cinematic composition with a shallow depth of field.
+Art direction: Free Kick Classics, an original football game set in believable football grounds, rendered as a comic book come to life in 3D. Real stadium architecture, turf, crowds and kits, drawn with hand-inked contour lines over 3D forms, bold flat colour, halftone and Ben-Day dot shading in shadows and skies, and offset-print colour misregistration where things fall out of focus, instead of blur. Graphic speed lines and motion smears on fast action. Dramatic light: golden hours, floodlights cutting through haze and rain, long shadows, drifting flare smoke. The goal frame, the ball and the players have the cleanest lines and the strongest contrast. Dynamic, comic-panel composition with bold camera angles.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -1276,9 +1276,9 @@ Create an image in a 3:2 landscape format. Use the reference images attached in 
 
 A storm at night at a packed old ground: a wall of six crimson players braced at the spray line, rain lashing sideways through the floodlight beams, lightning over the stand, and the kicker alone behind the ball.
 
-Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Render it with cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The sense of escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Grade the colour richly and naturally. Keep the goal frame, the ball and the players the sharpest, clearest elements in the frame, and compose cinematically with a shallow depth of field.
+Art direction: Free Kick Classics, an original football game set in believable football grounds, rendered as a comic book come to life in 3D. Draw real stadium architecture, turf, crowds and kits with hand-inked contour lines over 3D forms and bold flat colour. Shade shadows and skies with halftone and Ben-Day dots, and show anything out of focus as offset-print colour misregistration, with every edge still crisp. Add graphic speed lines and motion smears to fast action. Light it dramatically: golden hours, floodlights cutting through haze and rain, long shadows, drifting flare smoke. Give the goal frame, the ball and the players the cleanest lines and the strongest contrast, and compose like a dynamic comic panel with bold camera angles.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ### S03 · Classic: The Ice-Cold Chip
@@ -1294,9 +1294,9 @@ Everything here is an original design invented for this game: the people, kits, 
 ```text
 Make a landscape image (3:2). A snowy evening at a northern ground: snow falling through the floodlights, a bright orange winter ball, the pitch lines brushed clear, and the keeper diving early into the snow while a soft chip floats over him.
 
-Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Rich, natural colour grading. The goal frame, the ball and the players are always the sharpest, clearest elements in the frame. Cinematic composition with a shallow depth of field.
+Art direction: Free Kick Classics, an original football game set in believable football grounds, rendered as a comic book come to life in 3D. Real stadium architecture, turf, crowds and kits, drawn with hand-inked contour lines over 3D forms, bold flat colour, halftone and Ben-Day dot shading in shadows and skies, and offset-print colour misregistration where things fall out of focus, instead of blur. Graphic speed lines and motion smears on fast action. Dramatic light: golden hours, floodlights cutting through haze and rain, long shadows, drifting flare smoke. The goal frame, the ball and the players have the cleanest lines and the strongest contrast. Dynamic, comic-panel composition with bold camera angles.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -1306,9 +1306,9 @@ Create an image in a 3:2 landscape format. Use the reference images attached in 
 
 A snowy evening at a northern ground: snow falling through the floodlights, a bright orange winter ball, the pitch lines brushed clear, and the keeper diving early into the snow while a soft chip floats over him.
 
-Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Render it with cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The sense of escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Grade the colour richly and naturally. Keep the goal frame, the ball and the players the sharpest, clearest elements in the frame, and compose cinematically with a shallow depth of field.
+Art direction: Free Kick Classics, an original football game set in believable football grounds, rendered as a comic book come to life in 3D. Draw real stadium architecture, turf, crowds and kits with hand-inked contour lines over 3D forms and bold flat colour. Shade shadows and skies with halftone and Ben-Day dots, and show anything out of focus as offset-print colour misregistration, with every edge still crisp. Add graphic speed lines and motion smears to fast action. Light it dramatically: golden hours, floodlights cutting through haze and rain, long shadows, drifting flare smoke. Give the goal frame, the ball and the players the cleanest lines and the strongest contrast, and compose like a dynamic comic panel with bold camera angles.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ### S04 · Classic: Monsoon Final
@@ -1324,9 +1324,9 @@ Everything here is an original design invented for this game: the people, kits, 
 ```text
 Make a landscape image (3:2). A cup final in a monsoon at a tropical ground at dusk: warm torrential rain, palm trees beyond the low stand, kits soaked through, and the ball skidding across the waterlogged grass, throwing up a spray of water.
 
-Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Rich, natural colour grading. The goal frame, the ball and the players are always the sharpest, clearest elements in the frame. Cinematic composition with a shallow depth of field.
+Art direction: Free Kick Classics, an original football game set in believable football grounds, rendered as a comic book come to life in 3D. Real stadium architecture, turf, crowds and kits, drawn with hand-inked contour lines over 3D forms, bold flat colour, halftone and Ben-Day dot shading in shadows and skies, and offset-print colour misregistration where things fall out of focus, instead of blur. Graphic speed lines and motion smears on fast action. Dramatic light: golden hours, floodlights cutting through haze and rain, long shadows, drifting flare smoke. The goal frame, the ball and the players have the cleanest lines and the strongest contrast. Dynamic, comic-panel composition with bold camera angles.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -1336,9 +1336,9 @@ Create an image in a 3:2 landscape format. Use the attached image, the style key
 
 A cup final in a monsoon at a tropical ground at dusk: warm torrential rain, palm trees beyond the low stand, kits soaked through, and the ball skidding across the waterlogged grass, throwing up a spray of water.
 
-Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Render it with cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The sense of escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Grade the colour richly and naturally. Keep the goal frame, the ball and the players the sharpest, clearest elements in the frame, and compose cinematically with a shallow depth of field.
+Art direction: Free Kick Classics, an original football game set in believable football grounds, rendered as a comic book come to life in 3D. Draw real stadium architecture, turf, crowds and kits with hand-inked contour lines over 3D forms and bold flat colour. Shade shadows and skies with halftone and Ben-Day dots, and show anything out of focus as offset-print colour misregistration, with every edge still crisp. Add graphic speed lines and motion smears to fast action. Light it dramatically: golden hours, floodlights cutting through haze and rain, long shadows, drifting flare smoke. Give the goal frame, the ball and the players the cleanest lines and the strongest contrast, and compose like a dynamic comic panel with bold camera angles.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ### S05 · Classic: Thin Air
@@ -1354,9 +1354,9 @@ Everything here is an original design invented for this game: the people, kits, 
 ```text
 Make a landscape image (3:2). An original stadium high in the mountains on a clear afternoon: thin, bright air, sharp sunlight and crisp shadows, snow-capped peaks rising behind the stands, and clouds drifting in the valley below.
 
-Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Rich, natural colour grading. The goal frame, the ball and the players are always the sharpest, clearest elements in the frame. Cinematic composition with a shallow depth of field.
+Art direction: Free Kick Classics, an original football game set in believable football grounds, rendered as a comic book come to life in 3D. Real stadium architecture, turf, crowds and kits, drawn with hand-inked contour lines over 3D forms, bold flat colour, halftone and Ben-Day dot shading in shadows and skies, and offset-print colour misregistration where things fall out of focus, instead of blur. Graphic speed lines and motion smears on fast action. Dramatic light: golden hours, floodlights cutting through haze and rain, long shadows, drifting flare smoke. The goal frame, the ball and the players have the cleanest lines and the strongest contrast. Dynamic, comic-panel composition with bold camera angles.
 
-Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.
+Original design: not based on any real footballer, club, national team, stadium or brand, or on any existing film, comic or video game. No text, letters, numbers, logos, crests, sponsor marks, sound-effect lettering or watermarks anywhere in the image.
 ```
 
 **Gemini**
@@ -1366,26 +1366,27 @@ Create an image in a 3:2 landscape format. Use the attached image, the style key
 
 An original stadium high in the mountains on a clear afternoon: thin, bright air, sharp sunlight and crisp shadows, snow-capped peaks rising behind the stands, and clouds drifting in the valley below.
 
-Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Render it with cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The sense of escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Grade the colour richly and naturally. Keep the goal frame, the ball and the players the sharpest, clearest elements in the frame, and compose cinematically with a shallow depth of field.
+Art direction: Free Kick Classics, an original football game set in believable football grounds, rendered as a comic book come to life in 3D. Draw real stadium architecture, turf, crowds and kits with hand-inked contour lines over 3D forms and bold flat colour. Shade shadows and skies with halftone and Ben-Day dots, and show anything out of focus as offset-print colour misregistration, with every edge still crisp. Add graphic speed lines and motion smears to fast action. Light it dramatically: golden hours, floodlights cutting through haze and rain, long shadows, drifting flare smoke. Give the goal frame, the ball and the players the cleanest lines and the strongest contrast, and compose like a dynamic comic panel with bold camera angles.
 
-Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.
+Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new, and none of it comes from an existing film, comic or video game. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Impact moments use graphic bursts and lines rather than lettering. Keep the whole image free of text, numbers, logos and watermarks.
 ```
 
 ## What I'll build in Blender
 
 **Scenes**
 
-- **The harbour stadium.** The first playable ground, at golden hour and under floodlights: its stands, crowd, sky, sea and lighting, with the phone cameras for kicker, keeper and the stare-down close-up.
+- **The comic render setup.** One reusable Blender look for every scene: Line Art ink lines, halftone and Ben-Day dot shading, offset-colour defocus instead of blur, and a print style per era.
+- **The harbour stadium.** The first playable ground, at golden hour and under floodlights: its stands, crowd, sky, sea and lighting, with the phone cameras for kicker, keeper and the split-panel stare-down.
 - **The free-kick set piece.** The same ground with a wall at the 9.15 m spray line and the referee.
 - **Two more eras.** The 1970s old ground on a winter afternoon and the 1990s floodlit rain, each lit and graded as its own ground.
 - **Classics scenes.** Clifftop coast, night storm, snow, monsoon and mountain altitude, one per scenario card.
 
 **Animations**
 
-- **Kicker.** Ready idle, run-up, stutter, side-foot, driven knuckleball, curler, trivela, chip, two celebrations, a miss.
+- **Kicker.** Ready idle, run-up, stutter, side-foot, driven knuckleball, curler, trivela, chip, two celebrations, a miss. Animated on twos, with smear frames on the strikes.
 - **Keeper.** Ready stance, shuffle, low, middle and top-corner dives to both sides, staying big, catch, smother, fingertip save, punch, celebration, despair.
 - **Wall.** Line up, jump, brace, the lying man.
-- **Ball and effects.** Replay tracers that follow flight paths exported from the game's physics, the net ripple, scarves and flags in the crowd, rain, snow and flare smoke.
+- **Ball and effects.** Inked replay trajectories with speed lines that follow flight paths exported from the game's physics, impact bursts on the net, scarves and flags, rain, snow and flare smoke.
 
 You get `.blend` scenes, FBX characters and animations ready for Unity, and preview renders and videos along the way.
 

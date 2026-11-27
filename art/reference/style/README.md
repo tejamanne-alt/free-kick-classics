@@ -7,7 +7,7 @@ Save each image here under the name below. Alternatives get `-v2`, `-v3`.
 | File | Prompt | Batch |
 | --- | --- | --- |
 | `A01-style-keyframe.png` | A01 · Style keyframe: the stare-down | first |
-| `A02-palette-materials.png` | A02 · Palette and materials board | first |
-| `A03-replay-tracers.png` | A03 · Replay tracers: four ball flights | first |
+| `A02-palette-materials.png` | A02 · Palette, materials and print patterns | first |
+| `A03-replay-tracers.png` | A03 · Replay tracers: four inked ball flights | first |
 
 The prompts are in [`art/reference-prompts`](../../reference-prompts/README.md#start-here).

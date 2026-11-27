@@ -82,16 +82,17 @@ const notes = {
 };
 
 const scenes = [
-  ['The harbour stadium', 'The first playable ground, at golden hour and under floodlights: its stands, crowd, sky, sea and lighting, with the phone cameras for kicker, keeper and the stare-down close-up.'],
+  ['The comic render setup', 'One reusable Blender look for every scene: Line Art ink lines, halftone and Ben-Day dot shading, offset-colour defocus instead of blur, and a print style per era.'],
+  ['The harbour stadium', 'The first playable ground, at golden hour and under floodlights: its stands, crowd, sky, sea and lighting, with the phone cameras for kicker, keeper and the split-panel stare-down.'],
   ['The free-kick set piece', 'The same ground with a wall at the 9.15 m spray line and the referee.'],
   ['Two more eras', 'The 1970s old ground on a winter afternoon and the 1990s floodlit rain, each lit and graded as its own ground.'],
   ['Classics scenes', 'Clifftop coast, night storm, snow, monsoon and mountain altitude, one per scenario card.'],
 ];
 const animations = [
-  ['Kicker', 'Ready idle, run-up, stutter, side-foot, driven knuckleball, curler, trivela, chip, two celebrations, a miss.'],
+  ['Kicker', 'Ready idle, run-up, stutter, side-foot, driven knuckleball, curler, trivela, chip, two celebrations, a miss. Animated on twos, with smear frames on the strikes.'],
   ['Keeper', 'Ready stance, shuffle, low, middle and top-corner dives to both sides, staying big, catch, smother, fingertip save, punch, celebration, despair.'],
   ['Wall', 'Line up, jump, brace, the lying man.'],
-  ['Ball and effects', 'Replay tracers that follow flight paths exported from the game\'s physics, the net ripple, scarves and flags in the crowd, rain, snow and flare smoke.'],
+  ['Ball and effects', 'Inked replay trajectories with speed lines that follow flight paths exported from the game\'s physics, impact bursts on the net, scarves and flags, rain, snow and flare smoke.'],
 ];
 
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -241,7 +242,7 @@ const html = `<title>Free Kick Classics Prompts</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
 <style>
-  /* Layout: one reading column, like a match-day art book read under the floodlights. Deliberately dark-only: evening-match palette. */
+  /* Layout: one reading column, like a match-day comic annual read under the floodlights. Deliberately dark-only: evening-match palette with halftone accents. */
   :root {
     color-scheme: dark;
     --night: #0f0e1d;
@@ -270,7 +271,10 @@ const html = `<title>Free Kick Classics Prompts</title>
       radial-gradient(60% 80% at 80% 0%, rgba(70, 120, 170, 0.32), transparent 70%),
       radial-gradient(30% 50% at 92% 70%, rgba(255, 240, 210, 0.10), transparent 70%),
       linear-gradient(180deg, #14182b 0%, var(--night) 100%);
-    border-bottom: 1px solid var(--rule); }
+    border-bottom: 1px solid var(--rule); position: relative; isolation: isolate; }
+  .hero::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+    background-image: radial-gradient(circle, rgba(234, 185, 95, 0.22) 1.2px, transparent 1.8px); background-size: 8px 8px;
+    -webkit-mask-image: radial-gradient(60% 90% at 100% 100%, #000, transparent 70%); mask-image: radial-gradient(60% 90% at 100% 100%, #000, transparent 70%); }
   .eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin: 0 0 0.75rem; }
   h1 { font-family: var(--display); font-weight: 700; font-size: clamp(2.1rem, 5.5vw, 3.4rem); line-height: 1.04; letter-spacing: -0.02em; margin: 0 0 1rem; text-wrap: balance; max-width: 16ch; }
   .lead { font-size: 1.08rem; color: var(--ink-2); max-width: 62ch; margin: 0 0 1.5rem; }
@@ -293,7 +297,12 @@ const html = `<title>Free Kick Classics Prompts</title>
   .pillars strong { font-family: var(--display); font-weight: 500; font-size: 1.05rem; color: var(--ink); }
   .pillars span { color: var(--ink-2); }
   .eras { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.75rem; }
-  .era { border-radius: 10px; padding: 0.9rem 1rem 1rem; min-height: 8.5rem; display: flex; flex-direction: column; justify-content: flex-end; border: 1px solid rgba(255,255,255,0.08); }
+  .era { position: relative; overflow: hidden; isolation: isolate; border-radius: 10px; padding: 0.9rem 1rem 1rem; min-height: 8.5rem; display: flex; flex-direction: column; justify-content: flex-end; border: 2px solid #0b0a12; box-shadow: 4px 4px 0 #0b0a12; }
+  .era::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+    background-image: radial-gradient(circle, rgba(11, 10, 18, 0.55) 1.1px, transparent 1.6px); background-size: 6px 6px;
+    -webkit-mask-image: linear-gradient(20deg, transparent 40%, #000 95%); mask-image: linear-gradient(20deg, transparent 40%, #000 95%); }
+  .era.seventies::after { background-size: 9px 9px; background-image: radial-gradient(circle, rgba(90, 50, 20, 0.5) 1.8px, transparent 2.4px); }
+  .era.seventies { filter: saturate(0.85); }
   .era h3 { font-family: var(--display); font-weight: 700; font-size: 1.05rem; margin: 0; color: #fff; text-shadow: 0 1px 8px rgba(0,0,0,0.45); }
   .era p { margin: 0.2rem 0 0; font-size: 13px; line-height: 1.4; color: rgba(255,255,255,0.88); text-shadow: 0 1px 6px rgba(0,0,0,0.5); }
   .era.seventies { background: linear-gradient(165deg, #d9b98a 0%, #a8774a 45%, #4a3a2c 100%); }
@@ -417,18 +426,18 @@ const html = `<title>Free Kick Classics Prompts</title>
 <main>
   <section class="intro wrap" aria-labelledby="look">
     <h2 id="look">The look</h2>
-    <p>Real football grounds, made unforgettable by where they stand and the light they're in. The stadiums, turf and crowds are believable; the escape comes from golden hours, floodlights in the rain, sea air and snow. The goal, the ball and the two players stay crisp, because the game is still about reading your friend.</p>
+    <p>Real football grounds, drawn like a comic book come to life. The stadiums, turf and crowds are believable; the art is in the ink lines, halftone dots and offset colour, and in the light: golden hours, floodlights in the rain, sea air and snow. The goal, the ball and the two players stay crisp, because the game is still about reading your friend.</p>
     <ul class="pillars">
-      <li><strong>Real grounds</strong><span>Believable stadium architecture, natural turf, real-looking crowds and kits, shot with cinematic realism.</span></li>
-      <li><strong>Places worth the trip</strong><span>A harbour at sunset, an old terraced ground in winter sun, a coastal clifftop, a snowbound north, a monsoon final, the mountains.</span></li>
-      <li><strong>Light is the treat</strong><span>Golden hours, floodlights cutting through haze and rain, flare smoke, long shadows. Every kick looks like the poster for the match.</span></li>
-      <li><strong>Physics you can read</strong><span>Replays draw the ball's flight as a broadcast tracer: the real curl, dip or knuckle wobble from the flight model.</span></li>
-      <li><strong>Faces carry the duel</strong><span>Close-ups for the stare-down: the bluff, the read, the relief. The ball, frame and players always hold the strongest contrast.</span></li>
+      <li><strong>A comic come to life</strong><span>Hand-inked lines over 3D, bold flat colour, halftone and Ben-Day dots, offset colour instead of blur. Characters move on twos, with smears on the big strikes.</span></li>
+      <li><strong>Real grounds</strong><span>Believable stadiums, turf, crowds and kits, in places worth the trip: a harbour at sunset, an old terraced ground, a clifftop, snow, a monsoon final, the mountains.</span></li>
+      <li><strong>Every era, its own print</strong><span>The 1970s look like a yellowed newsprint comic, the 1990s like a glossy, heavily inked one, the modern game like a crisp graphic novel.</span></li>
+      <li><strong>Physics you can read</strong><span>Replays draw the ball's real flight as a bold inked trajectory with speed lines: the curl, dip or knuckle wobble from the flight model.</span></li>
+      <li><strong>Faces carry the duel</strong><span>The stare-down plays out in split panels: the bluff, the read, the relief. Ball, frame and players always hold the strongest contrast.</span></li>
     </ul>
     <div class="eras" role="list">
-      <div class="era seventies" role="listitem"><span class="tag">Heavy leather ball</span><h3>1970s</h3><p>The old ground on a winter afternoon: terraces, low sun, mud, film grain.</p></div>
-      <div class="era nineties" role="listitem"><span class="tag">Big-bending glossy ball</span><h3>1990s</h3><p>Floodlit rain: steam off the crowd, wet grass, puddles full of light.</p></div>
-      <div class="era modern" role="listitem"><span class="tag">Light knuckling ball</span><h3>Modern</h3><p>The harbour stadium at golden hour, open to the sea. First to build.</p></div>
+      <div class="era seventies" role="listitem"><span class="tag">Heavy leather ball</span><h3>1970s</h3><p>Yellowed newsprint: coarse dots, off-register colour, the old ground in winter sun.</p></div>
+      <div class="era nineties" role="listitem"><span class="tag">Big-bending glossy ball</span><h3>1990s</h3><p>Glossy 90s comic: heavy inks, airbrushed floodlights, steam and rain.</p></div>
+      <div class="era modern" role="listitem"><span class="tag">Light knuckling ball</span><h3>Modern</h3><p>Crisp graphic novel: the harbour stadium at golden hour. First to build.</p></div>
     </div>
   </section>
 
