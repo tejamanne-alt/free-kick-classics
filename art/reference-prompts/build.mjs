@@ -43,6 +43,17 @@ const sectionOf = p => sections.find(s => s.id === p.section);
 const fileName = p => `${p.id}-${p.file}.png`;
 const folderOf = p => `${REF_ROOT}/${sectionOf(p).folder}/`;
 const filePath = p => folderOf(p) + fileName(p);
+// Images already in the repo, under the expected name with any common extension.
+const EXTENSIONS = ['png', 'jpg', 'jpeg', 'webp'];
+function repoImage(p) {
+  for (const ext of EXTENSIONS) {
+    const rel = `${sectionOf(p).folder}/${p.id}-${p.file}.${ext}`;
+    if (existsSync(join(here, '..', 'reference', rel))) return rel;
+  }
+  return null;
+}
+const made = Object.fromEntries(prompts.map(p => [p.id, repoImage(p)]));
+const madeCount = Object.values(made).filter(Boolean).length;
 
 // ---------- Prompt composition ----------
 const ORDINALS = ['first', 'second', 'third', 'fourth'];
@@ -173,7 +184,10 @@ const refDir = join(here, '..', 'reference');
 const overview = ['# Reference images', ''];
 overview.push('Images generated from the prompts in [`art/reference-prompts`](../reference-prompts/README.md), used as references for the Blender scenes and animations. Each prompt has a fixed file name and folder; the prompt sheet shows both, with copy buttons.', '');
 overview.push('| Folder | Images |', '| --- | --- |');
-for (const s of sections) overview.push(`| [\`${s.folder}/\`](${s.folder}/README.md) | ${s.name}: ${prompts.filter(p => p.section === s.id).length} |`);
+for (const s of sections) {
+  const list = prompts.filter(p => p.section === s.id);
+  overview.push(`| [\`${s.folder}/\`](${s.folder}/README.md) | ${s.name}: ${list.filter(p => made[p.id]).length} of ${list.length} in repo |`);
+}
 overview.push(`| [\`guides/\`](guides/README.md) | Layout guides rendered in Blender, attached to the prompts: ${guides.length} |`);
 overview.push('', '- Name each file exactly as listed, e.g. `C01-kicker-turnaround.png`. Alternatives get `-v2`, `-v3`.');
 overview.push('- To add images on GitHub, open the folder and use **Add file → Upload files**. Or attach them in the chat with Claude, who files them.');
@@ -190,8 +204,8 @@ writeFileSync(join(refDir, 'README.md'), overview.join('\n') + '\n');
 }
 for (const s of sections) {
   const lines = [`# ${s.name}`, '', s.blurb, '', 'Save each image here under the name below. Alternatives get `-v2`, `-v3`.', ''];
-  lines.push('| File | Prompt | Batch |', '| --- | --- | --- |');
-  for (const p of prompts.filter(q => q.section === s.id)) lines.push(`| \`${fileName(p)}\` | ${p.id} · ${p.title} | ${p.batch} |`);
+  lines.push('| File | Prompt | Batch | Status |', '| --- | --- | --- | --- |');
+  for (const p of prompts.filter(q => q.section === s.id)) lines.push(`| \`${made[p.id] ? made[p.id].split('/')[1] : fileName(p)}\` | ${p.id} · ${p.title} | ${p.batch} | ${made[p.id] ? 'in repo' : 'to make'} |`);
   lines.push('', `The prompts are in [\`art/reference-prompts\`](../../reference-prompts/README.md#${s.name.toLowerCase().replace(/[^a-z0-9 ]/g, '').replace(/ /g, '-')}).`);
   mkdirSync(join(refDir, s.folder), { recursive: true });
   writeFileSync(join(refDir, s.folder, 'README.md'), lines.join('\n') + '\n');
@@ -217,7 +231,9 @@ const cards = sections.map(section => {
           <div><dt>Batch</dt><dd><span class="badge ${p.batch}">${p.batch === 'first' ? 'First batch' : 'Later'}</span></dd></div>
           <div><dt>Shape</dt><dd>${esc(p.aspect)}</dd></div>
           <div><dt>Attach</dt><dd>${attachList(p)}</dd></div>
+          ${made[p.id] ? '<div><dt>Status</dt><dd><span class="badge made">In repo</span></dd></div>' : ''}
         </dl>
+        ${made[p.id] ? `<figure class="made-image"><img src="reference/${made[p.id]}" alt="${esc(p.id + ' as generated: ' + p.title)}" loading="lazy"><figcaption>${p.id === 'A01' ? 'The approved style keyframe. Attach this first to every other prompt.' : 'The image in the repo.'}</figcaption></figure>` : ''}
         <div class="file">
           <span class="file-label">Save as</span>
           <code class="path"><span class="dir">${esc(folderOf(p))}</span><span class="name">${esc(fileName(p))}</span></code>
@@ -270,7 +286,7 @@ const styleBlocks = toolKeys.map(k => `
         </div>
       </div>`).join('');
 
-const payload = { files: Object.fromEntries(prompts.map(p => [p.id, { name: fileName(p), path: filePath(p) }])) };
+const payload = { files: Object.fromEntries(prompts.map(p => [p.id, { name: fileName(p), path: filePath(p) }])), made: Object.fromEntries(prompts.filter(p => made[p.id]).map(p => [p.id, true])) };
 for (const k of toolKeys) {
   payload[k] = { prompts: Object.fromEntries(prompts.map(p => [p.id, TOOLS[k].full(p)])), styles: {} };
   for (const s of Object.keys(styles)) payload[k].styles[s] = TOOLS[k].styleText(s);
@@ -396,6 +412,10 @@ const html = `<title>Free Kick Classics Prompts</title>
   .badge { font-size: 12px; padding: 0.1rem 0.5rem; border-radius: 999px; border: 1px solid; }
   .badge.first { color: var(--teal); border-color: rgba(76, 198, 181, 0.5); }
   .badge.later { color: var(--muted); border-color: var(--rule); }
+  .badge.made { color: var(--night); background: var(--teal); border-color: var(--teal); }
+  .made-image { margin: 0 0 0.75rem; border-radius: 8px; overflow: hidden; border: 1px solid var(--rule); background: var(--night); }
+  .made-image img { display: block; width: 100%; height: auto; }
+  .made-image figcaption { padding: 0.5rem 0.75rem; font-size: 13px; color: var(--ink-2); }
   .ref { font-family: var(--mono); font-size: 12px; text-decoration: none; border-bottom: 1px solid rgba(234, 185, 95, 0.4); }
   .ref:hover, .ref:focus-visible { border-bottom-color: var(--gold); }
   .then { color: var(--muted); margin: 0 0.35rem; font-size: 12px; }
@@ -502,7 +522,9 @@ const html = `<title>Free Kick Classics Prompts</title>
     <h2 id="how">How to use this sheet</h2>
     <ol class="steps">
       <li><span><b>Save the layout guides below</b> (G01–G05). They fix the pitch markings and camera for every prompt that shows the pitch.</span></li>
-      <li><span><b>Make A01 next</b> in a new chat, with G01 attached. Ask for three or four variations and keep the one you love; it sets the look for everything else.</span></li>
+      ${made.A01
+        ? '<li><span><b>A01 is done.</b> The approved style keyframe is on the A01 card and in the repo; save it, because every other prompt attaches it first.</span></li>'
+        : '<li><span><b>Make A01 next</b> in a new chat, with G01 attached. Ask for three or four variations and keep the one you love; it sets the look for everything else.</span></li>'}
       <li><span><b>Attach exactly what each card lists</b>, in that order: A01 first, then any character sheets, then the layout guide.</span></li>
       <li><span><b>One chat per character.</b> The kicker, keeper and wall each get their own chat, so faces and kits stay the same from sheet to sheet.</span></li>
       <li><span><b>Save each image under the name on its card</b>, like <code>C01-kicker-turnaround.png</code>, and tick “Made it”. Alternatives get <code>-v2</code>, <code>-v3</code>.</span></li>
@@ -574,6 +596,7 @@ const html = `<title>Free Kick Classics Prompts</title>
   var DONE_KEY = 'fkc-prompts-done';
   var TOOL_KEY = 'fkc-prompts-tool';
   var ids = Object.keys(data.chatgpt.prompts);
+  var inRepo = data.made;
   var done = {};
   try { done = JSON.parse(localStorage.getItem(DONE_KEY) || '{}') || {}; } catch (e) { done = {}; }
   var tool = 'chatgpt';
@@ -593,7 +616,7 @@ const html = `<title>Free Kick Classics Prompts</title>
 
   function save() { try { localStorage.setItem(DONE_KEY, JSON.stringify(done)); } catch (e) {} }
   function updateProgress() {
-    var count = ids.filter(function (id) { return done[id]; }).length;
+    var count = ids.filter(function (id) { return done[id] || inRepo[id]; }).length;
     document.getElementById('progress').innerHTML = '<b>' + count + '</b> of ' + ids.length + ' made';
   }
   function flash(card, message) {
@@ -652,7 +675,8 @@ const html = `<title>Free Kick Classics Prompts</title>
   });
   document.querySelectorAll('[data-done]').forEach(function (box) {
     var id = box.getAttribute('data-done');
-    box.checked = !!done[id];
+    box.checked = !!done[id] || !!inRepo[id];
+    if (inRepo[id]) { box.disabled = true; box.parentNode.lastChild.textContent = ' In repo'; }
     box.closest('.card').classList.toggle('is-done', box.checked);
     box.addEventListener('change', function () {
       if (box.checked) done[id] = true; else delete done[id];
@@ -687,4 +711,10 @@ const html = `<title>Free Kick Classics Prompts</title>
 </script>
 `;
 writeFileSync(join(here, 'sheet.html'), html);
+// Images the page shows, for publishing alongside it: published path -> repo path.
+const published = {};
+for (const g of guides) published[`guides/${g.file}.png`] = `${REF_ROOT}/guides/${g.file}.png`;
+for (const p of prompts) if (made[p.id]) published[`reference/${made[p.id]}`] = `${REF_ROOT}/${made[p.id]}`;
+writeFileSync(join(here, 'published-files.json'), JSON.stringify(published, null, 2) + '\n');
+console.log(`${madeCount} of ${prompts.length} images in the repo.`);
 console.log(`Built ${prompts.length} prompts (${firstCount} first batch) for ${toolKeys.map(k => TOOLS[k].name).join(' and ')}: sheet.html, README.md`);

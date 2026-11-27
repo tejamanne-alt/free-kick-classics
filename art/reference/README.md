@@ -4,14 +4,14 @@ Images generated from the prompts in [`art/reference-prompts`](../reference-prom
 
 | Folder | Images |
 | --- | --- |
-| [`style/`](style/README.md) | Start here: 3 |
-| [`characters/`](characters/README.md) | Characters: 7 |
-| [`poses/`](poses/README.md) | Animation poses: 10 |
-| [`props/`](props/README.md) | Ball, goal and pitch: 4 |
-| [`arena/`](arena/README.md) | Arena and cameras: 4 |
-| [`moments/`](moments/README.md) | Moments: 4 |
-| [`textures/`](textures/README.md) | Textures: 4 |
-| [`worlds/`](worlds/README.md) | Eras and Classics: 7 |
+| [`style/`](style/README.md) | Start here: 1 of 3 in repo |
+| [`characters/`](characters/README.md) | Characters: 0 of 7 in repo |
+| [`poses/`](poses/README.md) | Animation poses: 0 of 10 in repo |
+| [`props/`](props/README.md) | Ball, goal and pitch: 0 of 4 in repo |
+| [`arena/`](arena/README.md) | Arena and cameras: 0 of 4 in repo |
+| [`moments/`](moments/README.md) | Moments: 0 of 4 in repo |
+| [`textures/`](textures/README.md) | Textures: 0 of 4 in repo |
+| [`worlds/`](worlds/README.md) | Eras and Classics: 0 of 7 in repo |
 | [`guides/`](guides/README.md) | Layout guides rendered in Blender, attached to the prompts: 6 |
 
 - Name each file exactly as listed, e.g. `C01-kicker-turnaround.png`. Alternatives get `-v2`, `-v3`.
