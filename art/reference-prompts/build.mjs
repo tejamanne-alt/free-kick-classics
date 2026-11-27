@@ -1,14 +1,20 @@
 // Builds the prompt sheet from prompts.json: sheet.html (the interactive page) and README.md (the same prompts as
 // plain text), each with a ChatGPT and a Gemini version of every prompt.
 // Run with `node art/reference-prompts/build.mjs` after editing prompts.json.
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const data = JSON.parse(readFileSync(join(here, 'prompts.json'), 'utf8'));
-const { styles, rules, chatgptAspect, gemini, pitch, sections, prompts } = data;
-const byId = Object.fromEntries(prompts.map(p => [p.id, p]));
+const { styles, rules, chatgptAspect, gemini, pitch, headline, guides, sections, prompts } = data;
+const byId = Object.fromEntries([...prompts, ...guides].map(p => [p.id, p]));
+const isGuide = id => guides.some(g => g.id === id);
+const guideDir = join(here, '..', 'reference', 'guides');
+for (const g of guides) {
+  if (!/^G\d\d$/.test(g.id) || !g.ref || !g.file || !g.about) throw new Error(`Guide ${g.id} needs an id like G01, a ref, a file and an about.`);
+  if (!existsSync(join(guideDir, g.file + '.png'))) throw new Error(`Guide ${g.id}: render ${g.file}.png with art/blender/render_layout_guides.py first.`);
+}
 
 // ---------- Checks ----------
 for (const [i, p] of prompts.entries()) {
@@ -25,7 +31,9 @@ if (prompts.some(p => p.attach.length > 4)) throw new Error('Keep attachments to
 for (const p of prompts) if (!/^[a-z0-9]+(-[a-z0-9]+)*$/.test(p.file || '')) throw new Error(`${p.id}: "file" must be kebab-case`);
 if (new Set(prompts.map(p => p.file)).size !== prompts.length) throw new Error('File names must be unique.');
 if (sections.some(s => !s.folder)) throw new Error('Every section needs a "folder".');
-if (!pitch || !pitch.chatgpt || !pitch.gemini) throw new Error('prompts.json needs a "pitch" block for both tools.');
+if (!pitch || !pitch.chatgpt || !pitch.gemini || !pitch.chatgptGuided || !pitch.geminiGuided) throw new Error('prompts.json needs plain and guided "pitch" blocks for both tools.');
+if (!headline || !headline.chatgpt || !headline.gemini) throw new Error('prompts.json needs a "headline" for both tools.');
+for (const p of prompts) if (p.attach.some(isGuide) && !p.pitch) throw new Error(`${p.id}: attaches a layout guide, so set "pitch": true`);
 for (const p of prompts) if (typeof p.pitch !== 'boolean') throw new Error(`${p.id}: "pitch" must be true or false`);
 
 // ---------- Where the images live in the repo ----------
@@ -47,20 +55,28 @@ function geminiLead(p) {
   return `${shape} Use the reference images attached in this order: ${refs.map((r, i) => `${ORDINALS[i]}, ${r}`).join('; ')}.`;
 }
 const geminiBody = p => p.geminiPrompt || p.prompt;
+const hasGuide = p => p.attach.some(isGuide);
+// Scenes open with a one-line style headline: image models weight the start of a prompt most.
+const headlineFor = (p, tool) => (p.style === 'world' ? headline[tool] + ' ' : '');
+function pitchBlock(p, tool) {
+  if (!p.pitch) return '';
+  const text = hasGuide(p) ? pitch[tool + 'Guided'] : pitch[tool];
+  return text + '\n\n';
+}
 
 const TOOLS = {
   chatgpt: {
     name: 'ChatGPT',
-    visible: p => [`${chatgptLead(p)} ${p.prompt}`],
-    full: p => `${chatgptLead(p)} ${p.prompt}\n\n${p.pitch ? pitch.chatgpt + '\n\n' : ''}${styles[p.style].text}\n\n${rules}`,
+    visible: p => [`${chatgptLead(p)} ${headlineFor(p, 'chatgpt')}${p.prompt}`],
+    full: p => `${chatgptLead(p)} ${headlineFor(p, 'chatgpt')}${p.prompt}\n\n${pitchBlock(p, 'chatgpt')}${styles[p.style].text}\n\n${rules}`,
     styleName: k => styles[k].name,
     styleText: k => styles[k].text,
     rules,
   },
   gemini: {
     name: 'Gemini',
-    visible: p => [geminiLead(p), geminiBody(p)],
-    full: p => `${geminiLead(p)}\n\n${geminiBody(p)}\n\n${p.pitch ? pitch.gemini + '\n\n' : ''}${gemini.styles[p.style]}\n\n${gemini.rules}`,
+    visible: p => [geminiLead(p), headlineFor(p, 'gemini') + geminiBody(p)],
+    full: p => `${geminiLead(p)}\n\n${headlineFor(p, 'gemini')}${geminiBody(p)}\n\n${pitchBlock(p, 'gemini')}${gemini.styles[p.style]}\n\n${gemini.rules}`,
     styleName: k => styles[k].name,
     styleText: k => gemini.styles[k],
     rules: gemini.rules,
@@ -84,7 +100,7 @@ const notes = {
 };
 
 const scenes = [
-  ['The render setup', 'Realistic lighting and materials for every ground, with Line Art ink lines, halftone shading and speed lines layered on the players, ball and action, and a subtle print finish per era.'],
+  ['The comic render setup', 'One look for every scene, over realistic geometry and textures: Line Art ink outlines and hatching, halftone and Ben-Day shading, off-register colour instead of blur, a paper-print texture, and a print style per era.'],
   ['The harbour stadium', 'The first playable ground, at golden hour and under floodlights, with the pitch and its markings built to regulation dimensions: stands, crowd, dugouts, boards, sky, sea and lighting, plus the phone cameras for kicker, keeper and the split-panel stare-down.'],
   ['The free-kick set piece', 'The same ground with a wall at the 9.15 m spray line and the referee.'],
   ['Two more eras', 'The 1970s old ground on a winter afternoon and the 1990s floodlit rain, each lit and graded as its own ground.'],
@@ -107,9 +123,14 @@ md.push(`There are ${prompts.length} prompts, each in a ChatGPT and a Gemini ver
 md.push('Edit `prompts.json`, then run `node art/reference-prompts/build.mjs` to rebuild this file and `sheet.html`.', '');
 md.push('## How to use them', '');
 md.push('1. Generate **A01** first, in a new chat. Make three or four variations and keep the one you like best.');
-md.push('2. For every later prompt, attach exactly the images listed under **Attach**, in that order.');
+md.push('2. For every prompt, attach exactly the images listed under **Attach**, in that order. IDs starting with **G** are the layout guides below.');
 md.push('3. Give each character its own chat, so the face and kit stay the same across that character\'s sheets.');
 md.push('4. Save each image under the name given below, e.g. `C01-kicker-turnaround.png`. Alternatives get `-v2`, `-v3`.', '');
+md.push('## Layout guides', '');
+md.push('Image models can\'t measure, so prompts that show the pitch come with a layout guide: regulation markings, the goal and the players\' positions, rendered in Blender from the exact camera. The model copies the layout and takes the look from the prompt. Attach the guide where a prompt lists it.', '');
+md.push('| Guide | File | Shape | Used by |', '| --- | --- | --- | --- |');
+for (const g of guides) md.push(`| ${g.id} · ${g.title} | \`${REF_ROOT}/guides/${g.file}.png\` | ${g.aspect} | ${prompts.filter(p => p.attach.includes(g.id)).map(p => p.id).join(', ')} |`);
+md.push('', 'Re-render them with `xvfb-run -a blender -b --python art/blender/render_layout_guides.py -- art/reference/guides`.', '');
 md.push('## Where the files go', '');
 md.push(`Every image has a fixed place under \`${REF_ROOT}/\`, one folder per section:`, '');
 md.push('| Folder | What goes there |', '| --- | --- |');
@@ -153,12 +174,20 @@ const overview = ['# Reference images', ''];
 overview.push('Images generated from the prompts in [`art/reference-prompts`](../reference-prompts/README.md), used as references for the Blender scenes and animations. Each prompt has a fixed file name and folder; the prompt sheet shows both, with copy buttons.', '');
 overview.push('| Folder | Images |', '| --- | --- |');
 for (const s of sections) overview.push(`| [\`${s.folder}/\`](${s.folder}/README.md) | ${s.name}: ${prompts.filter(p => p.section === s.id).length} |`);
+overview.push(`| [\`guides/\`](guides/README.md) | Layout guides rendered in Blender, attached to the prompts: ${guides.length} |`);
 overview.push('', '- Name each file exactly as listed, e.g. `C01-kicker-turnaround.png`. Alternatives get `-v2`, `-v3`.');
 overview.push('- To add images on GitHub, open the folder and use **Add file → Upload files**. Or attach them in the chat with Claude, who files them.');
 overview.push('- Keep whatever extension the download has (`.png`, `.jpg` or `.webp`).');
 overview.push('', 'This folder is generated by `node art/reference-prompts/build.mjs`; edit the prompts there.');
 mkdirSync(refDir, { recursive: true });
 writeFileSync(join(refDir, 'README.md'), overview.join('\n') + '\n');
+{
+  const lines = ['# Layout guides', '', 'Rendered in Blender by `art/blender/render_layout_guides.py`: regulation markings, the goal and the players\' positions from each game camera, in flat placeholder colours. Attach them to the prompts that list them so image models copy the layout exactly.', ''];
+  lines.push('| File | Guide | Shape | Used by |', '| --- | --- | --- | --- |');
+  for (const g of guides) lines.push(`| \`${g.file}.png\` | ${g.id} · ${g.title}: ${g.about} | ${g.aspect} | ${prompts.filter(p => p.attach.includes(g.id)).map(p => p.id).join(', ')} |`);
+  mkdirSync(guideDir, { recursive: true });
+  writeFileSync(join(guideDir, 'README.md'), lines.join('\n') + '\n');
+}
 for (const s of sections) {
   const lines = [`# ${s.name}`, '', s.blurb, '', 'Save each image here under the name below. Alternatives get `-v2`, `-v3`.', ''];
   lines.push('| File | Prompt | Batch |', '| --- | --- | --- |');
@@ -175,7 +204,7 @@ const toolSwitch = id => `
       </div>`;
 const sectionNav = sections.map(s => `<button class="chip" type="button" data-filter="${s.id}">${esc(s.name)}</button>`).join('');
 const attachList = p => p.attach.length
-  ? p.attach.map(a => `<a class="ref" href="#${a}">${a}</a>`).join('<span class="then">then</span>')
+  ? p.attach.map(a => `<a class="ref${isGuide(a) ? ' guide-ref' : ''}" href="#${isGuide(a) ? 'guide-' + a : a}">${a}</a>`).join('<span class="then">then</span>')
   : '<span class="none">Nothing</span>';
 const cards = sections.map(section => {
   const items = prompts.filter(p => p.section === section.id).map(p => `
@@ -199,7 +228,7 @@ const cards = sections.map(section => {
         </div>
         <p class="builds"><span>I'll build</span>${esc(p.builds)}</p>
         ${toolKeys.map(k => `<div class="prompt only-${k}">${TOOLS[k].visible(p).map(t => `<p>${esc(t)}</p>`).join('')}</div>`).join('\n        ')}
-        <p class="appended">Copies with the ${esc(styles[p.style].name.toLowerCase())}${p.pitch ? ', the pitch markings' : ''} and the originality rules for <span class="only-chatgpt">ChatGPT</span><span class="only-gemini">Gemini</span>.</p>
+        <p class="appended">Copies with the ${esc(styles[p.style].name.toLowerCase())}${p.pitch ? (hasGuide(p) ? ', the pitch markings (copied from the layout guide)' : ', the pitch markings') : ''} and the originality rules for <span class="only-chatgpt">ChatGPT</span><span class="only-gemini">Gemini</span>.</p>
         ${p.tip ? `<p class="tip"><span>Tip</span>${esc(p.tip)}</p>` : ''}
         <div class="actions">
           <button class="copy" type="button" data-copy="${p.id}">Copy <span class="only-chatgpt">ChatGPT</span><span class="only-gemini">Gemini</span> prompt</button>
@@ -230,6 +259,11 @@ const styleBlocks = toolKeys.map(k => `
           <p>${esc(pitch[k])}</p>
         </div>
         <div class="block">
+          <div class="block-head"><h3>${esc(pitch.guidedName)}</h3><span>Prompts with a G guide attached</span>
+            <button class="copy small" type="button" data-copy-style="${k}:pitchGuided">Copy</button></div>
+          <p>${esc(pitch[k + 'Guided'])}</p>
+        </div>
+        <div class="block">
           <div class="block-head"><h3>Originality rules</h3><span>Every prompt</span>
             <button class="copy small" type="button" data-copy-style="${k}:rules">Copy</button></div>
           <p>${esc(TOOLS[k].rules)}</p>
@@ -242,6 +276,7 @@ for (const k of toolKeys) {
   for (const s of Object.keys(styles)) payload[k].styles[s] = TOOLS[k].styleText(s);
   payload[k].styles.rules = TOOLS[k].rules;
   payload[k].styles.pitch = pitch[k];
+  payload[k].styles.pitchGuided = pitch[k + 'Guided'];
 }
 
 const html = `<title>Free Kick Classics Prompts</title>
@@ -371,6 +406,19 @@ const html = `<title>Free Kick Classics Prompts</title>
   .path .dir { color: var(--muted); }
   .path .name { color: var(--ink); }
   .file-actions { display: inline-flex; gap: 0.4rem; flex: none; }
+  .guides { margin: 0 0 1.75rem; }
+  .guides h3 { font-size: 0.95rem; font-weight: 600; margin: 0 0 0.4rem; }
+  .guides > p { color: var(--ink-2); margin: 0 0 0.9rem; max-width: 70ch; }
+  .guide-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr)); gap: 0.9rem; }
+  .guide { margin: 0; background: var(--deep); border: 1px solid var(--rule); border-radius: 10px; overflow: hidden; scroll-margin-top: 7rem; }
+  .guide img { display: block; width: 100%; height: auto; background: #d6d8dc; }
+  .guide.portrait img { max-height: 22rem; object-fit: contain; }
+  .guide figcaption { display: grid; gap: 0.2rem; padding: 0.65rem 0.8rem 0.8rem; font-size: 13px; color: var(--ink-2); }
+  .guide figcaption b { color: var(--ink); font-weight: 600; }
+  .guide .about { line-height: 1.45; }
+  .guide .used { color: var(--muted); font-size: 12px; }
+  .guide code { font-size: 12px; overflow-wrap: anywhere; }
+  .ref.guide-ref { color: var(--teal); border-bottom-color: rgba(76, 198, 181, 0.45); }
   .where { margin: 0 0 1.25rem; }
   .where h3 { font-size: 0.95rem; font-weight: 600; margin: 0 0 0.4rem; }
   .where p { color: var(--ink-2); margin: 0 0 0.75rem; max-width: 70ch; }
@@ -434,30 +482,41 @@ const html = `<title>Free Kick Classics Prompts</title>
 <main>
   <section class="intro wrap" aria-labelledby="look">
     <h2 id="look">The look</h2>
-    <p>Real football grounds with comic-book heroes in them. The stadiums, turf, crowds and light are realistic, down to regulation pitch markings; the players, the ball and the action carry the comic treatment of ink lines, halftone dots, speed lines and smears. The goal, the ball and the two players stay crisp, because the game is still about reading your friend.</p>
+    <p>Believable football grounds drawn as a comic book come to life. The architecture, turf, crowds and markings are true to life, down to regulation lines copied from layout guides; every surface is drawn with ink outlines, halftone dots and off-register colour. The goal, the ball and the two players stay boldest, because the game is still about reading your friend.</p>
     <ul class="pillars">
-      <li><strong>Real world, comic heroes</strong><span>The grounds are realistic, with physically accurate light and weather. The players, ball and action get bold ink lines, halftone, speed lines and smears, and move on twos, so they pop.</span></li>
-      <li><strong>Lines you could referee by</strong><span>Regulation markings in every shot: the 16.5 m box, the 5.5 m six-yard box, one spot at 11 m, the 9.15 m arc, straight unbroken lines and a clean run-off to the boards.</span></li>
+      <li><strong>A comic come to life</strong><span>The whole frame is drawn: ink outlines and hatching, halftone and Ben-Day dots, off-register colour instead of blur, graphic flares, speed lines and smears. Characters move on twos.</span></li>
+      <li><strong>Lines you could referee by</strong><span>Markings copied from layout guides rendered at regulation size from each camera, painted like real lines on natural grass, with worn patches round the spot.</span></li>
       <li><strong>Places worth the trip</strong><span>A harbour at sunset, an old terraced ground, a clifftop, snow, a monsoon final, the mountains, each with real match-day detail: boards, dugouts, stewards, photographers.</span></li>
-      <li><strong>Every era, its own finish</strong><span>A subtle print finish over the real world: warm newsprint for the 1970s, glossy heavy inks for the 1990s, a crisp graphic-novel edge for today.</span></li>
+      <li><strong>Every era, its own print</strong><span>The 1970s drawn as yellowed newsprint, the 1990s as a glossy, heavily inked comic, the modern game as a crisp graphic novel.</span></li>
       <li><strong>Physics you can read</strong><span>Replays draw the ball's real flight as a bold inked trajectory with speed lines: the curl, dip or knuckle wobble from the flight model.</span></li>
       <li><strong>Faces carry the duel</strong><span>The stare-down plays out in split panels: the bluff, the read, the relief. Ball, frame and players always hold the strongest contrast.</span></li>
     </ul>
     <div class="eras" role="list">
-      <div class="era seventies" role="listitem"><span class="tag">Heavy leather ball</span><h3>1970s</h3><p>The old ground in winter sun, with a warm newsprint finish.</p></div>
-      <div class="era nineties" role="listitem"><span class="tag">Big-bending glossy ball</span><h3>1990s</h3><p>Floodlit rain and steam off the crowd, with a glossy 90s finish.</p></div>
-      <div class="era modern" role="listitem"><span class="tag">Light knuckling ball</span><h3>Modern</h3><p>The harbour stadium at golden hour, with a crisp graphic-novel edge. First to build.</p></div>
+      <div class="era seventies" role="listitem"><span class="tag">Heavy leather ball</span><h3>1970s</h3><p>Yellowed newsprint: coarse dots, off-register colour, the old ground in winter sun.</p></div>
+      <div class="era nineties" role="listitem"><span class="tag">Big-bending glossy ball</span><h3>1990s</h3><p>Glossy 90s comic: heavy inks, floodlit rain, steam off the crowd.</p></div>
+      <div class="era modern" role="listitem"><span class="tag">Light knuckling ball</span><h3>Modern</h3><p>Crisp graphic novel: the harbour stadium at golden hour. First to build.</p></div>
     </div>
   </section>
 
   <section class="intro wrap" aria-labelledby="how">
     <h2 id="how">How to use this sheet</h2>
     <ol class="steps">
-      <li><span><b>Make A01 first</b> in a new chat. Ask for three or four variations and keep the one you love; it sets the look for everything else.</span></li>
-      <li><span><b>Attach exactly what each card lists</b>, in that order. A01 always comes first.</span></li>
+      <li><span><b>Save the layout guides below</b> (G01–G05). They fix the pitch markings and camera for every prompt that shows the pitch.</span></li>
+      <li><span><b>Make A01 next</b> in a new chat, with G01 attached. Ask for three or four variations and keep the one you love; it sets the look for everything else.</span></li>
+      <li><span><b>Attach exactly what each card lists</b>, in that order: A01 first, then any character sheets, then the layout guide.</span></li>
       <li><span><b>One chat per character.</b> The kicker, keeper and wall each get their own chat, so faces and kits stay the same from sheet to sheet.</span></li>
       <li><span><b>Save each image under the name on its card</b>, like <code>C01-kicker-turnaround.png</code>, and tick “Made it”. Alternatives get <code>-v2</code>, <code>-v3</code>.</span></li>
     </ol>
+    <div class="guides" id="guides">
+      <h3>Layout guides</h3>
+      <p>Image models can't measure, so a list of distances doesn't get the markings right. These guides are rendered in Blender at regulation dimensions from each game camera: the goal, every line, and grey figures where the players stand. The model copies the layout and takes the look from the prompt. Long-press or right-click to save them, or take them from <code>${REF_ROOT}/guides/</code> in the repo.</p>
+      <div class="guide-grid">${guides.map(g => `
+        <figure class="guide ${g.aspect.startsWith('Portrait') ? 'portrait' : ''}" id="guide-${g.id}">
+          <img src="guides/${g.file}.png" alt="${esc(g.id + ' layout guide: ' + g.about)}" loading="lazy">
+          <figcaption><span class="pid">${g.id}</span> <b>${esc(g.title)}</b><span class="about">${esc(g.about)}</span><span class="used">Used by ${prompts.filter(p => p.attach.includes(g.id)).map(p => p.id).join(', ')}</span><code>${esc(g.file)}.png</code></figcaption>
+        </figure>`).join('')}
+      </div>
+    </div>
     <div class="where">
       <h3>Where the files go</h3>
       <p>Every image has a fixed place in the repo under <code>${REF_ROOT}/</code>, one folder per section. Each card shows its full path.</p>

@@ -12,6 +12,7 @@ Images generated from the prompts in [`art/reference-prompts`](../reference-prom
 | [`moments/`](moments/README.md) | Moments: 4 |
 | [`textures/`](textures/README.md) | Textures: 4 |
 | [`worlds/`](worlds/README.md) | Eras and Classics: 7 |
+| [`guides/`](guides/README.md) | Layout guides rendered in Blender, attached to the prompts: 6 |
 
 - Name each file exactly as listed, e.g. `C01-kicker-turnaround.png`. Alternatives get `-v2`, `-v3`.
 - To add images on GitHub, open the folder and use **Add file → Upload files**. Or attach them in the chat with Claude, who files them.
