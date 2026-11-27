@@ -1,6 +1,6 @@
 # Moments
 
-Frames that direct the animation, lighting and effects at the beats that matter: the stare-down, the goal, the save.
+Frames that direct the animation, lighting and effects at the beats that matter: the stare-down, the goal, the save, the replay.
 
 Save each image here under the name below. Alternatives get `-v2`, `-v3`.
 

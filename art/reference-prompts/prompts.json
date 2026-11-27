@@ -3,17 +3,17 @@
     "world": {
       "name": "World style",
       "use": "Scenes, moments and boards",
-      "text": "Art direction: Free Kick Classics, an original football game about a single dead-ball moment stretched into a dream. Stylized 3D with hand-painted textures, like a frame from a painterly animated film. Immersive, escapist and slightly surreal: the world around the pitch can bend, glow and dissolve, but the football always reads clearly, because the goal frame, the ball and the players carry the strongest contrast and the cleanest shapes. Soft volumetric light, low atmospheric haze, visible brushwork in skies and crowds, luminous accents. Graceful, slightly elongated character proportions with expressive faces. Cinematic composition with depth of field."
+      "text": "Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Rich, natural colour grading. The goal frame, the ball and the players are always the sharpest, clearest elements in the frame. Cinematic composition with a shallow depth of field."
     },
     "sheet": {
       "name": "Model sheet style",
       "use": "Characters, poses and props",
-      "text": "This is a reference sheet for 3D modelling and animation in Blender. Stylized 3D look with hand-painted textures, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat studio lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels."
+      "text": "This is a reference sheet for 3D modelling and animation in Blender. Realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials, matching the attached style reference. Orthographic views with no perspective distortion: every view at the same scale and standing on one shared ground line. Even, flat studio lighting with no cast shadows. Plain light grey background (#D8D8D8) with nothing else in frame. Do not draw numbers, arrows or labels."
     },
     "texture": {
       "name": "Texture style",
       "use": "Tileable surfaces",
-      "text": "This is a texture for a 3D game. View it straight down, with perfectly flat, even lighting and no shadows or highlights. It must tile seamlessly on all four edges and fill the whole frame edge to edge. Hand-painted, stylized look that matches the attached style reference."
+      "text": "This is a texture for a 3D game. Photorealistic, viewed straight down, with perfectly flat, even lighting and no shadows or highlights. It must tile seamlessly on all four edges and fill the whole frame edge to edge, matching the attached style reference."
     }
   },
   "rules": "Original design: not based on any real footballer, club, national team, stadium, brand or video game. No text, letters, numbers, logos, crests, sponsor marks or watermarks anywhere in the image.",
@@ -24,9 +24,9 @@
   },
   "gemini": {
     "styles": {
-      "world": "Art direction: Free Kick Classics, an original football game about a single dead-ball moment stretched into a dream. Render it as stylized 3D with hand-painted textures, like a frame from a painterly animated film. The mood is immersive, escapist and gently surreal: the world around the pitch bends, glows and dissolves into light, while the goal frame, the ball and the players stay sharp, high-contrast and instantly readable. Light it with soft volumetric beams and low atmospheric haze, show visible brushwork in the sky and the crowd, and add luminous accents. Give the characters graceful, slightly elongated proportions and expressive faces. Frame it cinematically, with a shallow depth of field.",
-      "sheet": "This is a reference sheet for 3D modelling and animation in Blender. Render it as stylized 3D with hand-painted textures, in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front, as in a softbox studio, so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.",
-      "texture": "This is a texture for a 3D game. Show the surface from directly above, evenly and flatly lit, so it reads as pure colour and pattern. Make it seamless, so the left edge flows into the right and the top into the bottom, and fill the whole frame edge to edge. Hand-painted and stylized, in the look of the style keyframe."
+      "world": "Art direction: Free Kick Classics, an original football game set in beautiful, believable football grounds. Render it with cinematic realism, like a frame from a beautifully shot sports film or a premium sports game: believable stadium architecture, natural turf, real-looking crowds and kits, physically based materials. The sense of escape comes from place and light: golden hours, floodlights cutting through haze, rain and snow catching the light, drifting flare smoke and long shadows. Grade the colour richly and naturally. Keep the goal frame, the ball and the players the sharpest, clearest elements in the frame, and compose cinematically with a shallow depth of field.",
+      "sheet": "This is a reference sheet for 3D modelling and animation in Blender. Render it with a realistic 3D look, like a character or prop sheet for a premium sports game, with physically based materials in the look of the style keyframe. Draw every view flat and orthographic, like a technical drawing, at the same scale and standing on one shared ground line. Light it evenly from the front, as in a softbox studio, so every form reads clearly. Use a plain light grey background (#D8D8D8). The sheet holds only the drawings themselves.",
+      "texture": "This is a texture for a 3D game. Make it photorealistic and show the surface from directly above, evenly and flatly lit, so it reads as pure colour and detail. Make it seamless, so the left edge flows into the right and the top into the bottom, and fill the whole frame edge to edge, in the look of the style keyframe."
     },
     "rules": "Everything here is an original design invented for this game: the people, kits, ball, stadium and crowd are all new. Kits are plain fabric with abstract patterns, the ball carries only its panel pattern, and boards and signs are blank or abstract. Keep the whole image free of text, numbers, logos and watermarks.",
     "aspect": {
@@ -63,13 +63,13 @@
     {
       "id": "arena",
       "name": "Arena and cameras",
-      "blurb": "The first playable world and the camera framings the shootout uses on a phone.",
+      "blurb": "The first playable ground, the harbour stadium, and the camera framings the shootout uses on a phone.",
       "folder": "arena"
     },
     {
       "id": "moments",
       "name": "Moments",
-      "blurb": "Frames that direct the animation, lighting and effects at the beats that matter: the stare-down, the goal, the save.",
+      "blurb": "Frames that direct the animation, lighting and effects at the beats that matter: the stare-down, the goal, the save, the replay.",
       "folder": "moments"
     },
     {
@@ -81,7 +81,7 @@
     {
       "id": "worlds",
       "name": "Eras and Classics",
-      "blurb": "The other worlds: the two remaining eras and the Classics scenario cards. These come after the first batch.",
+      "blurb": "The other grounds: the two remaining eras and the Classics scenario cards. These come after the first batch.",
       "folder": "worlds"
     }
   ],
@@ -97,7 +97,7 @@
       "file": "style-keyframe",
       "builds": "The master look: lighting, colour grade, fog and sky for every scene.",
       "tip": "Generate three or four variations and keep the one you love. Attach it to every prompt after this one.",
-      "prompt": "Cinematic wide frame of a penalty kick at night in a dreamlike arena. In the foreground a kicker in a deep teal kit stands behind the ball on the penalty spot, seen from behind and slightly to one side. On the goal line the keeper, in a warm amber kit, crouches with his eyes locked on the kicker. The white goal frame glows faintly. Around them the stadium rises into towering tiers of softly glowing crowd silhouettes that blur upward into an indigo sky full of green and violet aurora. A thin ribbon of gold light curls from the ball toward the top corner of the goal, as if showing the shot the kicker is imagining. Low mist drifts across grass painted with rich mowing stripes. The mood is a held breath just before the strike.",
+      "prompt": "Cinematic wide frame of a penalty kick at golden hour in an original modern football stadium built on a harbourfront. In the foreground a kicker in a deep teal kit stands behind the ball on the penalty spot, seen from behind and slightly to one side. On the goal line the keeper, in a warm amber kit, crouches with his eyes locked on the kicker. Behind the goal rises a steep two-tier stand packed with fans in scarves. The far end of the stadium is open, framing the sea and a low sun that throws long shadows across freshly mown, striped turf. The floodlights are just flickering on, light haze hangs over the pitch, and a few strands of coloured flare smoke drift from the stand. The mood is a held breath just before the strike.",
       "ref": "the style keyframe"
     },
     {
@@ -113,7 +113,7 @@
       "file": "palette-materials",
       "builds": "The Blender material library and the colour values every scene shares.",
       "tip": "",
-      "prompt": "A tidy art-direction board on a dark indigo background, using the colours of the attached keyframe. Across the top, a row of eight plain colour swatches: night indigo, violet, teal, aurora green, warm gold, amber, chalk white and deep pitch green. Below them, six glossy material spheres in a row showing how surfaces should look: painterly striped grass, stitched ball leather, smooth modern ball synthetic, the soft glow of the crowd, goal-net mesh with a faint glow on its knots, and kit fabric with a subtle woven texture."
+      "prompt": "A tidy art-direction board on a dark charcoal background, using the colours of the attached keyframe. Across the top, a row of eight plain colour swatches: sunset gold, harbour blue, deep pitch green, chalk-line white, teal, amber, weathered concrete grey and floodlight white. Below them, six material spheres in a row showing how surfaces should look: striped natural turf, stitched ball leather, smooth modern ball synthetic, kit fabric with a woven texture, goal-net nylon, and weathered stadium concrete."
     },
     {
       "id": "A03",
@@ -124,12 +124,12 @@
       "attach": [
         "A01"
       ],
-      "title": "Light language: four ball flights",
-      "file": "ball-flight-trails",
-      "builds": "The ball-trail effects. In Blender the ribbons follow real flight paths exported from the game's own physics.",
+      "title": "Replay tracers: four ball flights",
+      "file": "replay-tracers",
+      "builds": "The replay tracer effect. In Blender the tracers follow real flight paths exported from the game's own physics.",
       "tip": "",
-      "prompt": "Four panels side by side, each showing a football's flight as a ribbon of light against a dark painterly sky, seen from the side. Panel one: a smooth bending curve for a curling shot, in gold. Panel two: an arc that dips sharply at the end for a topspin shot, in violet. Panel three: a nearly straight path that wobbles and shimmers only in its last third, for a knuckleball, in cyan. Panel four: a high, gentle lob for a chip, in soft white. In every panel the ribbon is brightest at the ball and fades into sparkling dust behind it.",
-      "ref": "the light-trail board"
+      "prompt": "Four panels side by side, each a side-on television replay of a football's flight in a realistic stadium, with the path drawn as a clean, thin tracer line like a broadcast shot tracer. Panel one: a smooth bending curve for a curling shot. Panel two: an arc that dips sharply at the end for a topspin shot. Panel three: a nearly straight path that wobbles only in its last third, for a knuckleball. Panel four: a high, gentle lob for a chip. Each tracer is crisp and bright near the ball and fades softly behind it.",
+      "ref": "the replay tracer board"
     },
     {
       "id": "C01",
@@ -144,7 +144,7 @@
       "file": "kicker-turnaround",
       "builds": "The kicker model, rigged as a humanoid so animations can be shared and exported to Unity.",
       "tip": "If the views come back with perspective or shadows, reply in the same chat: “Same sheet, but flat orthographic views, evenly lit, every view the same height.”",
-      "prompt": "Character turnaround model sheet of the kicker from the attached keyframe: an original young footballer with an athletic, slightly elongated stylized build, short curly dark hair, warm brown skin and determined eyes. Deep teal kit with a subtle gold wave pattern across the shirt, white shorts, teal socks and gold boots. Three full-body views side by side: front, left side and back. A-pose, with arms angled 45 degrees down and feet shoulder-width apart.",
+      "prompt": "Character turnaround model sheet of the kicker from the attached keyframe: an original young professional footballer with an athletic build and realistic proportions, short curly dark hair, warm brown skin and determined eyes. Deep teal kit with a subtle tonal pattern across the shirt, white shorts, teal socks and gold boots. Three full-body views side by side: front, left side and back. A-pose, with arms angled 45 degrees down and feet shoulder-width apart.",
       "ref": "the kicker turnaround"
     },
     {
@@ -177,7 +177,7 @@
       "file": "keeper-turnaround",
       "builds": "The keeper model, on the same humanoid rig as the kicker.",
       "tip": "Start a new chat for the keeper so the kicker's features don't bleed into him.",
-      "prompt": "Character turnaround model sheet of the keeper from the attached keyframe: an original goalkeeper, tall with long arms and large hands, stylized proportions, shaved head with a short beard, light tan skin and calm, intense eyes. Long-sleeved warm amber goalkeeper kit with darker amber elbow pads and a faint geometric pattern, black shorts, amber socks, and chunky gloves whose fingertips glow softly. Three full-body views side by side: front, left side and back. A-pose, with arms angled 45 degrees down and feet shoulder-width apart.",
+      "prompt": "Character turnaround model sheet of the keeper from the attached keyframe: an original goalkeeper, tall with long arms and large hands, realistic athletic proportions, shaved head with a short beard, light tan skin and calm, intense eyes. Long-sleeved warm amber goalkeeper kit with darker amber elbow padding and a subtle tonal pattern, black shorts, amber socks, and well-worn goalkeeper gloves. Three full-body views side by side: front, left side and back. A-pose, with arms angled 45 degrees down and feet shoulder-width apart.",
       "ref": "the keeper turnaround"
     },
     {
@@ -243,7 +243,7 @@
       "file": "referee",
       "builds": "The referee who sprays the 9.15 m line and pushes the wall back.",
       "tip": "",
-      "prompt": "Character turnaround model sheet of an original referee with a calm, theatrical presence, like a conductor: night-black kit with luminous gold piping, a whistle on a cord, and a can of vanishing spray in one hand. Three full-body views side by side: front, left side and back, in an A-pose."
+      "prompt": "Character turnaround model sheet of an original referee with a calm, authoritative presence: a black kit with subtle gold trim, a whistle on a cord, and a can of vanishing spray on his belt. Three full-body views side by side: front, left side and back, in an A-pose."
     },
     {
       "id": "P01",
@@ -419,7 +419,7 @@
       "file": "era-balls",
       "builds": "The three balls, each paired with its era's physics in the game.",
       "tip": "",
-      "prompt": "Orthographic reference of three original footballs in one row, each shown from the front and from the side. A 1970s ball of hand-stitched brown leather in the classic 32-panel pattern of hexagons and pentagons, slightly worn and scuffed. A 1990s glossy white ball with bold original curved-triangle graphics in black and gold. A modern lightweight ball with smooth bonded panels and an original iridescent teal and violet swirl pattern."
+      "prompt": "Orthographic reference of three original footballs in one row, each shown from the front and from the side. A 1970s ball of hand-stitched brown leather in the classic 32-panel pattern of hexagons and pentagons, slightly worn and scuffed. A 1990s glossy white ball with bold original curved-triangle graphics in black and gold. A modern lightweight ball with smooth bonded panels and an original pattern of sweeping teal and gold strokes."
     },
     {
       "id": "B02",
@@ -432,9 +432,9 @@
       ],
       "title": "Goal frame and net",
       "file": "goal-net",
-      "builds": "The goal to real dimensions, with a net that ripples and glows on a goal.",
+      "builds": "The goal to real dimensions, with a net that ripples and bulges on a goal.",
       "tip": "",
-      "prompt": "Orthographic reference of a full-size football goal in the attached style, front view and side view next to each other: slim, rounded white posts and crossbar, a deep net held out by thin back supports, and net mesh that glows faintly where light catches the knots. Add a close-up inset of the net knots in the corner.",
+      "prompt": "Orthographic reference of a full-size football goal, front view and side view next to each other: slim, rounded white posts and crossbar, a deep net held out by thin back supports, and realistic nylon net mesh. Add a close-up inset of the net knots in the corner.",
       "ref": "the goal reference"
     },
     {
@@ -450,7 +450,7 @@
       "file": "penalty-area",
       "builds": "Line markings, the penalty spot, the spray line and the corner flag.",
       "tip": "",
-      "prompt": "Overhead view of the penalty area of a football pitch in the attached style: crisp painted white lines, the penalty spot, a curved line of white vanishing spray on the grass, and, beside the frame, a tall corner flag shown from the side."
+      "prompt": "Overhead view of the penalty area of a real football pitch: crisp painted white lines, the penalty spot, a curved line of white vanishing spray on the grass, and, beside the frame, a tall corner flag shown from the side."
     },
     {
       "id": "B04",
@@ -465,7 +465,7 @@
       "file": "floodlights",
       "builds": "One floodlight design per era.",
       "tip": "",
-      "prompt": "Three original floodlight designs side by side, all seen from the front: a 1970s lattice steel tower topped with round lamps, a 1990s angular chrome tower with rectangular lamp banks, and a modern slender arch that is itself a line of light."
+      "prompt": "Three original stadium floodlight designs side by side, all seen from the front: a 1970s lattice steel pylon topped with a dense grid of lamps, a 1990s angular tower with rectangular lamp banks, and a modern floodlight ring set into the edge of a stadium roof."
     },
     {
       "id": "W01",
@@ -476,12 +476,12 @@
       "attach": [
         "A01"
       ],
-      "title": "The dream arena from above",
-      "file": "arena-aerial",
-      "builds": "The layout and scale of the first playable arena.",
+      "title": "The harbour stadium from above",
+      "file": "stadium-aerial",
+      "builds": "The layout and scale of the first playable ground.",
       "tip": "",
-      "prompt": "Aerial three-quarter view of the dream arena from the attached keyframe at night. The pitch floats on a still, dark lake that mirrors the sky, ringed by towering, gently impossible curved stands whose crowd glows like a sea of tiny warm lights. Slender arches of light stand where floodlights would be. The aurora above washes everything in green and violet. One end of the pitch, with its goal, is in the foreground.",
-      "ref": "the arena overview"
+      "prompt": "Aerial three-quarter view of the harbourfront stadium from the attached keyframe at golden hour: a modern bowl with a sweeping translucent roof, three closed sides and one open end looking out over a harbour with moored fishing boats, a lighthouse on the breakwater, and the sun setting over the sea. Old brick warehouses and narrow streets surround the stadium, with fans streaming in. One end of the pitch, with its goal, is in the foreground.",
+      "ref": "the stadium overview"
     },
     {
       "id": "W02",
@@ -497,7 +497,7 @@
       "file": "camera-kicker",
       "builds": "The main kicker camera, framed for a phone.",
       "tip": "",
-      "prompt": "The game camera's view from just behind and above the ball on the penalty spot, looking at the goal in the attached arena. The keeper is set on his line, and the glowing stands rise behind the goal into the aurora sky. Framed for a phone held upright: the goal fills the upper half, and the ball sits in the lower third with clear space around it."
+      "prompt": "The game camera's view from just behind and above the ball on the penalty spot, looking at the goal in the attached stadium. The keeper is set on his line, the steep stand behind the goal is packed with fans and scarves, and the evening sky glows above the roof. Framed for a phone held upright: the goal fills the upper half, and the ball sits in the lower third with clear space around it."
     },
     {
       "id": "W03",
@@ -513,7 +513,7 @@
       "file": "camera-keeper",
       "builds": "The keeper camera, framed for a phone.",
       "tip": "",
-      "prompt": "The keeper's view from just in front of the goal line at eye height, looking out at the kicker from the attached keyframe standing behind the ball 11 metres away. The glowing crowd and the aurora sky fill the background. Framed for a phone held upright, with the kicker small and central and the goal posts just out of frame on either side."
+      "prompt": "The keeper's view from just in front of the goal line at eye height, looking out at the kicker from the attached keyframe standing behind the ball 11 metres away. Behind the kicker, the open end of the stadium frames the harbour and the setting sun. Framed for a phone held upright, with the kicker small and central and the goal posts just out of frame on either side."
     },
     {
       "id": "W04",
@@ -528,7 +528,7 @@
       "file": "stands-crowd",
       "builds": "Stand geometry and the crowd shader.",
       "tip": "",
-      "prompt": "A close view of one tier of the arena stands in the attached style: the crowd painted as soft silhouettes holding glowing scarves, with tiny sparkles of light scattered through them and a wave of light rippling across the tier. Painterly blur toward the top of the frame."
+      "prompt": "A close view of one tier of the stands: realistic fans in scarves and jackets, flags and hand-painted banners with abstract patterns, a few phone torches, and flare smoke drifting through low golden sunlight."
     },
     {
       "id": "M01",
@@ -545,7 +545,7 @@
       "file": "stare-down",
       "builds": "The stare-down cinematic camera and face lighting.",
       "tip": "",
-      "prompt": "A split composition at the moment before a penalty: the left half is an extreme close-up of the kicker's eyes and brow from the kicker face sheet, the right half the keeper's eyes from the keeper face sheet. Both are rim-lit in gold, and the background melts into aurora colours. The tension of two friends trying to read each other."
+      "prompt": "A split composition at the moment before a penalty: the left half is an extreme close-up of the kicker's eyes and brow from the kicker face sheet, the right half the keeper's eyes from the keeper face sheet. Both are lit by low golden sunlight, with the stadium falling away into soft bokeh behind them. The tension of two friends trying to read each other."
     },
     {
       "id": "M02",
@@ -559,9 +559,9 @@
       ],
       "title": "The goal",
       "file": "goal",
-      "builds": "The net burst, crowd wave and camera for a goal.",
+      "builds": "The net ripple, crowd eruption and camera for a goal.",
       "tip": "",
-      "prompt": "The instant a penalty hits the back of the net in the attached arena: the net bulges and bursts into a shower of gold light particles, the keeper lies on the grass where he dived, and a wave of light sweeps through the crowd behind the goal."
+      "prompt": "The instant a penalty hits the back of the net in the attached stadium: the net bulges, the keeper lies on the grass where he dived, and the stand behind the goal erupts, with scarves whirling, paper confetti in the air and flare smoke catching the evening light."
     },
     {
       "id": "M03",
@@ -575,9 +575,9 @@
       ],
       "title": "The fingertip save",
       "file": "fingertip-save",
-      "builds": "The slow-motion save with afterimages.",
+      "builds": "The slow-motion save, with water spray under the floodlights.",
       "tip": "",
-      "prompt": "A frozen slow-motion moment of the keeper from the attached turnaround at full stretch, tipping the ball around the post with his fingertips. Faint afterimages trail behind his body, and droplets and particles of light hang suspended in the air."
+      "prompt": "A frozen slow-motion moment under floodlights on a wet night: the keeper from the attached turnaround at full stretch, tipping the ball around the post with his fingertips. A spray of water flies off the ball and his gloves, each droplet catching the light, and the crowd behind is a soft blur."
     },
     {
       "id": "M04",
@@ -591,9 +591,9 @@
       ],
       "title": "The slow-motion replay",
       "file": "replay",
-      "builds": "The replay camera and trail styling.",
+      "builds": "The replay camera and tracer styling.",
       "tip": "",
-      "prompt": "A side-on slow-motion replay frame: the full flight of a knuckleball drawn as a cyan ribbon of light that wobbles near the goal, the ball frozen in mid-air above a jumping wall of crimson players, and the keeper beginning his dive."
+      "prompt": "A side-on slow-motion replay frame: the full flight of a knuckleball drawn as a thin broadcast tracer line that wobbles near the goal, the ball frozen in mid-air above a jumping wall of crimson players, and the keeper beginning his dive."
     },
     {
       "id": "T01",
@@ -604,11 +604,11 @@
       "attach": [
         "A01"
       ],
-      "title": "Painterly grass",
+      "title": "Stadium turf",
       "file": "grass",
       "builds": "The pitch surface.",
       "tip": "",
-      "prompt": "Hand-painted stylized grass, rich deep green with soft brush strokes and slight colour variation, with alternating wide light and dark mowing stripes running vertically.",
+      "prompt": "Photorealistic natural stadium turf, deep healthy green with fine blade detail and slight colour variation, with alternating wide light and dark mowing stripes running vertically.",
       "ref": "the grass texture"
     },
     {
@@ -625,7 +625,7 @@
       "file": "goalmouth",
       "builds": "The scuffed turf in front of the goal.",
       "tip": "",
-      "prompt": "Worn goalmouth turf in the same painted style as the attached grass: patchy grass with scuffed bare-earth patches and stud marks."
+      "prompt": "Worn goalmouth turf in the same style as the attached grass: thinning grass, scuffed bare-earth patches and stud marks."
     },
     {
       "id": "T03",
@@ -640,7 +640,7 @@
       "file": "crowd-sprites",
       "builds": "Billboard sprites for thousands of fans, cut out on the green background.",
       "tip": "The pure green background is what lets me cut the fans out. If it comes back with a floor or shadows, ask again for a flat #00FF00 background.",
-      "prompt": "A sheet of sixteen different stylized fans in a four-by-four grid, each a full-body painterly figure in a different pose: cheering with arms up, clapping, holding a scarf over the head, hands on head, jumping. Every figure is on a flat, pure green background (#00FF00) with clear space between figures. This overrides the grey background for this sheet."
+      "prompt": "A sheet of sixteen different realistic football fans in a four-by-four grid, each a full-body figure in a different pose: cheering with arms up, clapping, holding a scarf over the head, hands on head, jumping. Every figure is on a flat, pure green background (#00FF00) with clear space between figures. This overrides the grey background for this sheet."
     },
     {
       "id": "T04",
@@ -651,12 +651,12 @@
       "attach": [
         "A01"
       ],
-      "title": "Night sky dome",
+      "title": "Sunset sky dome",
       "file": "sky-dome",
-      "builds": "The 360-degree sky around the arena.",
+      "builds": "The 360-degree sky around the harbour stadium.",
       "tip": "",
-      "prompt": "A wide panoramic night sky for a 360-degree sky dome: deep indigo with sweeping green and violet aurora curtains, scattered stars and soft painterly clouds near the horizon. The horizon runs exactly across the middle of the image, with no ground, buildings or people.",
-      "geminiPrompt": "A wide panoramic night sky for a 360-degree sky dome: deep indigo with sweeping green and violet aurora curtains, scattered stars and soft painterly clouds near the horizon. The horizon runs exactly across the middle of the image, and the whole frame is sky and distant cloud."
+      "prompt": "A wide panoramic sunset sky over the sea for a 360-degree sky dome: a warm gold sun low on the horizon, layered clouds lit from below in orange and rose, deepening to clear blue overhead. The horizon runs exactly across the middle of the image, with no ground, buildings or people.",
+      "geminiPrompt": "A wide panoramic sunset sky over the sea for a 360-degree sky dome: a warm gold sun low on the horizon, layered clouds lit from below in orange and rose, deepening to clear blue overhead. The horizon runs exactly across the middle of the image, and the whole frame is sky, cloud and a thin line of calm sea."
     },
     {
       "id": "E01",
@@ -667,11 +667,11 @@
       "attach": [
         "A01"
       ],
-      "title": "1970s world: the sun-bleached afternoon",
+      "title": "1970s: the old ground on a winter afternoon",
       "file": "era-1970s",
       "builds": "The 1970s era, paired with the heavy leather ball.",
       "tip": "",
-      "prompt": "The same penalty end reimagined as a 1970s afternoon memory: concrete terraces packed with swaying fans in muted coats, a hazy amber sun low behind the stand, chalky pastel colours, a lattice floodlight tower, faint film grain and soft light leaks at the edges, a brown leather ball on the spot, and a worn, muddy goalmouth."
+      "prompt": "The penalty end of an original old football ground on a winter afternoon in the 1970s: deep standing terraces packed with fans in heavy coats and scarves, a low sun behind the main stand, breath clouding in the cold air, a heavy muddy goalmouth, a lattice floodlight pylon, and a brown leather ball on the spot. Warm, film-like colour with soft grain."
     },
     {
       "id": "E02",
@@ -682,11 +682,11 @@
       "attach": [
         "A01"
       ],
-      "title": "1990s world: floodlight neon",
+      "title": "1990s: floodlit rain",
       "file": "era-1990s",
       "builds": "The 1990s era, paired with the glossy, big-bending ball.",
       "tip": "",
-      "prompt": "The same penalty end reimagined as a 1990s night under blazing floodlights: chrome and concrete stands, magenta and teal light flares, a glossy white ball on the spot, wet grass mirroring the lights, and a faint scanline shimmer in the air."
+      "prompt": "The penalty end of an original city ground on a floodlit night in the 1990s: rain falling through the floodlight beams, steam rising off the packed crowd, blank advertising boards along the touchline, a glossy white ball on the wet spot, and puddles reflecting the lights."
     },
     {
       "id": "S01",
@@ -702,7 +702,7 @@
       "file": "classic-impossible-banana",
       "builds": "The 35 m free kick that has to start wide of the post.",
       "tip": "",
-      "prompt": "A free kick 35 metres from goal on a clifftop pitch at golden hour, with the sea far below. A wall of crimson players stands at the spray line, and a ribbon of gold light starts far wide of the post before bending back toward the far corner."
+      "prompt": "A free kick 35 metres from goal at an original small coastal ground on a clifftop at golden hour, with the sea far below beyond the low stand. A wall of crimson players stands at the spray line, and a thin replay tracer starts far wide of the post before bending back toward the far corner."
     },
     {
       "id": "S02",
@@ -718,7 +718,7 @@
       "file": "classic-ninety-third-minute",
       "builds": "One kick, a wall of six, everything on it.",
       "tip": "",
-      "prompt": "A storm at night: a wall of six crimson players braced at the spray line, rain lashing sideways through beams of light, lightning over the stand, and the kicker alone behind the ball."
+      "prompt": "A storm at night at a packed old ground: a wall of six crimson players braced at the spray line, rain lashing sideways through the floodlight beams, lightning over the stand, and the kicker alone behind the ball."
     },
     {
       "id": "S03",
@@ -734,7 +734,7 @@
       "file": "classic-ice-cold-chip",
       "builds": "The keeper who always dives early.",
       "tip": "",
-      "prompt": "A frozen lake arena under a pale blue dawn, breath clouding in the cold air. The keeper has dived early into the snow while a soft chip floats over him, trailing a ribbon of white light."
+      "prompt": "A snowy evening at a northern ground: snow falling through the floodlights, a bright orange winter ball, the pitch lines brushed clear, and the keeper diving early into the snow while a soft chip floats over him."
     },
     {
       "id": "S04",
@@ -749,7 +749,7 @@
       "file": "classic-monsoon-final",
       "builds": "The wet, skidding ball.",
       "tip": "",
-      "prompt": "Torrential warm rain at dusk with glowing raindrops, puddles mirroring neon light, and the ball skidding across the soaked grass, throwing up a spray of water."
+      "prompt": "A cup final in a monsoon at a tropical ground at dusk: warm torrential rain, palm trees beyond the low stand, kits soaked through, and the ball skidding across the waterlogged grass, throwing up a spray of water."
     },
     {
       "id": "S05",
@@ -760,11 +760,11 @@
       "attach": [
         "A01"
       ],
-      "title": "Classic: Above the Clouds",
-      "file": "classic-above-the-clouds",
+      "title": "Classic: Thin Air",
+      "file": "classic-thin-air",
       "builds": "The high-altitude stadium where the ball flies further.",
       "tip": "",
-      "prompt": "A pitch on a mountain plateau high above the clouds: thin, bright air, sharp sunlight, clouds drifting below the edges of the stands, and the kicker's shadow stretched long across the grass."
+      "prompt": "An original stadium high in the mountains on a clear afternoon: thin, bright air, sharp sunlight and crisp shadows, snow-capped peaks rising behind the stands, and clouds drifting in the valley below."
     }
   ]
 }

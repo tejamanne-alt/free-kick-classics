@@ -82,16 +82,16 @@ const notes = {
 };
 
 const scenes = [
-  ['The stare-down arena', 'The first playable world: the floating night arena, its stands, crowd, sky and lighting, with the phone cameras for kicker, keeper and the stare-down close-up.'],
-  ['The free-kick set piece', 'The same arena with a wall at the 9.15 m spray line and the referee.'],
-  ['Two more eras', 'The 1970s sun-bleached afternoon and the 1990s floodlit neon night, each lit and graded as its own world.'],
-  ['Classics scenes', 'Clifftop, storm, frozen lake, monsoon and above the clouds, one per scenario card.'],
+  ['The harbour stadium', 'The first playable ground, at golden hour and under floodlights: its stands, crowd, sky, sea and lighting, with the phone cameras for kicker, keeper and the stare-down close-up.'],
+  ['The free-kick set piece', 'The same ground with a wall at the 9.15 m spray line and the referee.'],
+  ['Two more eras', 'The 1970s old ground on a winter afternoon and the 1990s floodlit rain, each lit and graded as its own ground.'],
+  ['Classics scenes', 'Clifftop coast, night storm, snow, monsoon and mountain altitude, one per scenario card.'],
 ];
 const animations = [
   ['Kicker', 'Ready idle, run-up, stutter, side-foot, driven knuckleball, curler, trivela, chip, two celebrations, a miss.'],
   ['Keeper', 'Ready stance, shuffle, low, middle and top-corner dives to both sides, staying big, catch, smother, fingertip save, punch, celebration, despair.'],
   ['Wall', 'Line up, jump, brace, the lying man.'],
-  ['Ball and effects', 'Light ribbons that follow flight paths exported from the game\'s physics, the net bursting into light, crowd waves.'],
+  ['Ball and effects', 'Replay tracers that follow flight paths exported from the game\'s physics, the net ripple, scarves and flags in the crowd, rain, snow and flare smoke.'],
 ];
 
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -241,7 +241,7 @@ const html = `<title>Free Kick Classics Prompts</title>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
 <style>
-  /* Layout: one reading column, like an art-direction booklet read at dusk. Deliberately dark-only: it is the night arena's palette. */
+  /* Layout: one reading column, like a match-day art book read under the floodlights. Deliberately dark-only: evening-match palette. */
   :root {
     color-scheme: dark;
     --night: #0f0e1d;
@@ -266,10 +266,10 @@ const html = `<title>Free Kick Classics Prompts</title>
 
   .hero { margin-top: calc(-1 * env(safe-area-inset-top, 0px)); padding-top: calc(env(safe-area-inset-top, 0px) + 3.5rem); padding-bottom: 2.75rem;
     background:
-      radial-gradient(60% 90% at 18% 0%, rgba(63, 211, 154, 0.28), transparent 70%),
-      radial-gradient(55% 80% at 70% 10%, rgba(155, 132, 255, 0.30), transparent 70%),
-      radial-gradient(40% 60% at 95% 60%, rgba(234, 185, 95, 0.16), transparent 70%),
-      linear-gradient(180deg, #151332 0%, var(--night) 100%);
+      radial-gradient(55% 85% at 15% 100%, rgba(234, 165, 80, 0.30), transparent 70%),
+      radial-gradient(60% 80% at 80% 0%, rgba(70, 120, 170, 0.32), transparent 70%),
+      radial-gradient(30% 50% at 92% 70%, rgba(255, 240, 210, 0.10), transparent 70%),
+      linear-gradient(180deg, #14182b 0%, var(--night) 100%);
     border-bottom: 1px solid var(--rule); }
   .eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin: 0 0 0.75rem; }
   h1 { font-family: var(--display); font-weight: 700; font-size: clamp(2.1rem, 5.5vw, 3.4rem); line-height: 1.04; letter-spacing: -0.02em; margin: 0 0 1rem; text-wrap: balance; max-width: 16ch; }
@@ -296,9 +296,9 @@ const html = `<title>Free Kick Classics Prompts</title>
   .era { border-radius: 10px; padding: 0.9rem 1rem 1rem; min-height: 8.5rem; display: flex; flex-direction: column; justify-content: flex-end; border: 1px solid rgba(255,255,255,0.08); }
   .era h3 { font-family: var(--display); font-weight: 700; font-size: 1.05rem; margin: 0; color: #fff; text-shadow: 0 1px 8px rgba(0,0,0,0.45); }
   .era p { margin: 0.2rem 0 0; font-size: 13px; line-height: 1.4; color: rgba(255,255,255,0.88); text-shadow: 0 1px 6px rgba(0,0,0,0.5); }
-  .era.seventies { background: linear-gradient(160deg, #e7c38c 0%, #c98a4e 45%, #6f4a35 100%); }
-  .era.nineties { background: linear-gradient(160deg, #ff4fb3 0%, #6b2fc2 50%, #0f8f9c 100%); }
-  .era.modern { background: radial-gradient(80% 70% at 30% 20%, #3fd39a 0%, transparent 60%), radial-gradient(70% 70% at 80% 30%, #9b84ff 0%, transparent 65%), linear-gradient(180deg, #1f1b52, #0d0c1f); }
+  .era.seventies { background: linear-gradient(165deg, #d9b98a 0%, #a8774a 45%, #4a3a2c 100%); }
+  .era.nineties { background: radial-gradient(60% 55% at 75% 12%, rgba(236, 244, 255, 0.85) 0%, transparent 60%), linear-gradient(180deg, #2a3a57 0%, #15213a 55%, #0d2a1e 100%); }
+  .era.modern { background: radial-gradient(70% 60% at 25% 78%, #f6c36b 0%, transparent 60%), linear-gradient(180deg, #2f5d86 0%, #c9784a 72%, #3a2a2a 100%); }
   .era .tag { font-family: var(--mono); font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.85); margin-bottom: auto; }
 
   ol.steps { counter-reset: step; list-style: none; margin: 0 0 1.25rem; padding: 0; display: grid; gap: 0.75rem; }
@@ -417,18 +417,18 @@ const html = `<title>Free Kick Classics Prompts</title>
 <main>
   <section class="intro wrap" aria-labelledby="look">
     <h2 id="look">The look</h2>
-    <p>Every kick is a held breath stretched into a dream. The world around the pitch is painterly, luminous and a little impossible. The goal, the ball and the two players stay crisp, because the game is still about reading your friend.</p>
+    <p>Real football grounds, made unforgettable by where they stand and the light they're in. The stadiums, turf and crowds are believable; the escape comes from golden hours, floodlights in the rain, sea air and snow. The goal, the ball and the two players stay crisp, because the game is still about reading your friend.</p>
     <ul class="pillars">
-      <li><strong>Painted, not photographed</strong><span>Stylized 3D with hand-painted textures, soft volumetric light and visible brushwork in skies and crowds.</span></li>
-      <li><strong>Light shows the physics</strong><span>The ball leaves a ribbon of light whose shape is the real curl, dip or knuckle wobble from the flight model.</span></li>
-      <li><strong>Faces carry the duel</strong><span>Expressive faces and close-ups for the stare-down: the bluff, the read, the relief.</span></li>
-      <li><strong>Worlds, not filters</strong><span>Each era and each Classics card is its own place: its weather, its light, its crowd.</span></li>
-      <li><strong>Readable first</strong><span>During a kick the world dims around the goal; the ball, frame and players always hold the strongest contrast.</span></li>
+      <li><strong>Real grounds</strong><span>Believable stadium architecture, natural turf, real-looking crowds and kits, shot with cinematic realism.</span></li>
+      <li><strong>Places worth the trip</strong><span>A harbour at sunset, an old terraced ground in winter sun, a coastal clifftop, a snowbound north, a monsoon final, the mountains.</span></li>
+      <li><strong>Light is the treat</strong><span>Golden hours, floodlights cutting through haze and rain, flare smoke, long shadows. Every kick looks like the poster for the match.</span></li>
+      <li><strong>Physics you can read</strong><span>Replays draw the ball's flight as a broadcast tracer: the real curl, dip or knuckle wobble from the flight model.</span></li>
+      <li><strong>Faces carry the duel</strong><span>Close-ups for the stare-down: the bluff, the read, the relief. The ball, frame and players always hold the strongest contrast.</span></li>
     </ul>
     <div class="eras" role="list">
-      <div class="era seventies" role="listitem"><span class="tag">Heavy leather ball</span><h3>1970s</h3><p>Sun-bleached afternoon: amber haze, film grain, packed terraces.</p></div>
-      <div class="era nineties" role="listitem"><span class="tag">Big-bending glossy ball</span><h3>1990s</h3><p>Floodlight neon: chrome, magenta and teal flares, wet grass.</p></div>
-      <div class="era modern" role="listitem"><span class="tag">Light knuckling ball</span><h3>Modern</h3><p>The dream arena: a pitch on a mirror lake under aurora. First to build.</p></div>
+      <div class="era seventies" role="listitem"><span class="tag">Heavy leather ball</span><h3>1970s</h3><p>The old ground on a winter afternoon: terraces, low sun, mud, film grain.</p></div>
+      <div class="era nineties" role="listitem"><span class="tag">Big-bending glossy ball</span><h3>1990s</h3><p>Floodlit rain: steam off the crowd, wet grass, puddles full of light.</p></div>
+      <div class="era modern" role="listitem"><span class="tag">Light knuckling ball</span><h3>Modern</h3><p>The harbour stadium at golden hour, open to the sea. First to build.</p></div>
     </div>
   </section>
 
